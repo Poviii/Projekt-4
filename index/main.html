@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>Sign-in page</title>
+</head>
+<body>
+    <header>
+        <div class="header__upper">
+            <!-- Logo -->
+            <div class="header__logo">
+                <img src="../images/DUF-logo.png" alt="Logo" height="50">
+            </div>
+
+            <!-- Opret/Login boks -->
+            <div class="header__links">
+                <button id="opretKnap">Opret</button>
+                <button id="loginKnap">Login</button>
+            </div>
+
+            <!-- Sprog skift knappeboks -->
+            <div class="header__language">
+                <a href="?lang=en">EN</a> | <a href="?lang=dk">DK</a>
+            </div>
+            <!-- <div style="clear: both;"></div> -->
+        </div>
+            <!-- Nav links -->
+            <nav class="navbar">
+                <a href="#">OM DUF</a>
+                <a href="#">FRIVILLIG PORTAL</a>
+                <a href="#">PROJEKTER</a>
+                <a href="#">INTERNATIONALT ARBEJDE</a>
+                <a href="#">FOR FORENINGER</a>
+                <a href="#">TILSKUD OG PLEJER</a>
+                <a href="#">VIDEN</a>
+                <a href="#">NYHEDER</a>
+            </nav>
+            <div class="loginContainer modal">
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementByClassName('loginContainer').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <img src="../images/DUF-logo.png" alt="DUF logo" class="avatar">
+                    </div>
+
+                    <div class="loginContainer">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                            
+                        <button type="submit">Login</button>
+                        <label>
+                            <input type="checkbox" name="remember"> Remember me
+                        </label>
+
+                        <span class="psw"><a href="#">Forgot password</a></span>
+                    </div>
+                </form>
+            </div>
+    </header>
+
+    <main>
+<h1>Main section</h1>
+    </main>
+
+    <footer>
+        <h1>Footer</h1>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+        <p>&copy; 2023 Your Company</p>
+    </footer>
+    <script src="../script/main.js"></script>
+</body>
+</html>
