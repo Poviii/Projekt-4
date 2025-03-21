@@ -1,0 +1,78 @@
+<header>
+    <div class="header__upper">
+        <!-- Logo -->
+        <div class="header__logo">
+            <img src="../images/DUF-logo.png" alt="Logo" height="50">
+        </div>
+
+        <!-- Opret/Login boks -->
+        <div class="header__links">
+            <button id="opretKnap">Opret</button>
+            <button id="loginKnap">Login</button>
+        </div>
+
+        
+        <!-- <div style="clear: both;"></div> -->
+    </div>
+        <!-- Nav links -->
+        <nav class="navbar">
+            <a href="#">OM DUF</a>
+            <a href="#">FRIVILLIG PORTAL</a>
+            <a href="#">PROJEKTER</a>
+            <a href="#">INTERNATIONALT ARBEJDE</a>
+            <a href="#">FOR FORENINGER</a>
+            <a href="#">TILSKUD OG PLEJER</a>
+            <a href="#">VIDEN</a>
+            <a href="#">NYHEDER</a>
+        </nav>
+
+        <!-- loginContainer -->
+        <div class="loginContainer modal">
+            <form class="modal-content animate" action="/action_page.php" method="post">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementsByClassName('loginContainer').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="../images/DUF-logo.png" alt="DUF logo" class="avatar">
+                </div>
+
+                <div class="loginContainer">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+                    <br>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <br>
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <span class="psw"><a href="#">Forgot password</a></span>
+                </div>
+            </form>
+        </div>
+
+        <!-- opretContainer -->
+        <div class="opretContainer modal">
+            <form class="modal-content animate" action="/action_page.php" method="post"></form>
+                <div class="imgcontainer">
+                    <span onclick="document.getElementsByClassName('opretContainer').style.display='none'" class="close" title="Close Modal">&times;</span>
+                    <img src="../images/DUF-logo.png" alt="DUF logo" class="avatar">
+                </div>
+
+                <div class="opretContainer"></div>
+                    <label for="uname"><b>Brugernavn</b></label>
+                    <input type="text" placeholder="Tast Brugernavn" name="uname" required>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Tast Email" name="email" required>
+
+                    <label for="psw"><b>Adgangskode</b></label>
+                    <input type="password" placeholder="Tast Password" name="psw" required>
+
+                    <label for="rep-psw"><b>Gentag adgangskode</b></label>
+                    <input type="password" placeholder="Repeat Password" name="rep-psw" required>
+                        
+                    <button type="submit">Opret</button>
+                </div>
+            </form>
+        </div>
+</header>

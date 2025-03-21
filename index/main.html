@@ -4,66 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/main.css">
-    <title>Sign-in page</title>
+    <title>Main Page</title>
 </head>
 <body>
-    <header>
-        <div class="header__upper">
-            <!-- Logo -->
-            <div class="header__logo">
-                <img src="../images/DUF-logo.png" alt="Logo" height="50">
-            </div>
-
-            <!-- Opret/Login boks -->
-            <div class="header__links">
-                <button id="opretKnap">Opret</button>
-                <button id="loginKnap">Login</button>
-            </div>
-
-            <!-- Sprog skift knappeboks -->
-            <div class="header__language">
-                <a href="?lang=en">EN</a> | <a href="?lang=dk">DK</a>
-            </div>
-            <!-- <div style="clear: both;"></div> -->
-        </div>
-            <!-- Nav links -->
-            <nav class="navbar">
-                <a href="#">OM DUF</a>
-                <a href="#">FRIVILLIG PORTAL</a>
-                <a href="#">PROJEKTER</a>
-                <a href="#">INTERNATIONALT ARBEJDE</a>
-                <a href="#">FOR FORENINGER</a>
-                <a href="#">TILSKUD OG PLEJER</a>
-                <a href="#">VIDEN</a>
-                <a href="#">NYHEDER</a>
-            </nav>
-            <div class="loginContainer modal">
-                <form class="modal-content animate" action="/action_page.php" method="post">
-                    <div class="imgcontainer">
-                        <span onclick="document.getElementByClassName('loginContainer').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <img src="../images/DUF-logo.png" alt="DUF logo" class="avatar">
-                    </div>
-
-                    <div class="loginContainer">
-                        <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
-
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
-                            
-                        <button type="submit">Login</button>
-                        <label>
-                            <input type="checkbox" name="remember"> Remember me
-                        </label>
-
-                        <span class="psw"><a href="#">Forgot password</a></span>
-                    </div>
-                </form>
-            </div>
-    </header>
-
     <main>
-<h1>Main section</h1>
+        <div class="gridContainer">
+            <div class="gridItem gridHeader">
+                <!-- Titel -->
+                <h1>Dashboard</h1>
+                
+                <!-- Søg felt -->
+                <input type="text" name="" id="" placeholder="Søg her">
+
+                <!-- Sprog skift knappeboks -->
+                <div class="header__language">
+                    <a href="?lang=en">EN</a> | <a href="?lang=dk">DK</a>
+                </div>
+
+                
+            </div>
+            <div class="gridItem sideNav">
+                <h1>Heltene</h1>
+                <button class="sideNav__button">Leaderboards</button>
+                <button class="sideNav__button">My Page</button>
+                <button class="sideNav__button">Shop</button>
+                <button class="sideNav__button">Statistikker</button>
+                <button class="sideNav__button">Beskeder</button>
+                <button class="sideNav__button">Indstillinger</button>
+                <button class="sideNav__button">Log Ud</button>
+            </div>
+            <div class="gridItem grid1"><h3>Min Rangering</h1></div>
+            <div class="gridItem grid2"><h3>Mine Stats</h3></div>
+            <div class="gridItem grid3"><h3>Nye Beskeder</h3></div>
+            <div class="gridItem grid4"><h3>Mine Badges</h3></div>
+            <div class="gridItem grid5"><h3>Kommende Events</h3></div>
+            <div class="gridItem grid6"><h3>Top frivillige organisationer</h3></div>
+            <div class="gridItem grid7"><h3>Top Regioner</h3></div>
+            <div class="gridItem grid8"><h3>Stat</h3></div>
+        </div>
     </main>
 
     <footer>
