@@ -1,383 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gen-Fri</title>
+    <meta name="viewport" content="width=width=device-width, initial-scale=1.0" />
+    <title>Responsive Startup Page</title>
     <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="styleguide.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 767px)" />
+    <link rel="stylesheet" href="tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
+    <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="app-container">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <img src="images/logo.png" alt="Logo" class="logo" />
-      </aside>
+  
 
-      <!-- Main content -->
-      <main class="main-content">
-        <!-- Header -->
-        <header class="main-header">
-          <button class="menu-button">
-            <i class="fas fa-bars"></i>
-          </button>
-          <h1>Home</h1>
-          <div class="search-bar">
-            <input type="text" placeholder="Søg..." />
-            <button><i class="fas fa-search"></i></button>
-          </div>
-          <div class="header-icons">
-            <button><i class="fas fa-envelope"></i></button>
-            <button><i class="fas fa-bell"></i></button>
-            <button><i class="fas fa-user"></i></button>
-          </div>
-        </header>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <a href="#" class="sidebar__item sidebar__item--active">
+        <img src="icons/black_icons/homepage_black.svg" alt="Home" class="sidebar__item-icon" /> Explore/Homepage
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/mypage_black.svg" alt="My Page" class="sidebar__item-icon" /> My Page
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/message_black.svg" alt="Messages" class="sidebar__item-icon" /> Messages
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/leaderboard_black.svg" alt="Leaderboard" class="sidebar__item-icon" /> Leaderboard
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/shop_black.svg" alt="Shop" class="sidebar__item-icon" /> Shop
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/settings_black.svg" alt="Settings" class="sidebar__item-icon" /> Settings
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/logout_black.svg" alt="Log Out" class="sidebar__item-icon" /> Log Out
+      </a>
+    </aside>
 
-        <!-- Profile Section -->
-        <section class="profile-card">
-          <img src="images/martin.png" alt="Profile picture" class="profile-pic" />
-          <h2 class="profile-name">THEO</h2>
-          <p class="profile-age">24 ÅR</p>
-          <p class="profile-location">ODENSE</p>
-        </section>
-
-          <div class="menubar">
-            <img
-              class="menubar-explore"
-              src="https://c.animaapp.com/59KrY701/img/menubar-explore@2x.png"
-            />
-            <img class="img-2" src="icons/calendar.png" />
-            <img class="img-2" src="icons/message_icon.png" />
-            <img class="menubar-following" src="icons/mypage_icon.png" />
-          </div>
-          <div class="text-wrapper-3">Updates</div>
-          <div class="next-events">
-            <div class="next-events-h">Næste events</div>
-            <div class="next-events-slider">
-              <div class="next-events-slider-2">
-                <img
-                  class="next-events-slider-3"
-                  src="images/ventilen_logo.png"
-                />
-                <div class="next-events-slider-4">KOMsammen -Filmaften</div>
-                <img class="next-events-slider-5" src="icons/map_pin.png" />
-                <div class="next-events-slider-6">Odense</div>
-                <img class="next-events-slider-5" src="icons/calendar.png" />
-                <div class="next-events-slider-7">Maj</div>
-                <div class="group">
-                  <div class="next-events-slider-wrapper">
-                    <div class="next-events-slider-8">
-                      <button>Deltag</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="next-events-slider-2">
-                <img
-                  class="next-events-slider-3"
-                  src="images/ventilen_logo.png"
-                />
-                <div class="next-events-slider-4">KOMsammen -Filmaften</div>
-                <img class="next-events-slider-5" src="icons/map_pin.png" />
-                <div class="next-events-slider-6">Odense</div>
-                <img class="next-events-slider-5" src="icons/calendar.png" />
-                <div class="next-events-slider-7">Maj</div>
-                <div class="group">
-                  <div class="next-events-slider-wrapper">
-                    <div class="next-events-slider-8">Deltag</div>
-                  </div>
-                </div>
-              </div>
-              <div class="next-events-slider-2">
-                <img
-                  class="next-events-slider-3"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--logo-2@2x.png"
-                />
-                <div class="next-events-slider-4">KOMsammen -Filmaften</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon-2@2x.png"
-                />
-                <div class="next-events-slider-6">Odense</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon--2-2@2x.png"
-                />
-                <div class="next-events-slider-7">Maj</div>
-                <div class="group">
-                  <div class="next-events-slider-wrapper">
-                    <div class="next-events-slider-8">Deltag</div>
-                  </div>
-                </div>
-              </div>
-              <div class="next-events-slider-2">
-                <img
-                  class="next-events-slider-3"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--logo-3@2x.png"
-                />
-                <div class="next-events-slider-4">KOMsammen -Filmaften</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon-3@2x.png"
-                />
-                <div class="next-events-slider-6">Odense</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon--2-3@2x.png"
-                />
-                <div class="next-events-slider-7">Maj</div>
-                <div class="group">
-                  <div class="next-events-slider-wrapper">
-                    <div class="next-events-slider-8">Deltag</div>
-                  </div>
-                </div>
-              </div>
-              <div class="next-events-slider-2">
-                <img
-                  class="next-events-slider-3"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--logo-4@2x.png"
-                />
-                <div class="next-events-slider-4">KOMsammen -Filmaften</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon-4@2x.png"
-                />
-                <div class="next-events-slider-6">Odense</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon--2-4@2x.png"
-                />
-                <div class="next-events-slider-7">Maj</div>
-                <div class="group">
-                  <div class="next-events-slider-wrapper">
-                    <div class="next-events-slider-8">Deltag</div>
-                  </div>
-                </div>
-              </div>
-              <div class="next-events-slider-2">
-                <img
-                  class="next-events-slider-3"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--logo-5@2x.png"
-                />
-                <div class="next-events-slider-4">KOMsammen -Filmaften</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon-5@2x.png"
-                />
-                <div class="next-events-slider-6">Odense</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon--2-5@2x.png"
-                />
-                <div class="next-events-slider-7">Maj</div>
-                <div class="group">
-                  <div class="next-events-slider-wrapper">
-                    <div class="next-events-slider-8">Deltag</div>
-                  </div>
-                </div>
-              </div>
-              <div class="next-events-slider-2">
-                <img
-                  class="next-events-slider-3"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--logo-6@2x.png"
-                />
-                <div class="next-events-slider-4">KOMsammen -Filmaften</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon-6@2x.png"
-                />
-                <div class="next-events-slider-6">Odense</div>
-                <img
-                  class="next-events-slider-5"
-                  src="https://c.animaapp.com/59KrY701/img/next-events-slider--1--icon--2-6@2x.png"
-                />
-                <div class="next-events-slider-7">Maj</div>
-                <div class="group">
-                  <div class="next-events-slider-wrapper">
-                    <div class="next-events-slider-8">Deltag</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="updates">
-            <div class="updates-h">Updates</div>
-            <div class="updates-feed">
-              <div class="updates-feed-2">
-                <img
-                  class="updates-feed-3"
-                  src="https://c.animaapp.com/59KrY701/img/updates-feed-1--picture@2x.png"
-                />
-                <p class="updates-feed-text">
-                  <span class="text-wrapper-4">@MartinHaussmann</span>
-                  <span class="text-wrapper-5"> anbefalet </span>
-                  <span class="text-wrapper-6">Rød Kors Lektiecafé</span>
-                  <span class="text-wrapper-5">&nbsp;</span>
-                </p>
-              </div>
-              <div class="updates-feed-2">
-                <img
-                  class="updates-feed-3"
-                  src="https://c.animaapp.com/59KrY701/img/updates-feed-2--pitcture@2x.png"
-                />
-                <p class="p">
-                  <span class="text-wrapper-7">Regionsmøde<br /></span>
-                  <span class="text-wrapper-5"
-                    >Coding Pirates Syddanmark&nbsp;&nbsp;afholder regions møde
-                    den 28. Juni.</span
-                  >
-                  <span class="text-wrapper-6">Læs mere</span>
-                </p>
-              </div>
-              <div class="updates-feed-2">
-                <img
-                  class="updates-feed-4"
-                  src="https://c.animaapp.com/59KrY701/img/updates-feed-3--pitcture@2x.png"
-                />
-                <p class="p">
-                  <span class="text-wrapper-8"
-                    >Vi åbner ny SMS-funktion på vores anonyme samtaletilbud<br
-                  /></span>
-                  <span class="text-wrapper-5"
-                    > De mest alvorlige henvendelser, vi får fra unge, får vi på...
-                  </span>
-                  <span class="text-wrapper-6">Læs mere</span>
-                </p>
-              </div>
-              <div class="updates-feed-2">
-                <img
-                  class="updates-feed-4"
-                  src="https://c.animaapp.com/59KrY701/img/updates-feed-4--pitcture@2x.png"
-                />
-                <p class="p">
-                  <span class="text-wrapper-4">@Lucas Jæger</span>
-                  <span class="text-wrapper-5"> Deltager i </span>
-                  <span class="text-wrapper-6">Ventilen KOMsammen</span>
-                  <span class="text-wrapper-5">
-                    <br />Den 6. April&nbsp;&nbsp;2025</span
-                  >
-                </p>
-              </div>
-              <div class="updates-feed-2">
-                <img
-                  class="updates-feed-4"
-                  src="https://c.animaapp.com/59KrY701/img/updates-feed-5--pitcture@2x.png"
-                />
-                <p class="p">
-                  <span class="text-wrapper-8"
-                    >Ventilens nationale ensomhedsdag 2025<br
-                  /></span>
-                  <span class="text-wrapper-5"
-                    > Lørdag den 4. maj markerer vi Ventilens nationale
-                    ensomhedsdag for at sætte fokus på ensomhed blandt unge.
-                    Vores frivillige har planlagt aktiviteter og begivenheder i
-                    hele landet – og DU er inviteret....</span
-                  >
-                  <span class="text-wrapper-6">Læs mere</span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <footer class="FOOTER">
-            <p class="text-wrapper-9">© 2025. All rights reserved.</p>
-            <div class="quick-links">
-              <div class="flexcontainer">
-                <p class="text">
-                  <span class="text-wrapper-10">Om os<br /></span>
-                </p>
-                <p class="text">
-                  <span class="text-wrapper-10">Shop<br /></span>
-                </p>
-                <p class="text">
-                  <span class="text-wrapper-10">Partners<br /></span>
-                </p>
-                <p class="text">
-                  <span class="text-wrapper-10">Kontakt<br /></span>
-                </p>
-                <p class="text"><span class="text-wrapper-10"></span></p>
-              </div>
-              <div class="flexcontainer-2">
-                <p class="text">
-                  <span class="text-wrapper-10">Facebook<br /></span>
-                </p>
-                <p class="text">
-                  <span class="text-wrapper-10">Twitter<br /></span>
-                </p>
-                <p class="text">
-                  <span class="text-wrapper-10">Linkedin<br /></span>
-                </p>
-                <p class="text">
-                  <span class="text-wrapper-10">Instagram</span>
-                </p>
-              </div>
-            </div>
-            <div class="address-and-contact">
-              <p class="a">Seebladsgade <br />Danmark, Odense C 5000</p>
-              <div class="frame-wrapper">
-                <div class="frame"><div class="div-2">+45 123 456 78</div></div>
-              </div>
-              <div class="div-wrapper">
-                <div class="kontakt-genfri-com-wrapper">
-                  <p class="div-2">
-                    <a
-                      href="mailto:contact@lift.agency"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      ><span class="text-wrapper-11">k</span></a
-                    >
-                    <span class="text-wrapper-11">ontakt@genfri.com</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </footer>
-          <p class="text-wrapper-12">Du har ikke flere updates</p>
-        </div>
-      </main>
-    </div>
-    <div class="mobile-menu">
-      <div class="mobile-menu-header">
-        <div class="close-menu">
-          <i class="fas fa-times"></i>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar__left">
+        <button id="burger-btn">
+          <img src="icons/black_icons/burgermenu_black.svg" class="navbar__btn-icon" alt="Menu" />
+        </button>
+        <div class="navbar__logo navbar__logo--desktop">
+          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" />
         </div>
       </div>
-      <nav class="mobile-menu-nav">
-        <ul>
-          <li>
-            <a href="mypage.html"><i class="fas fa-user-circle"></i> My Page</a>
-          </li>
-          <li>
-            <a href="index.html" class="active"
-              ><i class="fas fa-compass"></i> Explore</a
-            >
-          </li>
-          <li>
-            <a href="shop.html"><i class="fas fa-shopping-bag"></i> Shop</a>
-          </li>
-          <li>
-            <a href="leaderboard.html"
-              ><i class="fas fa-chart-line"></i> Leaderboard</a
-            >
-          </li>
-          <li>
-            <a href="message.html"
-              ><i class="fas fa-comment-alt"></i> Beskeder</a
-            >
-          </li>
-          <li>
-            <a href="settings.html"><i class="fas fa-cog"></i> Indstillinger</a>
-          </li>
-          <li>
-            <a href="#"><i class="fas fa-sign-out-alt"></i> Log ud</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+      <div class="navbar__center">
+        <div class="navbar__logo navbar__logo--mobile">
+          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" />
+        </div>
+        <div class="search-bar">
+          <input type="text" class="search-bar__input" placeholder="Search..." />
+          <img src="icons/black_icons/search_black.svg" alt="Search" class="navbar__btn-icon" />
+        </div>
+      </div>
+      <div class="navbar__right">
+        <img src="icons/black_icons/message_black.svg" class="navbar__btn-icon" alt="Messages" />
+        <img src="icons/black_icons/notification_black.svg" class="navbar__btn-icon" alt="Notifications" />
+        <img src="icons/black_icons/mypage_black.svg" class="navbar__btn-icon" alt="Profile" />
+        <button id="theme-toggle" class="navbar__btn-icon">
+          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" />
+        </button>
+      </div>
+    </nav>
+
     <script src="script.js"></script>
   </body>
 </html>
+
+

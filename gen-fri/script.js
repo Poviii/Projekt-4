@@ -1,56 +1,27 @@
-// Existing code
+// Burgermenu toggle
+const burgerBtn = document.getElementById("burger-btn");
+const sidebar = document.getElementById("sidebar");
 
-// Update burger menu functionality
-const burgerMenuIcon = document.querySelector(".burger-menu-icon");
-const mobileMenu = document.querySelector(".mobile-menu");
-const closeMenu = document.querySelector(".close-menu");
+burgerBtn?.addEventListener("click", () => {
+  const isSidebarVisible = sidebar.classList.toggle("sidebar--visible");
 
-burgerMenuIcon.addEventListener("click", () => {
-  mobileMenu.classList.add("open");
-});
-
-closeMenu.addEventListener("click", () => {
-  mobileMenu.classList.remove("open");
-});
-
-// Close menu when clicking outside
-document.addEventListener("click", (event) => {
-  if (
-    !mobileMenu.contains(event.target) &&
-    !burgerMenuIcon.contains(event.target)
-  ) {
-    mobileMenu.classList.remove("open");
-  }
-});
-
-// Function to handle responsiveness
-function handleResponsiveness() {
-  const sidemenu = document.querySelector(".sidemenu");
-  const mainContent = document.querySelector(".main-content");
-  const mainHeader = document.querySelector(".main-header");
-  const pageTitle = document.querySelector(".page-title");
-  const searchBar = document.querySelector(".search-bar");
-
-  if (window.innerWidth >= 1024) {
-    sidemenu.style.display = "block";
-    burgerMenuIcon.style.display = "none";
-    mainContent.style.marginLeft = "250px";
-    mainHeader.style.display = "flex";
-    pageTitle.style.display = "block";
-    searchBar.style.display = "flex";
-    mobileMenu.classList.remove("open");
+  // Toggle the icon based on the sidebar visibility
+  const icon = burgerBtn.querySelector("img");
+  if (isSidebarVisible) {
+    icon.src = "icons/black_icons/circle-xmark.svg"; // Close icon
+    icon.alt = "Close Menu";
   } else {
-    sidemenu.style.display = "none";
-    burgerMenuIcon.style.display = "block";
-    mainContent.style.marginLeft = "0";
-    mainHeader.style.display = "flex";
-    pageTitle.style.display = "none";
-    searchBar.style.display = "none";
+    icon.src = "icons/black_icons/burgermenu_black.svg"; // Burger menu icon
+    icon.alt = "Menu";
   }
-}
+});
 
-// Initial call
-handleResponsiveness();
+// Dark mode toggle
+const themeToggle = document.getElementById("theme-toggle");
+const root = document.documentElement;
 
-// Listen for window resize events
-window.addEventListener("resize", handleResponsiveness);
+themeToggle?.addEventListener("click", () => {
+  const currentTheme = root.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", newTheme);
+});

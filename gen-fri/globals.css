@@ -1,19 +1,306 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:500,700,400,300|Baloo+2:700|Poppins:var(--description-font-weight)");
-* {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+/* ===== Global Styles (BEM Naming) ===== */
+:root {
+  --primaryblack: rgba(0, 0, 0, 1);
+  --primarywhite: rgba(255, 255, 255, 1);
+  --primarylight-black: rgba(53, 53, 53, 1);
+  --secondaryorange: rgba(209, 103, 8, 1);
+  --secondarylight: rgba(245, 245, 245, 1);
+  --secondarylight-medium: rgba(184, 183, 183, 1);
+  --dark: rgba(10, 20, 47, 1);
+  --font-main: "Montserrat", Helvetica;
+  --shadow-main: 5px 5px 8px 0px rgba(0, 0, 0, 0.25);
 }
-html,
+
 body {
-  margin: 0px;
-  height: 100%;
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--primarywhite);
+  color: var(--primaryblack);
 }
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-a {
-  text-decoration: none;
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Typography */
+.text--h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 64px;
+}
+
+.text--paragraph {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Utility */
+.u-flex {
+  display: flex;
+}
+.u-flex--between {
+  justify-content: space-between;
+  align-items: center;
+}
+.u-flex--center {
+  justify-content: center;
+  align-items: center;
+}
+.u-hidden {
+  display: none !important;
+}
+
+/* Navbar Layout */
+.navbar {
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1100; /* Ensure it stays above the sidebar */
+  padding: 1rem;
+  box-shadow: var(--shadow-main);
+  background-color: var(--secondarylight);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.navbar__left,
+.navbar__center,
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__center {
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar__right {
+  justify-content: flex-end;
+}
+
+.navbar__btn-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Navbar Icons */
+.navbar__btn-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Logo Styles */
+.navbar__logo {
+  display: none; /* Hidden by default */
+}
+
+.navbar__logo img {
+  height: 32px; /* Adjust size as needed */
+  width: auto;
+}
+
+/* Mobile Logo */
+.navbar__logo--mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Search Bar */
+.search-bar {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--secondarylight-medium);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.search-bar__input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/* Global styles for icons in sidebar items */
+.sidebar {
+  position: fixed; /* Keep the sidebar fixed */
+  top: 64px; /* Adjust this value to match the height of the navbar */
+  left: 0;
+  background-color: var(--secondarylight);
+  padding: 1rem;
+  height: calc(100vh - 64px); /* Sidebar height minus navbar height */
+  width: 250px;
+  box-shadow: var(--shadow-main);
+  z-index: 1000;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar--visible {
+  display: flex;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 700;
+  color: var(--primaryblack);
+  text-decoration: none; /* Remove underline from links */
+}
+
+.sidebar__item--active {
+  color: var(--secondaryorange);
+}
+
+.sidebar__item-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 1rem; /* Space between icon and text */
+}
+
+.close-btn {
+  display: none; /* Hide close button by default */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+/* Dark mode */
+[data-theme='dark'] {
+  --primaryblack: rgba(255, 255, 255, 1);
+  --primarywhite: rgba(0, 0, 0, 1);
+  --secondarylight: rgba(30, 30, 30, 1);
+}
+
+/* Theme Toggle */
+#theme-toggle {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Adjust height as needed */
+  background: linear-gradient(to bottom, var(--primarywhite) 50%, var(--secondaryorange) 50%);
+  padding: 1rem;
+}
+
+.profile-section__content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--primarywhite);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+}
+
+.profile-section__image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-section__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-section__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--primaryblack);
+}
+
+.profile-section__details {
+  font-size: 1rem;
+  margin: 0.2rem 0;
+  color: var(--primarylight-black);
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+  .search-bar {
+    display: flex;
+  }
+
+  .sidebar {
+    position: fixed; /* Sidebar remains fixed on desktop */
+    top: 64px; /* Below the navbar */
+    height: calc(100vh - 64px); /* Adjust height for the navbar */
+    width: 250px;
+    box-shadow: var(--shadow-main);
+  }
+
+  #burger-btn,
+  #close-btn {
+    display: none !important;
+  }
+
+  .navbar__right {
+    display: flex;
+  }
+
+  .navbar__logo--mobile {
+    display: none; /* Hide mobile logo on desktop */
+  }
+
+  .navbar__logo--desktop {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 1rem; /* Adjust spacing as needed */
+  }
+}
+
+@media (max-width: 1023px) {
+  .search-bar {
+    display: none !important;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar--visible {
+    display: flex !important;
+  }
 }
