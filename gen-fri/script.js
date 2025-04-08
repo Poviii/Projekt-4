@@ -25,3 +25,24 @@ themeToggle?.addEventListener("click", () => {
   const newTheme = currentTheme === "dark" ? "light" : "dark";
   root.setAttribute("data-theme", newTheme);
 });
+
+// Tab toggle functionality
+const tabs = document.querySelectorAll(".main-content__tab");
+const tabContents = document.querySelectorAll("[data-tab-content]");
+
+tabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    // Remove active class from all tabs
+    tabs.forEach((t) => t.classList.remove("main-content__tab--active"));
+
+    // Hide all tab contents
+    tabContents.forEach((content) => (content.style.display = "none"));
+
+    // Add active class to the clicked tab
+    tab.classList.add("main-content__tab--active");
+
+    // Show the corresponding tab content
+    const target = tab.getAttribute("data-tab");
+    document.querySelector(`[data-tab-content="${target}"]`).style.display = "block";
+  });
+});

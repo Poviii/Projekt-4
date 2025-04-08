@@ -69,6 +69,68 @@
       </div>
     </nav>
 
+    <section class="profile-section">
+      <div class="profile-section__content">
+        <div class="profile-section__image">
+          <img src="images/capio.png" alt="Profile Picture" />
+        </div>
+        <div class="profile-section__info">
+          <h2 class="profile-section__name">Capper</h2>
+          <p class="profile-section__details">Alder: 27</p>
+          <p class="profile-section__details">By: Odense</p>
+        </div>
+        <div class="profile-section__stats">
+          <div class="profile-section__stat">
+            <img src="badges/champion_badge.png" alt="Badges Icon" class="profile-section__stat-icon" />
+            <span>Badges: 10</span>
+          </div>
+          <div class="profile-section__stat">
+            <img src="badges/silver_badge.png" alt="Rank Icon" class="profile-section__stat-icon" />
+            <span>Rank: Silver</span>
+          </div>
+          <div class="profile-section__stat">
+            <img src="icons/black_icons/points_black.svg" alt="Credits Icon" class="profile-section__stat-icon" />
+            <span>Credits: 200</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-content">
+      <div class="main-content__tabs">
+        <button class="main-content__tab" data-tab="feed">
+          <img src="icons/placeholder-feed.svg" alt="Feed Icon" class="main-content__tab-icon" />
+          Feed
+        </button>
+        <button class="main-content__tab" data-tab="calendar">
+          <img src="icons/placeholder-calendar.svg" alt="Calendar Icon" class="main-content__tab-icon" />
+          Calendar
+        </button>
+        <button class="main-content__tab" data-tab="friends">
+          <img src="icons/placeholder-friends.svg" alt="Friends Icon" class="main-content__tab-icon" />
+          Friends
+        </button>
+      </div>
+      <div class="main-content__columns">
+        <div class="main-content__column main-content__feed" data-tab-content="feed">
+          <h3 class="main-content__title">Feed</h3>
+          <div class="main-content__scrollable">
+            <p class="main-content__placeholder">Feed content goes here...</p>
+            <p class="main-content__placeholder">More feed content...</p>
+            <p class="main-content__placeholder">Even more feed content...</p>
+          </div>
+        </div>
+        <div class="main-content__column main-content__calendar" data-tab-content="calendar" style="display: none;">
+          <h3 class="main-content__title">Calendar</h3>
+          <p class="main-content__placeholder">Calendar content goes here...</p>
+        </div>
+        <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none;">
+          <h3 class="main-content__title">Friends</h3>
+          <p class="main-content__placeholder">Friends content goes here...</p>
+        </div>
+      </div>
+    </section>
+
     <script src="script.js"></script>
   </body>
 </html>

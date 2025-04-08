@@ -224,17 +224,19 @@ button {
 .profile-section__content {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 2rem;
   background: var(--primarywhite);
   padding: 1rem;
   border-radius: 8px;
   box-shadow: var(--shadow-main);
+  width: 100%; /* Make the profile box span the full width */
 }
 
 .profile-section__image img {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 10%;
   object-fit: cover;
 }
 
@@ -254,6 +256,113 @@ button {
   font-size: 1rem;
   margin: 0.2rem 0;
   color: var(--primarylight-black);
+}
+
+/* Profile Section Stat Icons */
+.profile-section__stat-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain; /* Ensure the icon fits within the dimensions */
+}
+
+/* Main Content Section */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--secondarylight);
+}
+
+.main-content__column {
+  flex: 1; /* Each column takes equal space */
+  background: var(--primarywhite);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+  text-align: center;
+  width: 100%; /* Full width */
+  max-height: 400px; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.main-content__icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+.main-content__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+  color: var(--primaryblack);
+}
+
+.main-content__placeholder {
+  font-size: 1rem;
+  color: var(--primarylight-black);
+}
+
+/* Tabs Section */
+.main-content__tabs {
+  display: flex;
+  justify-content: space-around;
+  gap: 0;
+  margin-bottom: 1rem;
+  width: 100%; /* Full width */
+  background-color: var(--secondarylight-medium);
+  padding: 0.5rem 0;
+  position: sticky; /* Keep tabs at the top while scrolling */
+  top: 0;
+  z-index: 10;
+}
+
+.main-content__tab {
+  flex: 1; /* Equal width for all tabs */
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondarylight-medium);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primaryblack);
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.main-content__tab:hover {
+  background-color: var(--secondaryorange);
+  color: var(--primarywhite);
+}
+
+.main-content__tab--active {
+  background-color: var(--secondaryorange);
+  color: var(--primarywhite);
+}
+
+.main-content__tab-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Columns Section */
+.main-content__columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main-content__scrollable {
+  max-height: 300px; /* Adjust height for scrolling content */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: 1rem; /* Add padding for scrollbar space */
 }
 
 /* Media Queries */
