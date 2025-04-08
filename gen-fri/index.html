@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gen-Fri</title>
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="styleguide.css" />
     <link rel="stylesheet" href="style.css" />
@@ -13,66 +14,38 @@
   </head>
   <body>
     <div class="app-container">
-      <aside class="sidemenu">
-        <img src="https://via.placeholder.com/150x50?text=Logo" alt="Logo" class="logo"/>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <img src="images/logo.png" alt="Logo" class="logo" />
       </aside>
+
+      <!-- Main content -->
       <main class="main-content">
+        <!-- Header -->
         <header class="main-header">
-          <div class="burger-menu-icon">
+          <button class="menu-button">
             <i class="fas fa-bars"></i>
-          </div>
-          <h1 class="page-title">Home</h1>
+          </button>
+          <h1>Home</h1>
           <div class="search-bar">
             <input type="text" placeholder="Søg..." />
-            <button type="button"><i class="fas fa-search"></i></button>
+            <button><i class="fas fa-search"></i></button>
           </div>
-          <div class="header-actions">
-            <button class="icon-button"><i class="fas fa-envelope"></i></button>
-            <button class="icon-button"><i class="fas fa-bell"></i></button>
-            <button class="icon-button profile-button">
-              <i class="fas fa-user"></i>
-            </button>
+          <div class="header-icons">
+            <button><i class="fas fa-envelope"></i></button>
+            <button><i class="fas fa-bell"></i></button>
+            <button><i class="fas fa-user"></i></button>
           </div>
         </header>
-        <div class="iphone-pro">
-          <div class="profil-menu">
-            <img class="profil-picture" src="images/martin.png" />
-            <div class="profil-name">THEO</div>
-            <div class="text-wrapper">24 ÅR</div>
-            <div class="text-wrapper">ODENSE</div>
-          </div>
-          <div class="profil-trophy">
-            <div class="profil-trophy-point">
-              <div class="overlap-group">
-                <p class="profil-trophy-icon">
-                  <span class="span">213</span>
-                  <span class="text-wrapper-2">p</span>
-                </p>
-                <img class="img" src="icons/point_icon.png" />
-              </div>
-            </div>
-            <div class="profil-trophy-badge">
-              <div class="overlap">
-                <img class="badge" src="badges/silver_badge.png" />
-                <img class="darker" src="badges/badge_sides.png" />
-                <div class="rectangle"></div>
-                <div class="silver">SILVER</div>
-                <div class="div"></div>
-                <div class="rectangle-2"></div>
-              </div>
-            </div>
-            <div class="profil-tophy">
-              <div class="overlap-2">
-                <img class="badge-2" src="badges/top100_badge.png" />
-                <div class="tag">
-                  <div class="overlap-group-2">
-                    <img class="lighten" src="badges/champion_badge.png" />
-                    <div class="x">"×1"</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+
+        <!-- Profile Section -->
+        <section class="profile-card">
+          <img src="images/martin.png" alt="Profile picture" class="profile-pic" />
+          <h2 class="profile-name">THEO</h2>
+          <p class="profile-age">24 ÅR</p>
+          <p class="profile-location">ODENSE</p>
+        </section>
+
           <div class="menubar">
             <img
               class="menubar-explore"
@@ -271,8 +244,7 @@
                     >Vi åbner ny SMS-funktion på vores anonyme samtaletilbud<br
                   /></span>
                   <span class="text-wrapper-5"
-                    > De mest alvorlige henvendelser, vi får fra unge, får vi
-                    på...
+                    > De mest alvorlige henvendelser, vi får fra unge, får vi på...
                   </span>
                   <span class="text-wrapper-6">Læs mere</span>
                 </p>
