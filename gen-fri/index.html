@@ -2,16 +2,11 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-<<<<<<< HEAD
     <meta
       name="viewport"
       content="width=width=device-width, initial-scale=1.0"
     />
-    <title>Responsive Startup Page</title>
-=======
-    <meta name="viewport" content="width=width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
->>>>>>> e160a15deabba0ad9459ff0fb02e84d2c94bbf73
+    <title>Gen-Fri Homepage</title>
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="mobile.css" media="(max-width: 767px)" />
     <link
@@ -181,8 +176,9 @@
     </section>
 
     <section class="main-content">
+      <!-- Tabs Section -->
       <div class="main-content__tabs">
-        <button class="main-content__tab" data-tab="feed">
+        <button class="main-content__tab" data-tab="feed" aria-selected="true">
           <img
             src="icons/black_icons/homepage_black.svg"
             alt="Feed Icon"
@@ -206,7 +202,17 @@
           />
           Friends
         </button>
+        <button class="main-content__tab" data-tab="organisations">
+          <img
+            src="icons/black_icons/organisations_black.svg"
+            alt="Organisations Icon"
+            class="main-content__tab-icon"
+          />Organisations
+        </button>
+        <div class="main-content__tab-indicator"></div>
       </div>
+
+      <!-- Content Section -->
       <div class="main-content__columns">
         <div
           class="main-content__column main-content__feed"
@@ -235,9 +241,53 @@
           <h3 class="main-content__title">Friends</h3>
           <p class="main-content__placeholder">Friends content goes here...</p>
         </div>
+        <div
+          class="main-content__column main-content__organisations"
+          data-tab-content="organisations"
+          style="display: none"
+        >
+          <h3 class="main-content__title">My Organisations</h3>
+          <p class="main-content__placeholder">
+            Organisations content goes here...
+          </p>
+        </div>
       </div>
     </section>
 
+    <!--Scroll up btn-->
+    <button onclick="topFunction()" class="scrollUpBtn" title="Go to top">
+      <img src="icons/black_icons/up_arrow_black.svg" alt="small_up_arrow" />
+    </button>
+
     <script src="script.js"></script>
+
+    <footer>
+      <div class="footer__content">
+        <p class="footer__text">© 2023 Gen-Fri. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-icon">
+            <img src="icons/black_icons/facebook_black.svg" alt="Facebook" />
+          </a>
+          <a href="#" class="footer__social-icon">
+            <img src="icons/black_icons/twitter_black.svg" alt="Twitter" />
+          </a>
+          <a href="#" class="footer__social-icon">
+            <img src="icons/black_icons/instagram_black.svg" alt="Instagram" />
+          </a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <a href="#" class="footer__link">Privacy Policy</a>
+        <a href="#" class="footer__link">Terms of Service</a>
+        <a href="#" class="footer__link">Contact Us</a>
+        <a href="#" class="footer__link">Help</a>
+        <a href="#" class="footer__link">Feedback</a>
+      </div>
+      <div class="footer__theme-toggle">
+        <button id="footer-theme-toggle" class="navbar__btn-icon">
+          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" />
+        </button>
+      </div>
+    </footer>
   </body>
 </html>

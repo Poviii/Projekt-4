@@ -27,23 +27,44 @@ themeToggle?.addEventListener("click", () => {
 });
 
 // Tab toggle functionality
-const tabs = document.querySelectorAll(".main-content__tab");
-const tabContents = document.querySelectorAll("[data-tab-content]");
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".main-content__tab");
+  const tabContents = document.querySelectorAll("[data-tab-content]");
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    // Remove active class from all tabs
-    tabs.forEach((t) => t.classList.remove("main-content__tab--active"));
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      // Remove active state from all tabs
+      tabs.forEach((t) => t.setAttribute("aria-selected", "false"));
+      // Hide all tab contents
+      tabContents.forEach((content) => (content.style.display = "none"));
 
-    // Hide all tab contents
-    tabContents.forEach((content) => (content.style.display = "none"));
-
-    // Add active class to the clicked tab
-    tab.classList.add("main-content__tab--active");
-
-    // Show the corresponding tab content
-    const target = tab.getAttribute("data-tab");
-    document.querySelector(`[data-tab-content="${target}"]`).style.display =
-      "block";
+      // Activate the clicked tab
+      tab.setAttribute("aria-selected", "true");
+      const target = tab.getAttribute("data-tab");
+      document.querySelector(`[data-tab-content="${target}"]`).style.display =
+        "block";
+    });
   });
 });
+
+// Get the button
+let mybutton = document.getElementById("scrollUpBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

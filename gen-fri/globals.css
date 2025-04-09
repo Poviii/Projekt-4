@@ -193,7 +193,7 @@ button {
 }
 
 /* Dark mode */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --primaryblack: rgba(255, 255, 255, 1);
   --primarywhite: rgba(0, 0, 0, 1);
   --secondarylight: rgba(30, 30, 30, 1);
@@ -217,7 +217,11 @@ button {
   align-items: center;
   justify-content: center;
   height: 200px; /* Adjust height as needed */
-  background: linear-gradient(to bottom, var(--primarywhite) 50%, var(--secondaryorange) 50%);
+  background: linear-gradient(
+    to bottom,
+    var(--primarywhite) 50%,
+    var(--secondaryorange) 50%
+  );
   padding: 1rem;
 }
 
@@ -265,63 +269,41 @@ button {
   object-fit: contain; /* Ensure the icon fits within the dimensions */
 }
 
-/* Main Content Section */
-.main-content {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: var(--secondarylight);
+/* --- ANIMATED TAB INDICATOR --- */
+.main-content__tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: var(--secondaryorange);
+  transition: transform 0.3s ease, width 0.3s ease;
+  width: 0;
 }
 
-.main-content__column {
-  flex: 1; /* Each column takes equal space */
-  background: var(--primarywhite);
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow-main);
-  text-align: center;
-  width: 100%; /* Full width */
-  max-height: 400px; /* Limit height for scrolling */
-  overflow-y: auto; /* Enable vertical scrolling */
-}
-
-.main-content__icon {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 0.5rem;
-}
-
-.main-content__title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0.5rem 0;
-  color: var(--primaryblack);
-}
-
-.main-content__placeholder {
-  font-size: 1rem;
-  color: var(--primarylight-black);
-}
-
-/* Tabs Section */
+/* --- TABS CONTAINER UPDATE (position relative) --- */
 .main-content__tabs {
   display: flex;
   justify-content: space-around;
-  gap: 0;
-  margin-bottom: 1rem;
-  width: 100%; /* Full width */
-  background-color: var(--secondarylight-medium);
+  position: relative; /* Needed for the tab indicator */
+  width: 100%;
   padding: 0.5rem 0;
-  position: sticky; /* Keep tabs at the top while scrolling */
+  margin-bottom: 1rem;
+  background-color: var(--secondarylight-medium);
   top: 0;
   z-index: 10;
+  overflow-x: auto; /* Allows horizontal scroll on small screens */
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+}
+.main-content__tabs::-webkit-scrollbar {
+  display: none; /* Chrome/Safari: hide scrollbar */
 }
 
+/* --- TAB BUTTONS UPDATE --- */
 .main-content__tab {
-  flex: 1; /* Equal width for all tabs */
+  flex: 1;
+  min-width: 100px;
+  max-width: 200px;
   text-align: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.5rem;
   background-color: var(--secondarylight-medium);
   border: none;
   border-radius: 0;
@@ -333,7 +315,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .main-content__tab:hover {
@@ -346,12 +328,13 @@ button {
   color: var(--primarywhite);
 }
 
+/* --- TAB ICON SIZE --- */
 .main-content__tab-icon {
   width: 24px;
   height: 24px;
 }
 
-/* Columns Section */
+/* --- COLUMNS (no change unless needed) --- */
 .main-content__columns {
   display: flex;
   flex-direction: column;
@@ -359,10 +342,64 @@ button {
   width: 100%;
 }
 
+.main-content__column {
+  flex: 1;
+  background: var(--primarywhite);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+  text-align: center;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* --- SCROLLABLE FEED AREA --- */
 .main-content__scrollable {
-  max-height: 300px; /* Adjust height for scrolling content */
-  overflow-y: auto; /* Enable vertical scrolling */
-  padding-right: 1rem; /* Add padding for scrollbar space */
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .main-content__tabs {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-content__tab {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .main-content__column {
+    max-height: none;
+  }
+}
+/* Scroll to Top Button */
+.scrollUpBtn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.scrollup:active {
+  background: #e1b48c;
 }
 
 /* Media Queries */
