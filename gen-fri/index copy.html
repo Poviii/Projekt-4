@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 767px)" />
+    <link rel="stylesheet" href="tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
+    <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <a href="#" class="sidebar__item sidebar__item--active">
+        <img src="icons/black_icons/homepage_black.svg" alt="Home" class="sidebar__item-icon" /> Explore/Homepage
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/mypage_black.svg" alt="My Page" class="sidebar__item-icon" /> My Page
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/message_black.svg" alt="Messages" class="sidebar__item-icon" /> Messages
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/leaderboard_black.svg" alt="Leaderboard" class="sidebar__item-icon" /> Leaderboard
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/shop_black.svg" alt="Shop" class="sidebar__item-icon" /> Shop
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/settings_black.svg" alt="Settings" class="sidebar__item-icon" /> Settings
+      </a>
+      <a href="#" class="sidebar__item">
+        <img src="icons/black_icons/logout_black.svg" alt="Log Out" class="sidebar__item-icon" /> Log Out
+      </a>
+    </aside>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar__left">
+        <button id="burger-btn">
+          <img src="icons/black_icons/burgermenu_black.svg" class="navbar__btn-icon" alt="Menu" />
+        </button>
+        <div class="navbar__logo navbar__logo--desktop">
+          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" />
+        </div>
+      </div>
+      <div class="navbar__center">
+        <div class="navbar__logo navbar__logo--mobile">
+          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" />
+        </div>
+        <div class="search-bar">
+          <input type="text" class="search-bar__input" placeholder="Search..." />
+          <img src="icons/black_icons/search_black.svg" alt="Search" class="navbar__btn-icon" />
+        </div>
+      </div>
+      <div class="navbar__right">
+        <img src="icons/black_icons/message_black.svg" class="navbar__btn-icon" alt="Messages" />
+        <img src="icons/black_icons/notification_black.svg" class="navbar__btn-icon" alt="Notifications" />
+        <img src="icons/black_icons/mypage_black.svg" class="navbar__btn-icon" alt="Profile" />
+        <button id="theme-toggle" class="navbar__btn-icon">
+          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" />
+        </button>
+      </div>
+    </nav>
+
+    <section class="profile-section">
+      <div class="profile-section__content">
+        <div class="profile-section__image">
+          <img src="images/capio.png" alt="Profile Picture" />
+        </div>
+        <div class="profile-section__info">
+          <h2 class="profile-section__name">Capper</h2>
+          <p class="profile-section__details">Alder: 27</p>
+          <p class="profile-section__details">By: Odense</p>
+        </div>
+        <div class="profile-section__stats">
+          <div class="profile-section__stat">
+            <img src="badges/champion_badge.png" alt="Badges Icon" class="profile-section__stat-icon" />
+            <span>Badges: 10</span>
+          </div>
+          <div class="profile-section__stat">
+            <img src="badges/silver_badge.png" alt="Rank Icon" class="profile-section__stat-icon" />
+            <span>Rank: Silver</span>
+          </div>
+          <div class="profile-section__stat">
+            <img src="icons/black_icons/points_black.svg" alt="Credits Icon" class="profile-section__stat-icon" />
+            <span>Credits: 200</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="main-content">
+      <div class="main-content__tabs">
+        <button class="main-content__tab" data-tab="feed">
+          <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
+          Feed
+        </button>
+        <button class="main-content__tab" data-tab="calendar">
+          <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
+          Calendar
+        </button>
+        <button class="main-content__tab" data-tab="friends">
+          <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
+          Friends
+        </button>
+      </div>
+      <div class="main-content__columns">
+        <div class="main-content__column main-content__feed" data-tab-content="feed">
+          <h3 class="main-content__title">Feed</h3>
+          <div class="main-content__scrollable">
+            <p class="main-content__placeholder">Feed content goes here...</p>
+            <p class="main-content__placeholder">More feed content...</p>
+            <p class="main-content__placeholder">Even more feed content...</p>
+          </div>
+        </div>
+        <div class="main-content__column main-content__calendar" data-tab-content="calendar" style="display: none;">
+          <h3 class="main-content__title">Calendar</h3>
+          <p class="main-content__placeholder">Calendar content goes here...</p>
+        </div>
+        <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none;">
+          <h3 class="main-content__title">Friends</h3>
+          <p class="main-content__placeholder">Friends content goes here...</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
