@@ -134,26 +134,95 @@
 
       <!-- Content Section -->
       <div class="main-content__columns">
-        <div class="main-content__column main-content__feed" data-tab-content="feed" >
-          <h3 class="main-content__title">Feed</h3>
-          <div class="main-content__scrollable">
-            <p class="main-content__placeholder">Feed content goes here...</p>
-            <p class="main-content__placeholder">More feed content...</p>
-            <p class="main-content__placeholder">Even more feed content...</p>
+        <div class="main-content__column" data-tab-content="feed">
+          <h2>Feed</h2>
+          <p>Velkommen til dit feed!</p>
+
+          <!-- Next Events Section -->
+          <div class="next-events">
+            <h3 class="next-events__title">Næste Events</h3>
+            <p class="next-events__description">Her kan du finde kommende events, som du kan deltage i.</p>
+
+            <!-- Next Events Carousel -->
+            <div class="event-carousel">
+              <div class="event-carousel__container">
+                <!-- Event Box 1 -->
+                <div class="event-box">
+                  <img src="images/ventilen_logo.png" alt="Event Image" class="event-box__image" />
+                  <div class="event-box__details">
+                    <p class="event-box__location">
+                      <img src="icons/black_icons/map_black.svg" alt="Location Icon" class="event-box__icon" />
+                      Ventillen Headquarters
+                    </p>
+                    <p class="event-box__date">
+                      <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
+                      16. Maj 2025
+                    </p>
+                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <div class="event-box__buttons">
+                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
+                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Event Box 2 -->
+                <div class="event-box">
+                  <img src="images/coding_pirates.png" alt="Event Image" class="event-box__image" />
+                  <div class="event-box__details">
+                    <p class="event-box__location">
+                      <img src="icons/black_icons/map_black.svg" alt="Location Icon" class="event-box__icon" />
+                      Coding Pirates
+                    </p>
+                    <p class="event-box__date">
+                      <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
+                      4. September 2025
+                    </p>
+                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <div class="event-box__buttons">
+                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
+                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Event Box 3 -->
+                <div class="event-box">
+                  <img src="images/rode_kors.png" alt="Event Image" class="event-box__image" />
+                  <div class="event-box__details">
+                    <p class="event-box__location">
+                      <img src="icons/black_icons/map_black.svg" alt="Location Icon" class="event-box__icon" />
+                      Røde Kors Odense
+                    </p>
+                    <p class="event-box__date">
+                      <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
+                      10 April 2025
+                    </p>
+                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <div class="event-box__buttons">
+                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
+                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button class="event-carousel__prev">‹</button>
+              <button class="event-carousel__next">›</button>
+            </div>
           </div>
         </div>
-        <div class="main-content__column main-content__calendar" data-tab-content="calendar" style="display: none" >
-          <h3 class="main-content__title">Calendar</h3>
-          <p class="main-content__placeholder">Calendar content goes here...</p>
+        <div class="main-content__column" data-tab-content="calendar" style="display: none;">
+          <h2>Kalender</h2>
+          <p>Velkommen til din kalender!</p>
         </div>
         <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none" >
-          <h3 class="main-content__title">Friends</h3>
-          <p class="main-content__placeholder">Friends content goes here...</p>
+          <h3 class="main-content__title">Venner</h3>
+          <p class="main-content__placeholder">Se hvad dine venner laver her...</p>
         </div>
         <div class="main-content__column main-content__organisations" data-tab-content="organisations" style="display: none" >
-          <h3 class="main-content__title">My Organisations</h3>
+          <h3 class="main-content__title">Mine Organisationer</h3>
           <p class="main-content__placeholder">
-            Organisations content goes here...
+            Se alle dine organisationer her...
           </p>
         </div>
       </div>
