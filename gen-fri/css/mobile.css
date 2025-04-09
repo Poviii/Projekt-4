@@ -12,18 +12,18 @@ body {
 .sidebar {
   width: 100%; /* Full width for mobile */
   position: fixed; /* Fixed position for sidebar */
-  top: 0; /* Align to the top */
+  bottom: 0; /* Align to the bottom */
   left: 0; /* Align to the left */
-  background-color: #fff; /* White background for sidebar */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  z-index: 1000; /* Ensure sidebar is above other content */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-around; /* Space around items */
+  background-color: var(--background-color); /* Use variable for background color */
 }
 
 /* Sidebar item styles */
 .sidebar__item {
-  display: flex; /* Flexbox for alignment */
-  align-items: center; /* Center items vertically */
-  padding: 15px; /* Padding for clickable area */
+  flex: 1; /* Take available space */
+  text-align: center; /* Center text */
+  padding: 0.5rem 0; /* Padding for clickable area */
   text-decoration: none; /* Remove underline from links */
   color: #333; /* Dark text color */
 }
@@ -36,11 +36,16 @@ body {
 /* Navbar styles */
 .navbar {
   display: flex; /* Flexbox for layout */
-  justify-content: space-between; /* Space between items */
+  flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center items vertically */
   padding: 10px 15px; /* Padding for navbar */
   background-color: #fff; /* White background for navbar */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Centered navbar items */
+.navbar__center {
+  margin-top: 1rem; /* Margin for centered items */
 }
 
 /* Search bar styles */
@@ -70,7 +75,7 @@ body {
 
 /* Profile section styles */
 .profile-section {
-  padding: 20px; /* Padding for profile section */
+  padding: 1rem; /* Padding for profile section */
 }
 
 /* Main content styles */
@@ -83,6 +88,7 @@ body {
 /* Event box styles */
 .event-box {
   display: flex; /* Flexbox for layout */
+  width: 100%; /* Full width for event boxes */
   margin-bottom: 20px; /* Space between event boxes */
   border: 1px solid #ccc; /* Light border */
   border-radius: 4px; /* Rounded corners */

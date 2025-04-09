@@ -2,23 +2,19 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=width=device-width, initial-scale=1.0" />
     <title>Gen-Fri Homepage</title>
-    <link rel="stylesheet" href="css/globals.css" />
-    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)" />
-    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
-    <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1024px)" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="mobile.css" media="(max-width: 767px)" />
+    <link rel="stylesheet" href="tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
+    <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <!-- Sidebar Section -->
+    <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
-      <!-- Sidebar Navigation Links -->
       <a href="#" class="sidebar__item sidebar__item--active">
         <img src="icons/black_icons/homepage_black.svg" alt="Home" class="sidebar__item-icon" />
         Explore/Homepage
@@ -49,24 +45,20 @@
       </a>
     </aside>
 
-    <!-- Navbar Section -->
+    <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar__left">
-        <!-- Burger Menu -->
         <button id="burger-btn" class="navbar__btn">
           <img src="icons/black_icons/burgermenu_black.svg" class="navbar__btn-icon" alt="Menu" />
         </button>
-        <!-- Desktop Logo -->
         <div class="navbar__logo navbar__logo--desktop">
           <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
         </div>
       </div>
       <div class="navbar__center">
-        <!-- Mobile Logo -->
         <div class="navbar__logo navbar__logo--mobile">
           <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
         </div>
-        <!-- Search Bar -->
         <div class="search-bar">
           <input type="text" class="search-bar__input" placeholder="Search..." />
           <button class="search-bar__button">
@@ -75,7 +67,6 @@
         </div>
       </div>
       <div class="navbar__right">
-        <!-- Navbar Buttons -->
         <button class="navbar__btn">
           <img src="icons/black_icons/message_black.svg" class="navbar__btn-icon" alt="Messages" />
         </button>
@@ -90,21 +81,18 @@
         </button>
       </div>
     </nav>
+    
 
-    <!-- Profile Section -->
     <section class="profile-section">
       <div class="profile-section__content">
-        <!-- Profile Picture -->
         <div class="profile-section__image-wrapper">
           <img src="images/capio.png" alt="Profile Picture" class="profile-section__image" />
         </div>
-        <!-- Profile Info -->
         <div class="profile-section__info">
           <h2 class="profile-section__name">Capper</h2>
-          <p class="profile-section__details">Age: 27</p>
-          <p class="profile-section__details">Location: Odense</p>
+          <p class="profile-section__details">Alder: 27</p>
+          <p class="profile-section__details">By: Odense</p>
         </div>
-        <!-- Profile Stats -->
         <div class="profile-section__stats">
           <div class="profile-section__stat">
             <img src="badges/champion_badge.png" alt="Badges Icon" class="profile-section__stat-icon" />
@@ -121,39 +109,40 @@
         </div>
       </div>
     </section>
+    
 
-    <!-- Main Content Section -->
-    <div class="main-content">
-      <div class="main-content__tabs">
-        <button class="main-content__tab" data-tab="feed" aria-selected="true">
-          <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
-          <span class="main-content__tab-label">Feed</span>
-        </button>
-        <button class="main-content__tab" data-tab="calendar">
-          <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
-          <span class="main-content__tab-label">Calendar</span>
-        </button>
-        <button class="main-content__tab" data-tab="friends">
-          <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
-          <span class="main-content__tab-label">Friends</span>
-        </button>
-        <button class="main-content__tab" data-tab="organisations">
-          <img src="icons/black_icons/organisations_black.svg" alt="Organisations Icon" class="main-content__tab-icon" />
-          <span class="main-content__tab-label">Organisations</span>
-        </button>
-        <div class="main-content__tab-indicator"></div>
-      </div>
+    <div class="main-content__tabs">
+      <button class="main-content__tab" data-tab="feed" aria-selected="true">
+        <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
+        <span class="main-content__tab-label">Feed</span>
+      </button>
+      <button class="main-content__tab" data-tab="calendar">
+        <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
+        <span class="main-content__tab-label">Calendar</span>
+      </button>
+      <button class="main-content__tab" data-tab="friends">
+        <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
+        <span class="main-content__tab-label">Friends</span>
+      </button>
+      <button class="main-content__tab" data-tab="organisations">
+        <img src="icons/black_icons/organisations_black.svg" alt="Organisations Icon" class="main-content__tab-icon" />
+        <span class="main-content__tab-label">Organisations</span>
+      </button>
+      <div class="main-content__tab-indicator"></div>
+    </div>
+    
 
+      <!-- Content Section -->
       <div class="main-content__columns">
-<<<<<<< HEAD
+
         <div class="main-content__column" data-tab-content="feed">
           <h2>Feed</h2>
-          <p>Welcome to your feed!</p>
+          <p>Velkommen til dit feed!</p>
 
           <!-- Next Events Section -->
           <div class="next-events">
-            <h3 class="next-events__title">Upcoming Events</h3>
-            <p class="next-events__description">Here you can find upcoming events to participate in.</p>
+            <h3 class="next-events__title">Næste Events</h3>
+            <p class="next-events__description">Her kan du finde kommende events, som du kan deltage i.</p>
 
             <!-- Next Events Carousel -->
             <div class="event-carousel">
@@ -168,12 +157,12 @@
                     </p>
                     <p class="event-box__date">
                       <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
-                      May 16, 2025
+                      16. Maj 2025
                     </p>
-                    <p class="event-box__description">This is a brief description of the event.</p>
+                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
                     <div class="event-box__buttons">
-                      <button class="event-box__button event-box__button--participate">Join Now</button>
-                      <button class="event-box__button event-box__button--read-more">Read More</button>
+                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
+                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
                     </div>
                   </div>
                 </div>
@@ -188,12 +177,12 @@
                     </p>
                     <p class="event-box__date">
                       <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
-                      September 4, 2025
+                      4. September 2025
                     </p>
-                    <p class="event-box__description">This is a brief description of the event.</p>
+                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
                     <div class="event-box__buttons">
-                      <button class="event-box__button event-box__button--participate">Join Now</button>
-                      <button class="event-box__button event-box__button--read-more">Read More</button>
+                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
+                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
                     </div>
                   </div>
                 </div>
@@ -208,12 +197,12 @@
                     </p>
                     <p class="event-box__date">
                       <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
-                      April 10, 2025
+                      10 April 2025
                     </p>
-                    <p class="event-box__description">This is a brief description of the event.</p>
+                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
                     <div class="event-box__buttons">
-                      <button class="event-box__button event-box__button--participate">Join Now</button>
-                      <button class="event-box__button event-box__button--read-more">Read More</button>
+                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
+                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
                     </div>
                   </div>
                 </div>
@@ -224,81 +213,17 @@
           </div>
         </div>
         <div class="main-content__column" data-tab-content="calendar" style="display: none;">
-          <h2>Calendar</h2>
-          <p>Welcome to your calendar!</p>
-        </div>
-        <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none;">
-          <h3 class="main-content__title">Friends</h3>
-          <p class="main-content__placeholder">See what your friends are up to here...</p>
-        </div>
-        <div class="main-content__column main-content__organisations" data-tab-content="organisations" style="display: none;">
-          <h3 class="main-content__title">My Organisations</h3>
-          <p class="main-content__placeholder">See all your organisations here...</p>
-=======
-        <div class="main-content__column main-content__feed" data-tab-content="feed" >
-          <h3 class="main-content__title">Feed</h3>
-          <div class="main-content__scrollable">
-            <p class="main-content__placeholder">Feed content goes here...</p>
-            <p class="main-content__placeholder">More feed content...</p>
-            <p class="main-content__placeholder">Even more feed content...</p>
-          </div>
-        </div>
-        <div class="main-content__column main-content__calendar" data-tab-content="calendar" style="display: none" >
-          <h3 class="main-content__title">Calendar</h3>
-          <p class="main-content__placeholder">Calendar content goes here...</p>
+          <h2>Kalender</h2>
+          <p>Velkommen til din kalender!</p>
         </div>
         <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none" >
-          <h3 class="main-content__title">Friends</h3>
-          <p class="main-content__placeholder">Friends content goes here...</p>
+          <h3 class="main-content__title">Venner</h3>
+          <p class="main-content__placeholder">Se hvad dine venner laver her...</p>
         </div>
         <div class="main-content__column main-content__organisations" data-tab-content="organisations" style="display: none" >
-          <h3 class="main-content__title">My Organisations</h3>
+          <h3 class="main-content__title">Mine Organisationer</h3>
           <p class="main-content__placeholder">
-            Organisations content goes here...
+            Se alle dine organisationer her...
           </p>
->>>>>>> parent of abb1c9d (Merge branch 'main' of https://github.com/Poviii/Projekt-4)
         </div>
       </div>
-    </div>
-
-    <!-- Scroll Up Button -->
-    <button onclick="topFunction()" class="scroll-up-btn" title="Go to top">
-      <img src="icons/black_icons/up_arrow_black.svg" alt="Scroll Up" />
-    </button>
-
-    <script src="js/script.js"></script>
-
-    <!-- Footer Section -->
-    <footer class="footer">
-      <div class="footer__content">
-        <p class="footer__text">© 2023 Gen-Fri. All rights reserved.</p>
-        <div class="footer__socials">
-          <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/facebook_black.svg" alt="Facebook" class="footer__icon-img" />
-          </a>
-          <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/linkedin_black.svg" alt="LinkedIn" />
-          </a>
-          <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/instagram_black.svg" alt="Instagram" class="footer__icon-img" />
-          </a>
-        </div>
-      </div>
-      <div class="footer__links">
-        <a href="#" class="footer__link">Privacy Policy</a>
-        <a href="#" class="footer__link">Terms of Service</a>
-        <a href="#" class="footer__link">Contact Us</a>
-        <a href="#" class="footer__link">Help</a>
-        <a href="#" class="footer__link">Feedback</a>
-      </div>
-      <div class="footer__theme-toggle">
-        <button id="footer-theme-toggle" class="footer__theme-btn">
-          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" />
-        </button>
-      </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-  </body>
-</html>
