@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1024px)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Sidebar Section -->
     <aside class="sidebar" id="sidebar">
+      <!-- Sidebar Navigation Links -->
       <a href="#" class="sidebar__item sidebar__item--active">
         <img src="icons/black_icons/homepage_black.svg" alt="Home" class="sidebar__item-icon" />
         Explore/Homepage
@@ -48,17 +52,21 @@
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__left">
+        <!-- Burger Menu -->
         <button id="burger-btn" class="navbar__btn">
           <img src="icons/black_icons/burgermenu_black.svg" class="navbar__btn-icon" alt="Menu" />
         </button>
+        <!-- Desktop Logo -->
         <div class="navbar__logo navbar__logo--desktop">
           <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
         </div>
       </div>
       <div class="navbar__center">
+        <!-- Mobile Logo -->
         <div class="navbar__logo navbar__logo--mobile">
           <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
         </div>
+        <!-- Search Bar -->
         <div class="search-bar">
           <input type="text" class="search-bar__input" placeholder="Search..." />
           <button class="search-bar__button">
@@ -67,6 +75,7 @@
         </div>
       </div>
       <div class="navbar__right">
+        <!-- Navbar Buttons -->
         <button class="navbar__btn">
           <img src="icons/black_icons/message_black.svg" class="navbar__btn-icon" alt="Messages" />
         </button>
@@ -85,14 +94,17 @@
     <!-- Profile Section -->
     <section class="profile-section">
       <div class="profile-section__content">
+        <!-- Profile Picture -->
         <div class="profile-section__image-wrapper">
           <img src="images/capio.png" alt="Profile Picture" class="profile-section__image" />
         </div>
+        <!-- Profile Info -->
         <div class="profile-section__info">
           <h2 class="profile-section__name">Capper</h2>
           <p class="profile-section__details">Age: 27</p>
           <p class="profile-section__details">Location: Odense</p>
         </div>
+        <!-- Profile Stats -->
         <div class="profile-section__stats">
           <div class="profile-section__stat">
             <img src="badges/champion_badge.png" alt="Badges Icon" class="profile-section__stat-icon" />
@@ -285,5 +297,8 @@
         </button>
       </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
   </body>
 </html>

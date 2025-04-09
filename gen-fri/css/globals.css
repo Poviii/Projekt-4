@@ -1,88 +1,524 @@
-/* globals.css */
+/* ===== Global Styles (BEM Naming) ===== */
+:root {
+  --primaryblack: rgba(0, 0, 0, 1);
+  --primarywhite: rgba(255, 255, 255, 1);
+  --primarylight-black: rgba(53, 53, 53, 1);
+  --secondaryorange: rgba(209, 103, 8, 1);
+  --secondarylight: rgba(245, 245, 245, 1);
+  --secondarylight-medium: rgba(184, 183, 183, 1);
+  --dark: rgba(10, 20, 47, 1);
+  --font-main: "Montserrat", Helvetica;
+  --shadow-main: 5px 5px 8px 0px rgba(0, 0, 0, 0.25);
+}
 
-/* Base styles for the entire application */
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif; /* Global font family */
-  line-height: 1.6; /* Base line height for readability */
-  color: #333; /* Default text color */
-  background-color: #f9f9f9; /* Light background color */
+  font-family: var(--font-main);
+  background-color: var(--primarywhite);
+  color: var(--primaryblack);
 }
 
-/* Container for the main layout */
-.container {
-  display: flex; /* Use flexbox for layout */
-  min-height: 100vh; /* Full height of the viewport */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Sidebar styles */
-.sidebar {
-  width: 250px; /* Fixed width for sidebar */
-  background-color: #fff; /* White background for sidebar */
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Sidebar item styles */
-.sidebar__item {
-  display: flex; /* Flexbox for icon and text alignment */
-  align-items: center; /* Center items vertically */
-  padding: 15px; /* Padding for clickable area */
-  text-decoration: none; /* Remove underline from links */
-  color: #333; /* Default text color */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-/* Active sidebar item */
-.sidebar__item--active {
-  background-color: #e0e0e0; /* Highlight active item */
+/* Typography */
+.text--h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 64px;
 }
 
-/* Navbar styles */
+.text--paragraph {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Utility */
+.u-flex {
+  display: flex;
+}
+.u-flex--between {
+  justify-content: space-between;
+  align-items: center;
+}
+.u-flex--center {
+  justify-content: center;
+  align-items: center;
+}
+.u-hidden {
+  display: none !important;
+}
+
+/* Navbar Layout */
 .navbar {
-  display: flex; /* Flexbox for navbar layout */
-  justify-content: space-between; /* Space between items */
-  align-items: center; /* Center items vertically */
-  padding: 10px 20px; /* Padding for navbar */
-  background-color: #fff; /* White background for navbar */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  z-index: 1100; /* Ensure it stays above the sidebar */
+  padding: 1rem;
+  box-shadow: var(--shadow-main);
+  background-color: var(--secondarylight);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-/* Search bar styles */
+.navbar__left,
+.navbar__center,
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__center {
+  flex: 1;
+  justify-content: center;
+}
+
+.navbar__right {
+  justify-content: flex-end;
+}
+
+.navbar__btn-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Navbar Icons */
+.navbar__btn-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Logo Styles */
+.navbar__logo {
+  display: none; /* Hidden by default */
+}
+
+.navbar__logo img {
+  height: 32px; /* Adjust size as needed */
+  width: auto;
+}
+
+/* Mobile Logo */
+.navbar__logo--mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Search Bar */
 .search-bar {
-  display: flex; /* Flexbox for search input and button */
-  align-items: center; /* Center items vertically */
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--secondarylight-medium);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
 }
 
-/* Input field styles */
 .search-bar__input {
-  padding: 10px; /* Padding for input */
-  border: 1px solid #ccc; /* Border for input */
-  border-radius: 4px; /* Rounded corners */
-  margin-right: 10px; /* Space between input and button */
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
-/* Button styles */
-.button {
-  padding: 10px 15px; /* Padding for buttons */
-  border: none; /* Remove default border */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
+/* Global styles for icons in sidebar items */
+.sidebar {
+  position: fixed; /* Keep the sidebar fixed */
+  top: 64px; /* Adjust this value to match the height of the navbar */
+  left: 0;
+  background-color: var(--secondarylight);
+  padding: 1rem;
+  height: calc(100vh - 64px); /* Sidebar height minus navbar height */
+  width: 250px;
+  box-shadow: var(--shadow-main);
+  z-index: 1000;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/* Footer styles */
+.sidebar--visible {
+  display: flex;
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 700;
+  color: var(--primaryblack);
+  text-decoration: none; /* Remove underline from links */
+}
+
+.sidebar__item--active {
+  color: var(--secondaryorange);
+}
+
+.sidebar__item-icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 1rem; /* Space between icon and text */
+}
+
+.close-btn {
+  display: none; /* Hide close button by default */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+/* Dark mode */
+[data-theme="dark"] {
+  --primaryblack: rgba(255, 255, 255, 1);
+  --primarywhite: rgba(0, 0, 0, 1);
+  --secondarylight: rgba(30, 30, 30, 1);
+}
+
+/* Theme Toggle */
+#theme-toggle {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px; /* Adjust height as needed */
+  background: linear-gradient(
+    to bottom,
+    var(--primarywhite) 50%,
+    var(--secondaryorange) 50%
+  );
+  padding: 1rem;
+}
+
+.profile-section__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: var(--primarywhite);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+  width: 100%; /* Make the profile box span the full width */
+}
+
+.profile-section__image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+.profile-section__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-section__name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--primaryblack);
+}
+
+.profile-section__details {
+  font-size: 1rem;
+  margin: 0.2rem 0;
+  color: var(--primarylight-black);
+}
+
+/* Profile Section Stat Icons */
+.profile-section__stat-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain; /* Ensure the icon fits within the dimensions */
+}
+
+/* --- ANIMATED TAB INDICATOR --- */
+.main-content__tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: var(--secondaryorange);
+  transition: transform 0.3s ease, width 0.3s ease;
+  width: 0;
+}
+
+/* --- TABS CONTAINER UPDATE (position relative) --- */
+.main-content__tabs {
+  display: flex;
+  justify-content: space-around;
+  position: relative; /* Needed for the tab indicator */
+  width: 100%;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  background-color: var(--secondarylight-medium);
+  top: 0;
+  z-index: 10;
+  overflow-x: auto; /* Allows horizontal scroll on small screens */
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+}
+.main-content__tabs::-webkit-scrollbar {
+  display: none; /* Chrome/Safari: hide scrollbar */
+}
+
+/* --- TAB BUTTONS UPDATE --- */
+.main-content__tab {
+  flex: 1;
+  min-width: 100px;
+  max-width: 200px;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  background-color: var(--secondarylight-medium);
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primaryblack);
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.main-content__tab:hover {
+  background-color: var(--secondaryorange);
+  color: var(--primarywhite);
+}
+
+.main-content__tab--active {
+  background-color: var(--secondaryorange);
+  color: var(--primarywhite);
+}
+
+/* --- TAB ICON SIZE --- */
+.main-content__tab-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* --- COLUMNS (no change unless needed) --- */
+.main-content__columns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.main-content__column {
+  flex: 1;
+  background: var(--primarywhite);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+  text-align: center;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* --- SCROLLABLE FEED AREA --- */
+.main-content__scrollable {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .main-content__tabs {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-content__tab {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .main-content__column {
+    max-height: none;
+  }
+}
+/* Scroll to Top Button */
+.scrollUpBtn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.scrollup:active {
+  background: #e1b48c;
+}
+
+/* Media Queries */
+@media (min-width: 1024px) {
+  .search-bar {
+    display: flex;
+  }
+
+  .sidebar {
+    position: fixed; /* Sidebar remains fixed on desktop */
+    top: 64px; /* Below the navbar */
+    height: calc(100vh - 64px); /* Adjust height for the navbar */
+    width: 250px;
+    box-shadow: var(--shadow-main);
+  }
+
+  #burger-btn,
+  #close-btn {
+    display: none !important;
+  }
+
+  .navbar__right {
+    display: flex;
+  }
+
+  .navbar__logo--mobile {
+    display: none; /* Hide mobile logo on desktop */
+  }
+
+  .navbar__logo--desktop {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 1rem; /* Adjust spacing as needed */
+  }
+}
+
+@media (max-width: 1023px) {
+  .search-bar {
+    display: none !important;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar--visible {
+    display: flex !important;
+  }
+}
+
+/* Footer Styles */
 .footer {
-  padding: 20px; /* Padding for footer */
-  background-color: #fff; /* White background for footer */
-  text-align: center; /* Center text in footer */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  background-color: var(--secondarylight);
+  padding: 1rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--secondarylight-medium);
 }
 
-/* Responsive typography */
-h1, h2, h3 {
-  margin: 0; /* Remove default margin */
-  color: #333; /* Default heading color */
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-/* Utility classes */
-.hidden {
-  display: none; /* Utility class to hide elements */
+.footer__text {
+  font-size: 0.875rem;
+  color: var(--primarylight-black);
+  margin: 0;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__social-icon img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.footer__social-icon img:hover {
+  transform: scale(1.2);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer__link {
+  font-size: 0.875rem;
+  color: var(--primaryblack);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: var(--secondaryorange);
+}
+
+.footer__theme-toggle {
+  margin-top: 1rem;
+}
+
+.footer__theme-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.footer__theme-btn img {
+  width: 100%;
+  height: 100%;
 }
