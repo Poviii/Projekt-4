@@ -222,7 +222,9 @@ button {
     var(--primarywhite) 50%,
     var(--secondaryorange) 50%
   );
+  /* background-color: var(--secondaryorange); */
   padding: 1rem;
+  margin-top: 50px;
 }
 
 .profile-section__content {
@@ -232,6 +234,7 @@ button {
   gap: 2rem;
   background: var(--primarywhite);
   padding: 1rem;
+  border: 4px solid;
   border-radius: 8px;
   box-shadow: var(--shadow-main);
   width: 100%; /* Make the profile box span the full width */
@@ -343,6 +346,7 @@ button {
   width: 24px;
   height: 24px;
 }
+
 /* --- COLUMNS (Default for Mobile and Tablet) --- */
 .main-content__columns {
   display: flex;
@@ -351,6 +355,81 @@ button {
   width: 100%;
 }
 
+/* --- COLUMNS (Desktop View) --- */
+@media (min-width: 1024px) {
+  .main-content__columns {
+    flex-direction: row; /* Switch to multiple columns on desktop */
+    justify-content: space-between;
+    gap: 1rem; /* Add spacing between columns */
+  }
+
+  .main-content__column {
+    flex: 1;
+    max-width: calc(33.33% - 1rem); /* Adjust width for 3 columns */
+  }
+}
+
+/* --- SCROLLABLE FEED AREA --- */
+.main-content__scrollable {
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 1rem;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .main-content__tabs {
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .main-content__tab {
+    flex: 0 0 auto;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .main-content__column {
+    max-height: none;
+  }
+
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer__content {
+    gap: 1rem;
+  }
+
+  .footer__links {
+    gap: 0.5rem;
+  }
+
+  .footer__social-icon img {
+    width: 16px;
+    height: 16px;
+  }
+}
+/* Scroll to Top Button */
+.scrollUpBtn {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.25);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 .scrollup:active {
   background: #e1b48c;
 }

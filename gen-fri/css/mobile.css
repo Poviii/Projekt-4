@@ -1,123 +1,21 @@
-/* Mobile-specific styles for the Gen-Fri web application */
-
-/* Base styles for mobile devices */
-body {
-  font-family: 'Montserrat', sans-serif; /* Use Montserrat font for body text */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  background-color: #f9f9f9; /* Light background color */
-}
-
-/* Sidebar styles */
-.sidebar {
-  width: 100%; /* Full width for mobile */
-  position: fixed; /* Fixed position for sidebar */
-  bottom: 0; /* Align to the bottom */
-  left: 0; /* Align to the left */
-  display: flex; /* Flexbox for layout */
-  justify-content: space-around; /* Space around items */
-  background-color: var(--background-color); /* Use variable for background color */
-}
-
-/* Sidebar item styles */
-.sidebar__item {
-  flex: 1; /* Take available space */
-  text-align: center; /* Center text */
-  padding: 0.5rem 0; /* Padding for clickable area */
-  text-decoration: none; /* Remove underline from links */
-  color: #333; /* Dark text color */
-}
-
-/* Active sidebar item */
-.sidebar__item--active {
-  background-color: #e0e0e0; /* Highlight active item */
-}
-
-/* Navbar styles */
-.navbar {
-  display: flex; /* Flexbox for layout */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items vertically */
-  padding: 10px 15px; /* Padding for navbar */
-  background-color: #fff; /* White background for navbar */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-/* Centered navbar items */
-.navbar__center {
-  margin-top: 1rem; /* Margin for centered items */
-}
-
-/* Search bar styles */
-.search-bar {
-  display: flex; /* Flexbox for layout */
-  align-items: center; /* Center items vertically */
-  width: 100%; /* Full width for search bar */
-}
-
-/* Search input styles */
-.search-bar__input {
-  flex: 1; /* Take available space */
-  padding: 10px; /* Padding for input */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 4px; /* Rounded corners */
-}
-
-/* Button styles */
-.search-bar__button {
-  background-color: #007bff; /* Primary button color */
-  color: white; /* White text color */
-  border: none; /* Remove border */
-  padding: 10px; /* Padding for button */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-}
-
-/* Profile section styles */
-.profile-section {
-  padding: 1rem; /* Padding for profile section */
-}
-
-/* Main content styles */
-.main-content__columns {
-  display: flex; /* Flexbox for layout */
-  flex-direction: column; /* Stack columns vertically */
-  padding: 20px; /* Padding for main content */
-}
-
-/* Event box styles */
-.event-box {
-  display: flex; /* Flexbox for layout */
-  width: 100%; /* Full width for event boxes */
-  margin-bottom: 20px; /* Space between event boxes */
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 4px; /* Rounded corners */
-  overflow: hidden; /* Hide overflow */
-}
-
-/* Event box image styles */
-.event-box__image {
-  width: 100px; /* Fixed width for images */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Event box details styles */
-.event-box__details {
-  padding: 10px; /* Padding for details */
-  flex: 1; /* Take available space */
-}
-
-/* Responsive adjustments */
+/* Mobile-specific Styles (BEM Naming) */
 @media (max-width: 767px) {
-  .navbar__logo--desktop {
-      display: none; /* Hide desktop logo on mobile */
+  /* Hide search bar on mobile */
+  .search-bar {
+    display: none !important;
   }
 
-  .navbar__logo--mobile {
-      display: block; /* Show mobile logo */
+  /* Burger menu icon */
+  #burger-btn {
+    display: block;
   }
 
-  .main-content__columns {
-      padding: 10px; /* Reduce padding for mobile */
+  .navbar__left {
+    flex: 1;
+  }
+
+  /* Sidebar visibility for mobile */
+  .sidebar--visible {
+    display: flex !important;
   }
 }

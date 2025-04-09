@@ -134,7 +134,6 @@
 
       <!-- Content Section -->
       <div class="main-content__columns">
-
         <div class="main-content__column" data-tab-content="feed">
           <h2>Feed</h2>
           <p>Velkommen til dit feed!</p>
@@ -212,18 +211,57 @@
             </div>
           </div>
         </div>
-        <div class="main-content__column main-content__calendar" data-tab-content="calendar" style="display: none" >
-          <h3 class="main-content__title">Calendar</h3>
-          <p class="main-content__placeholder">Calendar content goes here...</p>
+        <div class="main-content__column" data-tab-content="calendar" style="display: none;">
+          <h2>Kalender</h2>
+          <p>Velkommen til din kalender!</p>
         </div>
         <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none" >
-          <h3 class="main-content__title">Friends</h3>
-          <p class="main-content__placeholder">Friends content goes here...</p>
+          <h3 class="main-content__title">Venner</h3>
+          <p class="main-content__placeholder">Se hvad dine venner laver her...</p>
         </div>
         <div class="main-content__column main-content__organisations" data-tab-content="organisations" style="display: none" >
-          <h3 class="main-content__title">My Organisations</h3>
+          <h3 class="main-content__title">Mine Organisationer</h3>
           <p class="main-content__placeholder">
-            Organisations content goes here...
+            Se alle dine organisationer her...
           </p>
         </div>
       </div>
+    </section>
+
+    <!--Scroll up btn-->
+    <button onclick="topFunction()" class="scrollUpBtn" title="Go to top">
+      <img src="icons/black_icons/up_arrow_black.svg" alt="small_up_arrow" />
+    </button>
+
+    <script src="script.js"></script>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p class="footer__text">© 2023 Gen-Fri. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-icon">
+            <img src="icons/black_icons/facebook_black.svg" alt="Facebook" class="footer__icon-img" />
+          </a>
+          <a href="#" class="footer__social-icon">
+            <img src="icons/black_icons/linkedin_black.svg" alt="LinkedIn" />
+          </a>
+          <a href="#" class="footer__social-icon">
+            <img src="icons/black_icons/instagram_black.svg" alt="Instagram" class="footer__icon-img" />
+          </a>
+        </div>
+      </div>
+      <div class="footer__links">
+        <a href="#" class="footer__link">Privacy Policy</a>
+        <a href="#" class="footer__link">Terms of Service</a>
+        <a href="#" class="footer__link">Contact Us</a>
+        <a href="#" class="footer__link">Help</a>
+        <a href="#" class="footer__link">Feedback</a>
+      </div>
+      <div class="footer__theme-toggle">
+        <button id="footer-theme-toggle" class="footer__theme-btn">
+          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" />
+        </button>
+      </div>
+    </footer>
+  </body>
+</html>
