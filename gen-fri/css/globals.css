@@ -1,0 +1,88 @@
+/* globals.css */
+
+/* Base styles for the entire application */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Global font family */
+  line-height: 1.6; /* Base line height for readability */
+  color: #333; /* Default text color */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+/* Container for the main layout */
+.container {
+  display: flex; /* Use flexbox for layout */
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px; /* Fixed width for sidebar */
+  background-color: #fff; /* White background for sidebar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Sidebar item styles */
+.sidebar__item {
+  display: flex; /* Flexbox for icon and text alignment */
+  align-items: center; /* Center items vertically */
+  padding: 15px; /* Padding for clickable area */
+  text-decoration: none; /* Remove underline from links */
+  color: #333; /* Default text color */
+}
+
+/* Active sidebar item */
+.sidebar__item--active {
+  background-color: #e0e0e0; /* Highlight active item */
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex; /* Flexbox for navbar layout */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Padding for navbar */
+  background-color: #fff; /* White background for navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Search bar styles */
+.search-bar {
+  display: flex; /* Flexbox for search input and button */
+  align-items: center; /* Center items vertically */
+}
+
+/* Input field styles */
+.search-bar__input {
+  padding: 10px; /* Padding for input */
+  border: 1px solid #ccc; /* Border for input */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 10px; /* Space between input and button */
+}
+
+/* Button styles */
+.button {
+  padding: 10px 15px; /* Padding for buttons */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Footer styles */
+.footer {
+  padding: 20px; /* Padding for footer */
+  background-color: #fff; /* White background for footer */
+  text-align: center; /* Center text in footer */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Responsive typography */
+h1, h2, h3 {
+  margin: 0; /* Remove default margin */
+  color: #333; /* Default heading color */
+}
+
+/* Utility classes */
+.hidden {
+  display: none; /* Utility class to hide elements */
+}

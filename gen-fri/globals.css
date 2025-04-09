@@ -222,9 +222,7 @@ button {
     var(--primarywhite) 50%,
     var(--secondaryorange) 50%
   );
-  /* background-color: var(--secondaryorange); */
   padding: 1rem;
-  margin-top: 50px;
 }
 
 .profile-section__content {
@@ -234,7 +232,6 @@ button {
   gap: 2rem;
   background: var(--primarywhite);
   padding: 1rem;
-  border: 4px solid;
   border-radius: 8px;
   box-shadow: var(--shadow-main);
   width: 100%; /* Make the profile box span the full width */

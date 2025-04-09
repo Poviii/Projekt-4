@@ -2,18 +2,18 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gen-Fri Homepage</title>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="mobile.css" media="(max-width: 767px)" />
-    <link rel="stylesheet" href="tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
-    <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)" />
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)" />
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
+    <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1024px)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <!-- Sidebar -->
+    <!-- Sidebar Section -->
     <aside class="sidebar" id="sidebar">
       <a href="#" class="sidebar__item sidebar__item--active">
         <img src="icons/black_icons/homepage_black.svg" alt="Home" class="sidebar__item-icon" />
@@ -45,7 +45,7 @@
       </a>
     </aside>
 
-    <!-- Navbar -->
+    <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__left">
         <button id="burger-btn" class="navbar__btn">
@@ -81,8 +81,8 @@
         </button>
       </div>
     </nav>
-    
 
+    <!-- Profile Section -->
     <section class="profile-section">
       <div class="profile-section__content">
         <div class="profile-section__image-wrapper">
@@ -90,8 +90,8 @@
         </div>
         <div class="profile-section__info">
           <h2 class="profile-section__name">Capper</h2>
-          <p class="profile-section__details">Alder: 27</p>
-          <p class="profile-section__details">By: Odense</p>
+          <p class="profile-section__details">Age: 27</p>
+          <p class="profile-section__details">Location: Odense</p>
         </div>
         <div class="profile-section__stats">
           <div class="profile-section__stat">
@@ -109,39 +109,38 @@
         </div>
       </div>
     </section>
-    
 
-    <div class="main-content__tabs">
-      <button class="main-content__tab" data-tab="feed" aria-selected="true">
-        <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Feed</span>
-      </button>
-      <button class="main-content__tab" data-tab="calendar">
-        <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Calendar</span>
-      </button>
-      <button class="main-content__tab" data-tab="friends">
-        <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Friends</span>
-      </button>
-      <button class="main-content__tab" data-tab="organisations">
-        <img src="icons/black_icons/organisations_black.svg" alt="Organisations Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Organisations</span>
-      </button>
-      <div class="main-content__tab-indicator"></div>
-    </div>
-    
+    <!-- Main Content Section -->
+    <div class="main-content">
+      <div class="main-content__tabs">
+        <button class="main-content__tab" data-tab="feed" aria-selected="true">
+          <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
+          <span class="main-content__tab-label">Feed</span>
+        </button>
+        <button class="main-content__tab" data-tab="calendar">
+          <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
+          <span class="main-content__tab-label">Calendar</span>
+        </button>
+        <button class="main-content__tab" data-tab="friends">
+          <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
+          <span class="main-content__tab-label">Friends</span>
+        </button>
+        <button class="main-content__tab" data-tab="organisations">
+          <img src="icons/black_icons/organisations_black.svg" alt="Organisations Icon" class="main-content__tab-icon" />
+          <span class="main-content__tab-label">Organisations</span>
+        </button>
+        <div class="main-content__tab-indicator"></div>
+      </div>
 
-      <!-- Content Section -->
       <div class="main-content__columns">
         <div class="main-content__column" data-tab-content="feed">
           <h2>Feed</h2>
-          <p>Velkommen til dit feed!</p>
+          <p>Welcome to your feed!</p>
 
           <!-- Next Events Section -->
           <div class="next-events">
-            <h3 class="next-events__title">Næste Events</h3>
-            <p class="next-events__description">Her kan du finde kommende events, som du kan deltage i.</p>
+            <h3 class="next-events__title">Upcoming Events</h3>
+            <p class="next-events__description">Here you can find upcoming events to participate in.</p>
 
             <!-- Next Events Carousel -->
             <div class="event-carousel">
@@ -156,12 +155,12 @@
                     </p>
                     <p class="event-box__date">
                       <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
-                      16. Maj 2025
+                      May 16, 2025
                     </p>
-                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <p class="event-box__description">This is a brief description of the event.</p>
                     <div class="event-box__buttons">
-                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
-                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
+                      <button class="event-box__button event-box__button--participate">Join Now</button>
+                      <button class="event-box__button event-box__button--read-more">Read More</button>
                     </div>
                   </div>
                 </div>
@@ -176,12 +175,12 @@
                     </p>
                     <p class="event-box__date">
                       <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
-                      4. September 2025
+                      September 4, 2025
                     </p>
-                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <p class="event-box__description">This is a brief description of the event.</p>
                     <div class="event-box__buttons">
-                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
-                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
+                      <button class="event-box__button event-box__button--participate">Join Now</button>
+                      <button class="event-box__button event-box__button--read-more">Read More</button>
                     </div>
                   </div>
                 </div>
@@ -196,12 +195,12 @@
                     </p>
                     <p class="event-box__date">
                       <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
-                      10 April 2025
+                      April 10, 2025
                     </p>
-                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <p class="event-box__description">This is a brief description of the event.</p>
                     <div class="event-box__buttons">
-                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
-                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
+                      <button class="event-box__button event-box__button--participate">Join Now</button>
+                      <button class="event-box__button event-box__button--read-more">Read More</button>
                     </div>
                   </div>
                 </div>
@@ -212,29 +211,28 @@
           </div>
         </div>
         <div class="main-content__column" data-tab-content="calendar" style="display: none;">
-          <h2>Kalender</h2>
-          <p>Velkommen til din kalender!</p>
+          <h2>Calendar</h2>
+          <p>Welcome to your calendar!</p>
         </div>
-        <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none" >
-          <h3 class="main-content__title">Venner</h3>
-          <p class="main-content__placeholder">Se hvad dine venner laver her...</p>
+        <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none;">
+          <h3 class="main-content__title">Friends</h3>
+          <p class="main-content__placeholder">See what your friends are up to here...</p>
         </div>
-        <div class="main-content__column main-content__organisations" data-tab-content="organisations" style="display: none" >
-          <h3 class="main-content__title">Mine Organisationer</h3>
-          <p class="main-content__placeholder">
-            Se alle dine organisationer her...
-          </p>
+        <div class="main-content__column main-content__organisations" data-tab-content="organisations" style="display: none;">
+          <h3 class="main-content__title">My Organisations</h3>
+          <p class="main-content__placeholder">See all your organisations here...</p>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!--Scroll up btn-->
-    <button onclick="topFunction()" class="scrollUpBtn" title="Go to top">
-      <img src="icons/black_icons/up_arrow_black.svg" alt="small_up_arrow" />
+    <!-- Scroll Up Button -->
+    <button onclick="topFunction()" class="scroll-up-btn" title="Go to top">
+      <img src="icons/black_icons/up_arrow_black.svg" alt="Scroll Up" />
     </button>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
+    <!-- Footer Section -->
     <footer class="footer">
       <div class="footer__content">
         <p class="footer__text">© 2023 Gen-Fri. All rights reserved.</p>
