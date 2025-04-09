@@ -30,23 +30,38 @@ img {
   display: block;
 }
 
-button {
-  background: none;
+/* Unified Button Styles */
+button,
+.event-box__button,
+.content_sections__item-button {
+  background-color: var(--secondaryorange);
+  color: var(--primarywhite);
+  font-weight: 600;
   border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+.event-box__button:hover,
+.content_sections__item-button:hover {
+  background-color: var(--primaryblack);
+  transform: scale(1.05);
 }
 
 /* Typography */
 .text--h1 {
-  font-size: 56px;
+  color: var(--primaryblack);
+  font-size: 2.5rem;
   font-weight: 800;
-  line-height: 64px;
 }
 
 .text--paragraph {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+  color: var(--primarylight-black);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Utility */
@@ -157,6 +172,82 @@ button {
   gap: 1rem;
 }
 
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  height: 100vh; /* Full height */
+  width: 250px; /* Fixed width */
+  background-color: var(--secondarylight);
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  transition: left 0.3s ease; /* Smooth slide-in animation */
+}
+
+.sidebar--visible {
+  left: 0; /* Slide in the sidebar */
+}
+
+.sidebar__item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: var(--primaryblack);
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.sidebar__item:hover {
+  background-color: var(--secondaryorange);
+  color: var(--primarywhite);
+}
+
+.sidebar__item-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Close Button */
+.close-btn {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  z-index: 1100;
+}
+
+/* Sidebar Toggle Button */
+#burger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primarywhite);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 1100;
+}
+
+#burger-btn img {
+  width: 24px;
+  height: 24px;
+}
+
 .sidebar--visible {
   display: flex;
 }
@@ -175,8 +266,8 @@ button {
 }
 
 .sidebar__item-icon {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   margin-right: 1rem; /* Space between icon and text */
 }
 
@@ -241,8 +332,8 @@ button {
 }
 
 .profile-section__image img {
-  width: 80px;
-  height: 80px;
+  width: 200px;
+  height: 200px;
   border-radius: 10%;
   object-fit: cover;
 }
@@ -263,13 +354,17 @@ button {
   font-size: 1rem;
   margin: 0.2rem 0;
   color: var(--primarylight-black);
+  margin: 0.5rem 0;
 }
 
-/* Profile Section Stat Icons */
 .profile-section__stat-icon {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
   object-fit: contain; /* Ensure the icon fits within the dimensions */
+}
+
+.profile-section__stats {
+  margin-top: 1rem;
 }
 
 /* --- ANIMATED TAB INDICATOR --- */
@@ -285,41 +380,46 @@ button {
 /* --- TABS CONTAINER UPDATE (position relative) --- */
 .main-content__tabs {
   display: flex;
-  justify-content: space-around;
-  position: relative; /* Needed for the tab indicator */
+  justify-content: space-evenly; /* Even spacing between tabs */
+  align-items: center; /* Vertically center the tabs */
+  gap: 1rem; /* Add spacing between tabs */
+  padding: 1rem;
+  background-color: var(--secondarylight);
+  border: 1px solid var(--primaryblack); /* Stroke effect */
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1), /* Inner shadow */
+              0 4px 6px rgba(0, 0, 0, 0.1); /* Outer shadow */
   width: 100%;
-  padding: 0.5rem 0;
-  margin-bottom: 1rem;
-  background-color: var(--primarywhite);
-  top: 0;
-  z-index: 10;
-  overflow-x: auto; /* Allows horizontal scroll on small screens */
-  scrollbar-width: none; /* Firefox: hide scrollbar */
-}
-.main-content__tabs::-webkit-scrollbar {
-  display: none; /* Chrome/Safari: hide scrollbar */
+  max-width: 800px; /* Limit the width of the tabs container */
+  margin: 2rem auto; /* Center the tabs container horizontally on the page */
 }
 
 /* --- TAB BUTTONS UPDATE --- */
 .main-content__tab {
-  flex: 1;
-  min-width: 100px;
-  max-width: 200px;
-  text-align: center;
-  padding: 0.5rem 0.5rem;
-  background-color: var(--primarywhite);
-  border: none;
-  border-radius: 20%; /* Add rounded corners */
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--primaryblack);
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-radius 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: center;
+  gap: 0.5rem; /* Space between icon and label */
+  padding: 0.75rem 1rem;
+  background-color: var(--primarywhite);
+  border: 1px solid var(--primaryblack); /* Stroke effect */
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.main-content__tab:hover {
+  transform: translateY(-2px); /* Lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.main-content__tab {
+  background-color: var(--primarywhite);
+  color: var(--primaryblack);
+  border: 1px solid var(--secondarylight-medium);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main-content__tab:hover {
@@ -327,21 +427,52 @@ button {
   color: var(--primarywhite);
 }
 
-.main-content__tab--active {
-  background-color: var(--secondaryorange); /* Animate background color */
+.main-content__tab[aria-selected="true"] {
+  background-color: var(--secondaryorange);
   color: var(--primarywhite);
-  border-radius: 20%; /* Keep the rounded corners for active tabs */
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-radius 0.3s ease;
+  border-color: var(--secondaryorange);
 }
 
-.main-content__tab--active .main-content__tab-icon {
-  filter: brightness(0) saturate(100%) invert(58%) sepia(72%) saturate(1000%)
-    hue-rotate(359deg) brightness(95%) contrast(95%);
-  /* This filter applies an orange tint to the icon */
+/* Active Tab Styling */
+.main-content__tab[aria-selected="true"] {
+  background-color: var(--secondaryorange);
+  color: var(--primarywhite);
+  border-color: var(--secondaryorange);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Stronger shadow for active tab */
+  transform: scale(1.05); /* Slightly enlarge the active tab */
 }
 
-/* --- TAB ICON SIZE --- */
+/* Tab Indicator Animation */
+.main-content__tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 3px;
+  background-color: var(--secondaryorange);
+  transition: transform 0.3s ease, width 0.3s ease;
+  width: 0;
+}
+
+.main-content__tabs[data-active-tab="feed"] .main-content__tab-indicator {
+  transform: translateX(0%);
+  width: 25%; /* Adjust width based on the number of tabs */
+}
+
+.main-content__tabs[data-active-tab="calendar"] .main-content__tab-indicator {
+  transform: translateX(100%);
+  width: 25%;
+}
+
+.main-content__tabs[data-active-tab="friends"] .main-content__tab-indicator {
+  transform: translateX(200%);
+  width: 25%;
+}
+
+.main-content__tabs[data-active-tab="organisations"] .main-content__tab-indicator {
+  transform: translateX(300%);
+  width: 25%;
+}
+
+/* Tab Icon */
 .main-content__tab-icon {
   width: 24px;
   height: 24px;
@@ -411,8 +542,8 @@ button {
   }
 
   .footer__social-icon img {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
   }
 }
 /* Scroll to Top Button */
@@ -432,6 +563,11 @@ button {
 }
 .scrollup:active {
   background: #e1b48c;
+}
+
+.scrollUpBtn img {
+  width: 24px;
+  height: 24px;
 }
 
 /* Media Queries */
@@ -486,7 +622,7 @@ button {
 /* Footer Styles */
 .footer {
   background-color: var(--secondarylight);
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem; /* Increased padding for breathing room */
   text-align: center;
   border-top: 1px solid var(--secondarylight-medium);
 }
@@ -495,7 +631,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem; /* Increased gap for better spacing */
 }
 
 .footer__text {
@@ -506,13 +642,13 @@ button {
 
 .footer__socials {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased gap between icons */
   justify-content: center;
 }
 
 .footer__social-icon img {
-  width: 18px;
-  height: 18px;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0.8;
 }
@@ -526,7 +662,8 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.5rem; /* Increased gap for better spacing */
+  margin-top: 1.5rem; /* Added margin for breathing room */
   margin-top: 1rem;
 }
 
@@ -542,15 +679,15 @@ button {
 }
 
 .footer__theme-toggle {
-  margin-top: 1rem;
+  margin-top: 1.5rem; /* Added margin for spacing */
 }
 
 .footer__theme-btn {
   background: none;
   border: none;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 25px; /* Set to 25x25 pixels */
+  height: 25px;
 }
 
 .footer__theme-btn img {
@@ -561,6 +698,25 @@ button {
 
 .footer__theme-btn img:hover {
   transform: rotate(20deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 1rem; /* Adjusted padding for smaller screens */
+  }
+
+  .footer__content {
+    gap: 1.5rem; /* Reduced gap for smaller screens */
+  }
+
+  .footer__links {
+    gap: 1rem; /* Reduced gap for smaller screens */
+  }
+
+  .footer__socials {
+    gap: 1rem; /* Reduced gap for smaller screens */
+  }
 }
 
 /* Event Carousel */
@@ -597,6 +753,27 @@ button {
 
 .event-box__details {
   padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* Event Box Location and Date */
+.event-box__location,
+.event-box__date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between the icon and text */
+  font-size: 0.9rem;
+  color: var(--primaryblack);
+  margin: 0.5rem 0;
+}
+
+/* Event Box Location and Date Icons */
+.event-box__location .event-box__icon,
+.event-box__date .event-box__icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain; /* Ensure the icon fits within the dimensions */
+  margin-right: 0.5rem; /* Add spacing between the icon and text */
 }
 
 .event-box__location,
@@ -609,9 +786,11 @@ button {
   margin: 0.5rem 0;
 }
 
+/* Event Box Location and Date Icons */
 .event-box__icon {
-  width: 16px;
-  height: 16px;
+  width: 24px !important;
+  height: 24px !important;
+  object-fit: contain; /* Ensure the icon fits within the dimensions */
 }
 
 .event-box__button {
@@ -626,6 +805,13 @@ button {
 
 .event-box__button:hover {
   background-color: var(--primaryblack);
+}
+
+.event-box__buttons {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .event-carousel__prev,
@@ -724,4 +910,155 @@ button {
 
 .event-box__button--read-more:hover {
   background-color: var(--primaryblack); /* Slightly darker on hover */
+}
+
+/* Content Sections */
+.content_sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Add spacing between sections */
+  padding: 2rem; /* Add padding around the content */
+  margin: 0 auto; /* Center the content */
+  max-width: 1200px; /* Limit the width for better readability */
+  box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Section Titles */
+.content_sections__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primaryblack);
+  text-align: center;
+  margin-bottom: 1rem; /* Add spacing below the title */
+}
+
+/* Section Descriptions */
+.content_sections__description {
+  font-size: 1rem;
+  color: var(--primarylight-black);
+  text-align: center;
+  margin-bottom: 2rem; /* Add spacing below the description */
+  line-height: 1.6; /* Improve readability */
+}
+
+/* Section Items */
+.content_sections__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Add spacing between items */
+  padding: 1.5rem;
+  background-color: var(--secondarylight);
+  border-radius: 8px;
+  box-shadow: var(--shadow-main);
+  align-items: center;
+  text-align: center;
+}
+
+/* Icons in Section Items */
+.content_sections__item-icon {
+  width: 24px; /* Set width to 25px */
+  height: 24px; /* Set height to 25px */
+  object-fit: contain; /* Ensure the icon fits within the dimensions */
+}
+
+/* Item Titles */
+.content_sections__item-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primaryblack);
+  margin-bottom: 0.5rem;
+}
+
+/* Item Descriptions */
+.content_sections__item-description {
+  font-size: 1rem;
+  color: var(--primarylight-black);
+  line-height: 1.5; /* Improve readability */
+}
+
+/* Buttons in Items */
+.content_sections__item-buttons {
+  display: flex;
+  gap: 1rem; /* Add spacing between buttons */
+  justify-content: center;
+}
+
+.content_sections__item-button {
+  background-color: var(--secondaryorange);
+  color: var(--primarywhite);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.content_sections__item-button:hover {
+  background-color: var(--primaryblack);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .content_sections {
+    padding: 1rem; /* Reduce padding for smaller screens */
+    gap: 1.5rem; /* Reduce spacing between sections */
+  }
+
+  .content_sections__item {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .content_sections__title {
+    font-size: 1.75rem; /* Adjust title size for smaller screens */
+  }
+
+  .content_sections__description {
+    font-size: 0.9rem; /* Adjust description size for smaller screens */
+  }
+
+  .content_sections__item-title {
+    font-size: 1.1rem; /* Adjust item title size for smaller screens */
+  }
+
+  .content_sections__item-description {
+    font-size: 0.9rem; /* Adjust item description size for smaller screens */
+  }
+}
+
+/* Global Icon Styling */
+img,
+[class*="__icon"] {
+  width: 24px !important; /* Set width to 24px */
+  height: 24px !important; /* Set height to 24px */
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+/* Unified Headings */
+h1,
+h2,
+h3 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--primaryblack);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
 }

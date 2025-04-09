@@ -5,6 +5,67 @@
     display: flex;
   }
 
+  /* Header Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Space between left and right sections */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primarywhite);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .navbar__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between items */
+  }
+
+  .navbar__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between buttons */
+  }
+
+  /* Sidebar Styling */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full height */
+    width: 250px; /* Fixed width */
+    background-color: var(--secondarylight);
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1000;
+  }
+
+  .sidebar__item {
+    padding: 1rem;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--primaryblack);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .sidebar__item:hover {
+    background-color: var(--secondaryorange);
+    color: var(--primarywhite);
+  }
+
+  /* Content Area */
+  .main-content {
+    margin-left: 250px; /* Leave space for the sidebar */
+    padding: 2rem;
+  }
+
   /* Sidebar on desktop is shown normally */
   .sidebar {
     display: flex;

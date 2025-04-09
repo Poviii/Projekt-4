@@ -108,6 +108,22 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.querySelectorAll('.main-content__tab').forEach((tab) => {
+  tab.addEventListener('click', (e) => {
+    const tabsContainer = document.querySelector('.main-content__tabs');
+    const selectedTab = e.currentTarget.dataset.tab;
+
+    // Update the active tab
+    document.querySelectorAll('.main-content__tab').forEach((t) => {
+      t.setAttribute('aria-selected', 'false');
+    });
+    e.currentTarget.setAttribute('aria-selected', 'true');
+
+    // Update the active tab indicator
+    tabsContainer.setAttribute('data-active-tab', selectedTab);
+  });
+});
+
 // Get the button
 let mybutton = document.getElementById("scrollUpBtn");
 
@@ -129,3 +145,23 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.getElementById("sidebar");
+  const burgerBtn = document.getElementById("burger-btn");
+  const closeBtn = document.createElement("button");
+
+  // Add close button dynamically
+  closeBtn.classList.add("close-btn");
+  closeBtn.innerHTML = "&times;";
+  sidebar.appendChild(closeBtn);
+
+  // Toggle sidebar visibility
+  const toggleSidebar = () => {
+    sidebar.classList.toggle("sidebar--visible");
+  };
+
+  // Event listeners
+  burgerBtn.addEventListener("click", toggleSidebar);
+  closeBtn.addEventListener("click", toggleSidebar);
+});

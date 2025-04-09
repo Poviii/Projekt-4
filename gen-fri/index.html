@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=width=device-width, initial-scale=1.0" />
     <title>Gen-Fri Homepage</title>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="mobile.css" media="(max-width: 767px)" />
-    <link rel="stylesheet" href="tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
-    <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)" />
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)" />
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
+    <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1024px)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
@@ -48,36 +48,17 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar__left">
-        <button id="burger-btn" class="navbar__btn">
-          <img src="icons/black_icons/burgermenu_black.svg" class="navbar__btn-icon" alt="Menu" />
+        <button id="burger-btn">
+          <img src="icons/black_icons/burgermenu_black.svg" alt="Menu" />
         </button>
-        <div class="navbar__logo navbar__logo--desktop">
-          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
-        </div>
-      </div>
-      <div class="navbar__center">
-        <div class="navbar__logo navbar__logo--mobile">
-          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
-        </div>
-        <div class="search-bar">
-          <input type="text" class="search-bar__input" placeholder="Search..." />
-          <button class="search-bar__button">
-            <img src="icons/black_icons/search_black.svg" alt="Search" class="search-bar__icon" />
-          </button>
-        </div>
+        <h1>Logo</h1>
       </div>
       <div class="navbar__right">
         <button class="navbar__btn">
-          <img src="icons/black_icons/message_black.svg" class="navbar__btn-icon" alt="Messages" />
+          <img src="icons/black_icons/profile_black.svg" alt="Profile" />
         </button>
         <button class="navbar__btn">
-          <img src="icons/black_icons/notification_black.svg" class="navbar__btn-icon" alt="Notifications" />
-        </button>
-        <button class="navbar__btn">
-          <img src="icons/black_icons/mypage_black.svg" class="navbar__btn-icon" alt="Profile" />
-        </button>
-        <button id="theme-toggle" class="navbar__btn">
-          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" class="navbar__btn-icon" />
+          <img src="icons/black_icons/settings_black.svg" alt="Settings" />
         </button>
       </div>
     </nav>
@@ -111,26 +92,27 @@
     </section>
     
 
-    <div class="main-content__tabs">
-      <button class="main-content__tab" data-tab="feed" aria-selected="true">
-        <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Feed</span>
-      </button>
-      <button class="main-content__tab" data-tab="calendar">
-        <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Calendar</span>
-      </button>
-      <button class="main-content__tab" data-tab="friends">
-        <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Friends</span>
-      </button>
-      <button class="main-content__tab" data-tab="organisations">
-        <img src="icons/black_icons/organisations_black.svg" alt="Organisations Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Organisations</span>
-      </button>
-      <div class="main-content__tab-indicator"></div>
+    <div class="main-content">
+      <div class="main-content__tabs">
+        <button class="main-content__tab" data-tab="feed" aria-selected="true">
+          <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
+          <span class="main-content__tab-label">Feed</span>
+        </button>
+        <button class="main-content__tab" data-tab="calendar">
+          <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
+          <span class="main-content__tab-label">Calendar</span>
+        </button>
+        <button class="main-content__tab" data-tab="friends">
+          <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
+          <span class="main-content__tab-label">Friends</span>
+        </button>
+        <button class="main-content__tab" data-tab="organisations">
+          <img src="icons/black_icons/organisations_black.svg" alt="Organisations Icon" class="main-content__tab-icon" />
+          <span class="main-content__tab-label">Organisations</span>
+        </button>
+        <div class="main-content__tab-indicator"></div>
+      </div>
     </div>
-    
 
       <!-- Content Section -->
       <div class="main-content__columns">
