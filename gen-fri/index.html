@@ -26,59 +26,31 @@
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <a href="#" class="sidebar__item sidebar__item--active">
-        <img
-          src="icons/black_icons/homepage_black.svg"
-          alt="Home"
-          class="sidebar__item-icon"
-        />
+        <img src="icons/black_icons/homepage_black.svg" alt="Home" class="sidebar__item-icon" />
         Explore/Homepage
       </a>
       <a href="#" class="sidebar__item">
-        <img
-          src="icons/black_icons/mypage_black.svg"
-          alt="My Page"
-          class="sidebar__item-icon"
-        />
+        <img src="icons/black_icons/mypage_black.svg" alt="My Page" class="sidebar__item-icon" />
         My Page
       </a>
       <a href="#" class="sidebar__item">
-        <img
-          src="icons/black_icons/message_black.svg"
-          alt="Messages"
-          class="sidebar__item-icon"
-        />
+        <img src="icons/black_icons/message_black.svg" alt="Messages" class="sidebar__item-icon" />
         Messages
       </a>
       <a href="#" class="sidebar__item">
-        <img
-          src="icons/black_icons/leaderboard_black.svg"
-          alt="Leaderboard"
-          class="sidebar__item-icon"
-        />
+        <img src="icons/black_icons/leaderboard_black.svg" alt="Leaderboard" class="sidebar__item-icon" />
         Leaderboard
       </a>
       <a href="#" class="sidebar__item">
-        <img
-          src="icons/black_icons/shop_black.svg"
-          alt="Shop"
-          class="sidebar__item-icon"
-        />
+        <img src="icons/black_icons/shop_black.svg" alt="Shop" class="sidebar__item-icon" />
         Shop
       </a>
       <a href="#" class="sidebar__item">
-        <img
-          src="icons/black_icons/settings_black.svg"
-          alt="Settings"
-          class="sidebar__item-icon"
-        />
+        <img src="icons/black_icons/settings_black.svg" alt="Settings" class="sidebar__item-icon" />
         Settings
       </a>
       <a href="#" class="sidebar__item">
-        <img
-          src="icons/black_icons/logout_black.svg"
-          alt="Log Out"
-          class="sidebar__item-icon"
-        />
+        <img src="icons/black_icons/logout_black.svg" alt="Log Out" class="sidebar__item-icon" />
         Log Out
       </a>
     </aside>
@@ -86,60 +58,45 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar__left">
-        <button id="burger-btn">
-          <img
-            src="icons/black_icons/burgermenu_black.svg"
-            class="navbar__btn-icon"
-            alt="Menu"
-          />
+        <button id="burger-btn" class="navbar__btn">
+          <img src="icons/black_icons/burgermenu_black.svg" class="navbar__btn-icon" alt="Menu" />
         </button>
         <div class="navbar__logo navbar__logo--desktop">
-          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" />
+          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
         </div>
       </div>
       <div class="navbar__center">
         <div class="navbar__logo navbar__logo--mobile">
-          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" />
+          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
         </div>
         <div class="search-bar">
-          <input
-            type="text"
-            class="search-bar__input"
-            placeholder="Search..."
-          />
-          <img
-            src="icons/black_icons/search_black.svg"
-            alt="Search"
-            class="navbar__btn-icon"
-          />
+          <input type="text" class="search-bar__input" placeholder="Search..." />
+          <button class="search-bar__button">
+            <img src="icons/black_icons/search_black.svg" alt="Search" class="search-bar__icon" />
+          </button>
         </div>
       </div>
       <div class="navbar__right">
-        <img
-          src="icons/black_icons/message_black.svg"
-          class="navbar__btn-icon"
-          alt="Messages"
-        />
-        <img
-          src="icons/black_icons/notification_black.svg"
-          class="navbar__btn-icon"
-          alt="Notifications"
-        />
-        <img
-          src="icons/black_icons/mypage_black.svg"
-          class="navbar__btn-icon"
-          alt="Profile"
-        />
-        <button id="theme-toggle" class="navbar__btn-icon">
-          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" />
+        <button class="navbar__btn">
+          <img src="icons/black_icons/message_black.svg" class="navbar__btn-icon" alt="Messages" />
+        </button>
+        <button class="navbar__btn">
+          <img src="icons/black_icons/notification_black.svg" class="navbar__btn-icon" alt="Notifications" />
+        </button>
+        <button class="navbar__btn">
+          <img src="icons/black_icons/mypage_black.svg" class="navbar__btn-icon" alt="Profile" />
+        </button>
+        <button id="theme-toggle" class="navbar__btn">
+          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" class="navbar__btn-icon" />
         </button>
       </div>
     </nav>
+    
 
     <section class="profile-section">
       <div class="profile-section__content">
-        <div class="profile-section__image">
-          <img src="images/capio.png" alt="Profile Picture" />
+        <div class="profile-section__image-wrapper">
+          <img src="images/capio.png" alt="Profile Picture" class="profile-section__image" />
         </div>
         <div class="profile-section__info">
           <h2 class="profile-section__name">Capper</h2>
@@ -148,76 +105,46 @@
         </div>
         <div class="profile-section__stats">
           <div class="profile-section__stat">
-            <img
-              src="badges/champion_badge.png"
-              alt="Badges Icon"
-              class="profile-section__stat-icon"
-            />
+            <img src="badges/champion_badge.png" alt="Badges Icon" class="profile-section__stat-icon" />
             <span>Badges: 10</span>
           </div>
           <div class="profile-section__stat">
-            <img
-              src="badges/silver_badge.png"
-              alt="Rank Icon"
-              class="profile-section__stat-icon"
-            />
+            <img src="badges/silver_badge.png" alt="Rank Icon" class="profile-section__stat-icon" />
             <span>Rank: Silver</span>
           </div>
           <div class="profile-section__stat">
-            <img
-              src="icons/black_icons/points_black.svg"
-              alt="Credits Icon"
-              class="profile-section__stat-icon"
-            />
+            <img src="icons/black_icons/points_black.svg" alt="Credits Icon" class="profile-section__stat-icon" />
             <span>Credits: 200</span>
           </div>
         </div>
       </div>
     </section>
+    
 
-    <section class="main-content">
-      <!-- Tabs Section -->
-      <div class="main-content__tabs">
-        <button class="main-content__tab" data-tab="feed" aria-selected="true">
-          <img
-            src="icons/black_icons/homepage_black.svg"
-            alt="Feed Icon"
-            class="main-content__tab-icon"
-          />
-          Feed
-        </button>
-        <button class="main-content__tab" data-tab="calendar">
-          <img
-            src="icons/black_icons/calendar_black.svg"
-            alt="Calendar Icon"
-            class="main-content__tab-icon"
-          />
-          Calendar
-        </button>
-        <button class="main-content__tab" data-tab="friends">
-          <img
-            src="icons/black_icons/friends_black.svg"
-            alt="Friends Icon"
-            class="main-content__tab-icon"
-          />
-          Friends
-        </button>
-        <button class="main-content__tab" data-tab="organisations">
-          <img
-            src="icons/black_icons/organisations_black.svg"
-            alt="Organisations Icon"
-            class="main-content__tab-icon"
-          />Organisations
-        </button>
-        <div class="main-content__tab-indicator"></div>
-      </div>
+    <div class="main-content__tabs">
+      <button class="main-content__tab" data-tab="feed" aria-selected="true">
+        <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
+        <span class="main-content__tab-label">Feed</span>
+      </button>
+      <button class="main-content__tab" data-tab="calendar">
+        <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
+        <span class="main-content__tab-label">Calendar</span>
+      </button>
+      <button class="main-content__tab" data-tab="friends">
+        <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
+        <span class="main-content__tab-label">Friends</span>
+      </button>
+      <button class="main-content__tab" data-tab="organisations">
+        <img src="icons/black_icons/organisations_black.svg" alt="Organisations Icon" class="main-content__tab-icon" />
+        <span class="main-content__tab-label">Organisations</span>
+      </button>
+      <div class="main-content__tab-indicator"></div>
+    </div>
+    
 
       <!-- Content Section -->
       <div class="main-content__columns">
-        <div
-          class="main-content__column main-content__feed"
-          data-tab-content="feed"
-        >
+        <div class="main-content__column main-content__feed" data-tab-content="feed" >
           <h3 class="main-content__title">Feed</h3>
           <div class="main-content__scrollable">
             <p class="main-content__placeholder">Feed content goes here...</p>
@@ -225,27 +152,15 @@
             <p class="main-content__placeholder">Even more feed content...</p>
           </div>
         </div>
-        <div
-          class="main-content__column main-content__calendar"
-          data-tab-content="calendar"
-          style="display: none"
-        >
+        <div class="main-content__column main-content__calendar" data-tab-content="calendar" style="display: none" >
           <h3 class="main-content__title">Calendar</h3>
           <p class="main-content__placeholder">Calendar content goes here...</p>
         </div>
-        <div
-          class="main-content__column main-content__friends"
-          data-tab-content="friends"
-          style="display: none"
-        >
+        <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none" >
           <h3 class="main-content__title">Friends</h3>
           <p class="main-content__placeholder">Friends content goes here...</p>
         </div>
-        <div
-          class="main-content__column main-content__organisations"
-          data-tab-content="organisations"
-          style="display: none"
-        >
+        <div class="main-content__column main-content__organisations" data-tab-content="organisations" style="display: none" >
           <h3 class="main-content__title">My Organisations</h3>
           <p class="main-content__placeholder">
             Organisations content goes here...
@@ -261,18 +176,18 @@
 
     <script src="script.js"></script>
 
-    <footer>
+    <footer class="footer">
       <div class="footer__content">
         <p class="footer__text">© 2023 Gen-Fri. All rights reserved.</p>
         <div class="footer__socials">
           <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/facebook_black.svg" alt="Facebook" />
+            <img src="icons/black_icons/facebook_black.svg" alt="Facebook" class="footer__icon-img" />
           </a>
           <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/twitter_black.svg" alt="Twitter" />
+            <img src="icons/black_icons/twitter_black.svg" alt="Twitter" class="footer__icon-img" />
           </a>
           <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/instagram_black.svg" alt="Instagram" />
+            <img src="icons/black_icons/instagram_black.svg" alt="Instagram" class="footer__icon-img" />
           </a>
         </div>
       </div>
@@ -284,8 +199,8 @@
         <a href="#" class="footer__link">Feedback</a>
       </div>
       <div class="footer__theme-toggle">
-        <button id="footer-theme-toggle" class="navbar__btn-icon">
-          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" />
+        <button id="footer-theme-toggle" class="footer__theme-btn">
+          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" class="footer__icon-img" />
         </button>
       </div>
     </footer>
