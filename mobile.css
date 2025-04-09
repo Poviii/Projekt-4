@@ -1,22 +1,21 @@
 /* Mobile-specific Styles (BEM Naming) */
 @media (max-width: 767px) {
-    /* Hide search bar on mobile */
-    .search-bar {
-      display: none !important;
-    }
-  
-    /* Burger menu icon */
-    #burger-btn {
-      display: block;
-    }
-  
-    .navbar__left {
-      flex: 1;
-    }
-  
-    /* Sidebar visibility for mobile */
-    .sidebar--visible {
-      display: flex !important;
-    }
+  /* Hide search bar on mobile */
+  .search-bar {
+    display: none !important;
   }
-  
+
+  /* Burger menu icon */
+  #burger-btn {
+    display: block;
+  }
+
+  .navbar__left {
+    flex: 1;
+  }
+
+  /* Sidebar visibility for mobile */
+  .sidebar--visible {
+    display: flex !important;
+  }
+}

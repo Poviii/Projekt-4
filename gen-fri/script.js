@@ -43,6 +43,7 @@ tabs.forEach((tab) => {
 
     // Show the corresponding tab content
     const target = tab.getAttribute("data-tab");
-    document.querySelector(`[data-tab-content="${target}"]`).style.display = "block";
+    document.querySelector(`[data-tab-content="${target}"]`).style.display =
+      "block";
   });
 });

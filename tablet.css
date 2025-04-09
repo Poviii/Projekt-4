@@ -1,13 +1,12 @@
 /* Tablet-specific Styles (BEM Naming) */
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* Hide search bar on tablet */
-    .search-bar {
-      display: none !important;
-    }
-  
-    /* Sidebar behavior on tablet */
-    .sidebar--visible {
-      display: flex !important;
-    }
+  /* Hide search bar on tablet */
+  .search-bar {
+    display: none !important;
   }
-  
+
+  /* Sidebar behavior on tablet */
+  .sidebar--visible {
+    display: flex !important;
+  }
+}
