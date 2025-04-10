@@ -2,7 +2,7 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes" />
     <title>Gen-Fri Homepage</title>
     <link rel="stylesheet" href="css/globals.css" />
     <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)" />
@@ -48,17 +48,21 @@
     <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar__left">
+        <!-- Burger Menu Button -->
         <button id="burger-btn">
-          <img src="icons/black_icons/burgermenu_black.svg" alt="Menu" />
+          <img src="icons/black_icons/burgermenu_black.svg" alt="Menu" class="navbar__icon" />
         </button>
-        <h1>Logo</h1>
+        <!-- Logo -->
+        <img src="images/logo_sort-ubaggrund.svg" alt="Logo uden baggrund" class="navbar__logo" />
       </div>
       <div class="navbar__right">
+        <!-- Profile Button -->
         <button class="navbar__btn">
-          <img src="icons/black_icons/profile_black.svg" alt="Profile" />
+          <img src="icons/black_icons/mypage_black.svg" alt="Profile" class="navbar__icon" />
         </button>
+        <!-- Settings Button -->
         <button class="navbar__btn">
-          <img src="icons/black_icons/settings_black.svg" alt="Settings" />
+          <img src="icons/black_icons/settings_black.svg" alt="Settings" class="navbar__icon" />
         </button>
       </div>
     </nav>
@@ -215,7 +219,7 @@
       <img src="icons/black_icons/up_arrow_black.svg" alt="small_up_arrow" />
     </button>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
     <footer class="footer">
       <div class="footer__content">

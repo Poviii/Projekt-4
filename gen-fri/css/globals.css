@@ -30,6 +30,14 @@ img {
   display: block;
 }
 
+/* Global Icon Styling */
+[class*="__icon"] {
+  width: 24px; /* Default icon size */
+  height: 24px;
+  object-fit: contain; /* Ensure icons fit within their dimensions */
+  display: inline-block;
+}
+
 /* Unified Button Styles */
 button,
 .event-box__button,
@@ -113,20 +121,29 @@ button:hover,
   justify-content: flex-end;
 }
 
-.navbar__btn-icon {
-  width: 24px;
-  height: 24px;
+
+.navbar__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primarywhite);
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* Navbar Icons */
-.navbar__btn-icon img {
-  width: 24px;
-  height: 24px;
+.navbar__btn:hover {
+  background-color: var(--secondaryorange);
+  transform: scale(1.1);
 }
 
 /* Logo Styles */
 .navbar__logo {
-  display: none; /* Hidden by default */
+  height: 40px;
+  object-fit: contain;
 }
 
 .navbar__logo img {
@@ -210,8 +227,8 @@ button:hover,
 }
 
 .sidebar__item-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   object-fit: contain;
 }
 
@@ -266,8 +283,8 @@ button:hover,
 }
 
 .sidebar__item-icon {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   margin-right: 1rem; /* Space between icon and text */
 }
 
@@ -770,8 +787,8 @@ button:hover,
 /* Event Box Location and Date Icons */
 .event-box__location .event-box__icon,
 .event-box__date .event-box__icon {
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   object-fit: contain; /* Ensure the icon fits within the dimensions */
   margin-right: 0.5rem; /* Add spacing between the icon and text */
 }
@@ -788,8 +805,8 @@ button:hover,
 
 /* Event Box Location and Date Icons */
 .event-box__icon {
-  width: 24px !important;
-  height: 24px !important;
+  width: 16px !important;
+  height: 16px !important;
   object-fit: contain; /* Ensure the icon fits within the dimensions */
 }
 
@@ -1025,12 +1042,17 @@ button:hover,
   }
 }
 
-/* Global Icon Styling */
-img,
-[class*="__icon"] {
-  width: 24px !important; /* Set width to 24px */
-  height: 24px !important; /* Set height to 24px */
-  object-fit: contain; /* Maintain aspect ratio */
+
+
+
+.sidebar__item-icon {
+  width: 20px; /* Sidebar icons */
+  height: 20px;
+}
+
+.event-box__icon {
+  width: 16px; /* Smaller icons for event details */
+  height: 16px;
 }
 
 /* Unified Headings */

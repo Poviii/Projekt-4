@@ -178,12 +178,7 @@
 }
 
 /* Global Icon Styling for Mobile */
-img,
-[class*="__icon"] {
-  width: 24px; /* Standard mobile icon size */
-  height: 24px;
-  object-fit: contain; /* Maintain aspect ratio */
-}
+
 
 /* Navbar Icons */
 .navbar__btn-icon {
