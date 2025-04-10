@@ -1,70 +1,64 @@
-// Burgermenu toggle
+/* Burger Menu Toggle */
 const burgerBtn = document.getElementById("burger-btn");
 const sidebar = document.getElementById("sidebar");
 
-burgerBtn?.addEventListener("click", () => {
-  const isSidebarVisible = sidebar.classList.toggle("sidebar--visible");
+if (burgerBtn && sidebar) {
+  burgerBtn.addEventListener("click", () => {
+    const isVisible = sidebar.classList.toggle("sidebar--visible");
+    const icon = burgerBtn.querySelector("img");
+    if (icon) {
+      if (isVisible) {
+        icon.src = "icons/black_icons/circle-xmark.svg";
+        icon.alt = "Close Menu";
+      } else {
+        icon.src = "icons/black_icons/burgermenu_black.svg";
+        icon.alt = "Menu";
+      }
+    }
+  });
+}
 
-  // Toggle the icon based on the sidebar visibility
-  const icon = burgerBtn.querySelector("img");
-  if (isSidebarVisible) {
-    icon.src = "icons/black_icons/circle-xmark.svg"; // Close icon
-    icon.alt = "Close Menu";
-  } else {
-    icon.src = "icons/black_icons/burgermenu_black.svg"; // Burger menu icon
-    icon.alt = "Menu";
-  }
-});
-
-// Dark mode toggle
+/* Dark Mode Toggle */
 const themeToggle = document.getElementById("theme-toggle");
-const root = document.documentElement;
+const rootElement = document.documentElement;
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const currentTheme = rootElement.getAttribute("data-theme");
+    rootElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+  });
+}
 
-themeToggle?.addEventListener("click", () => {
-  const currentTheme = root.getAttribute("data-theme");
-  const newTheme = currentTheme === "dark" ? "light" : "dark";
-  root.setAttribute("data-theme", newTheme);
-});
-
-// Tab toggle functionality
+/* Tab Toggle Functionality */
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".main-content__tab");
   const tabContents = document.querySelectorAll("[data-tab-content]");
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      // Remove active state from all tabs
       tabs.forEach((t) => t.setAttribute("aria-selected", "false"));
-      // Hide all tab contents
-      tabContents.forEach((content) => (content.style.display = "none"));
-
-      // Activate the clicked tab
+      tabContents.forEach((content) => {
+        content.style.display = "none";
+      });
       tab.setAttribute("aria-selected", "true");
-      const target = tab.getAttribute("data-tab");
-      document.querySelector(`[data-tab-content="${target}"]`).style.display =
-        "block";
+      const targetTab = tab.getAttribute("data-tab");
+      const targetContent = document.querySelector(`[data-tab-content="${targetTab}"]`);
+      if (targetContent) {
+        targetContent.style.display = "block";
+      }
     });
   });
 });
 
-// Get the button
-let mybutton = document.getElementById("scrollUpBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-  scrollFunction();
-};
-
-function scrollFunction() {
+/* Scroll to Top Button */
+const scrollBtn = document.querySelector(".scrollUpBtn");
+window.addEventListener("scroll", () => {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
+    scrollBtn.style.display = "flex";
   } else {
-    mybutton.style.display = "none";
+    scrollBtn.style.display = "none";
   }
-}
+});
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }

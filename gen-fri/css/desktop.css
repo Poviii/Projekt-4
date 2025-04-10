@@ -1,81 +1,95 @@
-/* Desktop-specific Styles (BEM Naming) */
+/* Desktop-specific Styles */
 @media (min-width: 1024px) {
-  /* Ensure the search bar is visible on desktop */
+  /* Ensure search bar is visible */
   .search-bar {
     display: flex;
   }
 
-  /* Header Styling */
+  /* Navbar styling for desktop */
   .navbar {
-    display: flex;
-    justify-content: space-between; /* Space between left and right sections */
-    align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--primarywhite);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean look */
-    position: fixed; /* Fix the navbar at the top */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+    background-color: var(--primary-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-
-  .navbar__left {
-    display: flex;
-    align-items: center;
-    gap: 1rem; /* Space between items */
-  }
-
+  .navbar__left,
   .navbar__right {
-    display: flex;
-    align-items: center;
-    gap: 1rem; /* Space between buttons */
+    gap: 1rem;
   }
 
-  /* Sidebar Styling */
+  /* Sidebar adjustments: show by default */
   .sidebar {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
     left: 0;
-    height: 100vh; /* Full height */
-    width: 250px; /* Fixed width */
-    background-color: var(--secondarylight);
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    z-index: 1000;
+    top: 64px;
+    height: calc(100vh - 64px);
+    display: flex;
+    position: fixed;
+  }
+  /* Hide burger button on desktop */
+  #burger-btn {
+    display: none;
   }
 
-  .sidebar__item {
-    padding: 1rem;
-    text-align: left;
-    font-size: 1rem;
-    color: var(--primaryblack);
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-
-  .sidebar__item:hover {
-    background-color: var(--secondaryorange);
-    color: var(--primarywhite);
-  }
-
-  /* Content Area */
+  /* Main content offset for sidebar */
   .main-content {
-    margin-left: 250px; /* Leave space for the sidebar */
+    margin-left: 250px;
     padding: 2rem;
   }
 
-  /* Sidebar on desktop is shown normally */
-  .sidebar {
-    display: flex;
+  /* Tabs adjustments */
+  .main-content__tabs {
+    justify-content: space-evenly;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--secondary-light);
+    border: 1px solid var(--primary-black);
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 2rem auto;
     position: relative;
-    height: auto;
-    width: 200px;
-    box-shadow: none;
+  }
+  .main-content__tab {
+    padding: 0.75rem 1rem;
+    background-color: var(--primary-white);
+    border: 1px solid var(--secondary-light-medium);
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  .main-content__tab[aria-selected="true"] {
+    background-color: var(--secondary-orange);
+    color: var(--primary-white);
+    border-color: var(--secondary-orange);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
   }
 
-  #burger-btn {
-    display: none;
+  /* Event carousel navigation buttons */
+  .event-carousel__prev,
+  .event-carousel__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-white);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: var(--shadow-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .event-carousel__prev {
+    left: 10px;
+  }
+  .event-carousel__next {
+    right: 10px;
+  }
+  .event-carousel__prev:hover,
+  .event-carousel__next:hover {
+    background-color: var(--secondary-orange);
+    color: var(--primary-white);
   }
 }

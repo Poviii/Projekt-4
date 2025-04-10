@@ -1,65 +1,41 @@
-/* Tablet-specific Styles (BEM Naming) */
+/* Tablet-specific Styles */
 @media (min-width: 768px) and (max-width: 1023px) {
   /* Hide search bar on tablet */
   .search-bar {
     display: none !important;
   }
 
-  /* Sidebar behavior on tablet */
+  /* Hide sidebar by default; toggle visibility as needed */
+  .sidebar {
+    display: none;
+  }
   .sidebar--visible {
     display: flex !important;
   }
 
+  /* Navbar adjustments */
+  .navbar {
+    padding: 1rem 1.5rem;
+    background-color: var(--primary-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Main content with no sidebar offset */
+  .main-content {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+
+  /* Tabs styling: evenly spaced */
   .main-content__tabs {
-    display: flex;
-    justify-content: space-evenly; /* Evenly space tabs */
-    align-items: center; /* Center tabs vertically */
+    justify-content: space-evenly;
     gap: 1rem;
     padding: 1rem;
     width: 100%;
   }
-
   .main-content__tab {
-    flex: 1; /* Ensure tabs take up equal space */
-    max-width: 200px; /* Limit the width of each tab */
+    flex: 1;
+    max-width: 200px;
     text-align: center;
-  }
-
-  /* Header Styling */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    background-color: var(--primarywhite);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  .navbar__left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .navbar__right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  /* Sidebar Styling */
-  .sidebar {
-    display: none; /* Hide the sidebar on tablet */
-  }
-
-  /* Content Area */
-  .main-content {
-    margin-left: 0; /* No sidebar space */
-    padding: 1.5rem;
   }
 }

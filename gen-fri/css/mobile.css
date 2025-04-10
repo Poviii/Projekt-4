@@ -1,154 +1,14 @@
-/* Mobile-specific Styles (BEM Naming) */
+/* Mobile-specific Styles */
 @media (max-width: 767px) {
   /* Hide search bar on mobile */
   .search-bar {
     display: none !important;
   }
 
-  /* Burger menu icon */
+  /* Display burger menu on mobile */
   #burger-btn {
     display: block;
-  }
-
-  .navbar__left {
-    flex: 1;
-  }
-
-  /* Sidebar visibility for mobile */
-  .sidebar--visible {
-    display: flex !important;
-  }
-
-  img,
-  [class*="__icon"] {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-  }
-
-  /* Center and Stack Tabs Vertically on Mobile */
-  .main-content__tabs {
-    display: flex;
-    flex-direction: column; /* Stack tabs vertically */
-    align-items: center; /* Center tabs horizontally */
-    gap: 1rem; /* Add spacing between tabs */
-    padding: 1rem;
-    width: 100%; /* Ensure full width */
-  }
-
-  .main-content__tab {
-    width: 90%; /* Make tabs take up most of the screen width */
-    max-width: 300px; /* Limit the width of each tab */
-    text-align: center; /* Center text and icons */
-  }
-
-  .main-content__tab-icon {
-    margin-bottom: 0.5rem; /* Add spacing between icon and label */
-  }
-
-  /* Navbar and Tabs in One Line */
-  .main-content {
-    display: flex;
-    flex-direction: row; /* Place navbar and tabs in one row */
-    justify-content: space-between; /* Space between navbar and tabs */
-    align-items: center; /* Center vertically */
-    width: 100%;
-    padding: 0.5rem;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: flex-start; /* Align navbar items to the left */
-    align-items: center;
-    gap: 0.5rem; /* Add spacing between navbar buttons */
-    width: auto; /* Allow navbar to take only the necessary space */
-  }
-
-  .navbar__btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px; /* Smaller button size */
-    height: 40px;
-    background-color: var(--primarywhite);
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-
-  .main-content__tabs {
-    display: flex;
-    flex-direction: row; /* Stack tabs horizontally */
-    justify-content: space-evenly; /* Evenly space tabs */
-    align-items: center; /* Center tabs vertically */
-    gap: 1rem; /* Match spacing from tablet.css */
-    width: 100%; /* Ensure full width */
-    padding: 0.5rem;
-  }
-
-  .main-content__tab {
-    flex: 1; /* Ensure tabs take up equal space */
-    max-width: 120px; /* Match the size from tablet.css */
-    padding: 0.75rem; /* Match padding from tablet.css */
-    text-align: center;
-    background-color: var(--primarywhite);
-    border: 1px solid var(--primaryblack);
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 0.875rem; /* Match font size from tablet.css */
-  }
-
-  .main-content__tab-icon {
-    width: 24px; /* Match icon size from tablet.css */
-    height: 24px;
-    margin-bottom: 0.5rem; /* Match spacing from tablet.css */
-  }
-
-  .main-content__tab-label {
-    font-size: 0.875rem; /* Match label font size from tablet.css */
-  }
-
-  /* Header Styling */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--primarywhite);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  .navbar__left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .navbar__right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  /* Sidebar Styling */
-  .sidebar {
-    display: none; /* Hide the sidebar on mobile */
-  }
-
-  /* Content Area */
-  .main-content {
-    margin-left: 0; /* No sidebar space */
-    padding: 1rem;
-  }
-
-  /* Burger Menu */
-  #burger-btn {
-    display: block;
-    background-color: var(--primarywhite);
+    background-color: var(--primary-white);
     border: none;
     width: 40px;
     height: 40px;
@@ -156,56 +16,50 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
-
   #burger-btn img {
     width: 24px;
     height: 24px;
   }
 
-  /* Sidebar Visibility */
-  .sidebar--visible {
-    display: flex !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 250px;
-    background-color: var(--secondarylight);
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    flex-direction: column;
+  /* Navbar adjustments for mobile */
+  .navbar {
+    padding: 1rem;
+    justify-content: space-between;
   }
-}
 
-/* Global Icon Styling for Mobile */
+  /* Sidebar adjustments for mobile overlay */
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+  }
 
+  /* Tabs styling adjustments */
+  .main-content__tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    gap: 1rem;
+  }
+  .main-content__tab {
+    flex: 1;
+    max-width: 120px;
+    padding: 0.75rem;
+    background-color: var(--primary-white);
+    border: 1px solid var(--primary-black);
+    border-radius: 6px;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+  .main-content__tab-icon {
+    margin-bottom: 0.5rem;
+  }
 
-/* Navbar Icons */
-.navbar__btn-icon {
-  width: 24px;
-  height: 24px;
-}
-
-/* Sidebar Icons */
-.sidebar__item-icon {
-  width: 24px;
-  height: 24px;
-}
-
-/* Event Box Icons */
-.event-box__icon {
-  width: 24px;
-  height: 24px;
-}
-
-/* Footer Social Icons */
-.footer__social-icon img {
-  width: 24px;
-  height: 24px;
-}
-
-/* Scroll Up Button Icon */
-.scrollUpBtn img {
-  width: 24px;
-  height: 24px;
+  /* Main content adjustments */
+  .main-content {
+    margin: 0;
+    padding: 1rem;
+  }
 }
