@@ -2,266 +2,460 @@
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Gen-Fri is your go-to platform for exploring events, connecting with friends, and managing your organizations."
+    />
+    <meta
+      name="keywords"
+      content="Gen-Fri, events, friends, organizations, social platform"
+    />
+    <meta name="author" content="Gen-Fri Team" />
     <title>Gen-Fri Homepage</title>
-    <link rel="stylesheet" href="globals.css" />
-    <link rel="stylesheet" href="mobile.css" media="(max-width: 767px)" />
-    <link rel="stylesheet" href="tablet.css" media="(min-width: 768px) and (max-width: 1023px)" />
-    <link rel="stylesheet" href="desktop.css" media="(min-width: 1024px)" />
+    <link rel="stylesheet" href="css/globals.css" />
+    <link rel="stylesheet" href="css/mobile.css" media="(max-width: 767px)" />
+    <link
+      rel="stylesheet"
+      href="css/tablet.css"
+      media="(min-width: 768px) and (max-width: 1023px)"
+    />
+    <link rel="stylesheet" href="css/desktop.css" media="(min-width: 1024px)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+
     <!-- Sidebar -->
-    <aside class="sidebar" id="sidebar">
-      <a href="#" class="sidebar__item sidebar__item--active">
-        <img src="icons/black_icons/homepage_black.svg" alt="Home" class="sidebar__item-icon" />
-        Explore/Homepage
-      </a>
-      <a href="#" class="sidebar__item">
-        <img src="icons/black_icons/mypage_black.svg" alt="My Page" class="sidebar__item-icon" />
-        My Page
-      </a>
-      <a href="#" class="sidebar__item">
-        <img src="icons/black_icons/message_black.svg" alt="Messages" class="sidebar__item-icon" />
-        Messages
-      </a>
-      <a href="#" class="sidebar__item">
-        <img src="icons/black_icons/leaderboard_black.svg" alt="Leaderboard" class="sidebar__item-icon" />
-        Leaderboard
-      </a>
-      <a href="#" class="sidebar__item">
-        <img src="icons/black_icons/shop_black.svg" alt="Shop" class="sidebar__item-icon" />
-        Shop
-      </a>
-      <a href="#" class="sidebar__item">
-        <img src="icons/black_icons/settings_black.svg" alt="Settings" class="sidebar__item-icon" />
-        Settings
-      </a>
-      <a href="#" class="sidebar__item">
-        <img src="icons/black_icons/logout_black.svg" alt="Log Out" class="sidebar__item-icon" />
-        Log Out
-      </a>
+    <aside class="sidebar" id="sidebar" aria-label="Main Sidebar">
+      <nav>
+        <ul class="sidebar__list">
+          <li>
+            <a href="#" class="sidebar__item sidebar__item--active">
+              <img
+                src="icons/black_icons/homepage_black.svg"
+                alt="Home Icon"
+                class="sidebar__item-icon"
+              />
+              <span>Explore/Homepage</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar__item">
+              <img
+                src="icons/black_icons/mypage_black.svg"
+                alt="My Page Icon"
+                class="sidebar__item-icon"
+              />
+              <span>My Page</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar__item">
+              <img
+                src="icons/black_icons/message_black.svg"
+                alt="Messages Icon"
+                class="sidebar__item-icon"
+              />
+              <span>Messages</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar__item">
+              <img
+                src="icons/black_icons/leaderboard_black.svg"
+                alt="Leaderboard Icon"
+                class="sidebar__item-icon"
+              />
+              <span>Leaderboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar__item">
+              <img
+                src="icons/black_icons/shop_black.svg"
+                alt="Shop Icon"
+                class="sidebar__item-icon"
+              />
+              <span>Shop</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar__item">
+              <img
+                src="icons/black_icons/settings_black.svg"
+                alt="Settings Icon"
+                class="sidebar__item-icon"
+              />
+              <span>Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar__item">
+              <img
+                src="icons/black_icons/logout_black.svg"
+                alt="Log Out Icon"
+                class="sidebar__item-icon"
+              />
+              <span>Log Out</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </aside>
 
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" role="banner">
       <div class="navbar__left">
-        <button id="burger-btn" class="navbar__btn">
-          <img src="icons/black_icons/burgermenu_black.svg" class="navbar__btn-icon" alt="Menu" />
+        <button id="burger-btn" aria-label="Toggle Menu">
+          <img
+            src="icons/black_icons/burgermenu_black.svg"
+            alt="Menu Icon"
+            class="navbar__btn-icon"
+          />
         </button>
-        <div class="navbar__logo navbar__logo--desktop">
-          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
-        </div>
-      </div>
-      <div class="navbar__center">
-        <div class="navbar__logo navbar__logo--mobile">
-          <img src="images/logo_sort-ubaggrund.svg" alt="Logo" class="navbar__logo-img" />
-        </div>
-        <div class="search-bar">
-          <input type="text" class="search-bar__input" placeholder="Search..." />
-          <button class="search-bar__button">
-            <img src="icons/black_icons/search_black.svg" alt="Search" class="search-bar__icon" />
-          </button>
+        <div class="navbar__logo-container">
+          <img
+            src="images/logo_sort-ubaggrund.svg"
+            alt="Gen-Fri Logo"
+            class="navbar__logo"
+          />
         </div>
       </div>
       <div class="navbar__right">
-        <button class="navbar__btn">
-          <img src="icons/black_icons/message_black.svg" class="navbar__btn-icon" alt="Messages" />
+        <button class="navbar__btn" aria-label="Profile">
+          <img
+            src="icons/black_icons/mypage_black.svg"
+            alt="Profile Icon"
+            class="navbar__btn-icon"
+          />
         </button>
-        <button class="navbar__btn">
-          <img src="icons/black_icons/notification_black.svg" class="navbar__btn-icon" alt="Notifications" />
+        <button class="navbar__btn" aria-label="Settings">
+          <img
+            src="icons/black_icons/settings_black.svg"
+            alt="Settings Icon"
+            class="navbar__btn-icon"
+          />
         </button>
-        <button class="navbar__btn">
-          <img src="icons/black_icons/mypage_black.svg" class="navbar__btn-icon" alt="Profile" />
-        </button>
-        <button id="theme-toggle" class="navbar__btn">
-          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" class="navbar__btn-icon" />
+        <button id="theme-toggle" aria-label="Toggle Theme">
+          <img
+            src="icons/black_icons/dark-mode-alt.svg"
+            alt="Theme Toggle Icon"
+            class="navbar__btn-icon"
+          />
         </button>
       </div>
     </nav>
-    
 
+    <!-- Profile Section -->
     <section class="profile-section">
       <div class="profile-section__content">
         <div class="profile-section__image-wrapper">
-          <img src="images/capio.png" alt="Profile Picture" class="profile-section__image" />
+          <img
+            src="images/capio.png"
+            alt="Profile Picture of Capper"
+            class="profile-section__image"
+          />
         </div>
         <div class="profile-section__info">
           <h2 class="profile-section__name">Capper</h2>
-          <p class="profile-section__details">Alder: 27</p>
-          <p class="profile-section__details">By: Odense</p>
+          <p class="profile-section__details">Age: 27</p>
+          <p class="profile-section__details">City: Odense</p>
         </div>
         <div class="profile-section__stats">
           <div class="profile-section__stat">
-            <img src="badges/champion_badge.png" alt="Badges Icon" class="profile-section__stat-icon" />
+            <img
+              src="badges/champion_badge.png"
+              alt="Champion Badge"
+              class="profile-section__stat-icon"
+            />
             <span>Badges: 10</span>
           </div>
           <div class="profile-section__stat">
-            <img src="badges/silver_badge.png" alt="Rank Icon" class="profile-section__stat-icon" />
+            <img
+              src="badges/silver_badge.png"
+              alt="Silver Badge"
+              class="profile-section__stat-icon"
+            />
             <span>Rank: Silver</span>
           </div>
           <div class="profile-section__stat">
-            <img src="icons/black_icons/points_black.svg" alt="Credits Icon" class="profile-section__stat-icon" />
+            <img
+              src="icons/black_icons/points_black.svg"
+              alt="Credits Icon"
+              class="profile-section__stat-icon"
+            />
             <span>Credits: 200</span>
           </div>
         </div>
       </div>
     </section>
-    
 
-    <div class="main-content__tabs">
-      <button class="main-content__tab" data-tab="feed" aria-selected="true">
-        <img src="icons/black_icons/homepage_black.svg" alt="Feed Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Feed</span>
-      </button>
-      <button class="main-content__tab" data-tab="calendar">
-        <img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Calendar</span>
-      </button>
-      <button class="main-content__tab" data-tab="friends">
-        <img src="icons/black_icons/friends_black.svg" alt="Friends Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Friends</span>
-      </button>
-      <button class="main-content__tab" data-tab="organisations">
-        <img src="icons/black_icons/organisations_black.svg" alt="Organisations Icon" class="main-content__tab-icon" />
-        <span class="main-content__tab-label">Organisations</span>
-      </button>
-      <div class="main-content__tab-indicator"></div>
-    </div>
-    
+    <!-- Tab System (4-Column Layout) -->
+    <div id="main-content" class="main-content">
+      <!-- Tabs Navigation -->
+      <div class="main-content__tabs" role="tablist">
+        <button
+          class="main-content__tab"
+          role="tab"
+          data-tab="feed"
+          aria-selected="true"
+        >
+          <img
+            src="icons/black_icons/homepage_black.svg"
+            alt="Feed Icon"
+            class="main-content__tab-icon"
+          />
+          <span class="main-content__tab-label">Feed</span>
+        </button>
+        <button
+          class="main-content__tab"
+          role="tab"
+          data-tab="calendar"
+          aria-selected="false"
+        >
+          <img
+            src="icons/black_icons/calendar_black.svg"
+            alt="Calendar Icon"
+            class="main-content__tab-icon"
+          />
+          <span class="main-content__tab-label">Calendar</span>
+        </button>
+        <button
+          class="main-content__tab"
+          role="tab"
+          data-tab="friends"
+          aria-selected="false"
+        >
+          <img
+            src="icons/black_icons/friends_black.svg"
+            alt="Friends Icon"
+            class="main-content__tab-icon"
+          />
+          <span class="main-content__tab-label">Friends</span>
+        </button>
+        <button
+          class="main-content__tab"
+          role="tab"
+          data-tab="organisations"
+          aria-selected="false"
+        >
+          <img
+            src="icons/black_icons/organisations_black.svg"
+            alt="Organisations Icon"
+            class="main-content__tab-icon"
+          />
+          <span class="main-content__tab-label">Organisations</span>
+        </button>
+        <div class="main-content__tab-indicator" aria-hidden="true"></div>
+      </div>
 
-      <!-- Content Section -->
+      <!-- Tab Contents -->
       <div class="main-content__columns">
-        <div class="main-content__column" data-tab-content="feed">
+        <article class="main-content__column" data-tab-content="feed">
           <h2>Feed</h2>
-          <p>Velkommen til dit feed!</p>
-
-          <!-- Next Events Section -->
-          <div class="next-events">
-            <h3 class="next-events__title">Næste Events</h3>
-            <p class="next-events__description">Her kan du finde kommende events, som du kan deltage i.</p>
-
-            <!-- Next Events Carousel -->
-            <div class="event-carousel">
+          <p>Welcome to your feed!</p>
+          <!-- Event Carousel -->
+          <section class="next-events">
+            <h3 class="next-events__title">Upcoming Events</h3>
+            <p class="next-events__description">
+              Discover upcoming events you can join.
+            </p>
+            <div class="event-carousel" aria-label="Event Carousel">
               <div class="event-carousel__container">
                 <!-- Event Box 1 -->
                 <div class="event-box">
-                  <img src="images/ventilen_logo.png" alt="Event Image" class="event-box__image" />
+                  <img
+                    src="images/ventilen_logo.png"
+                    alt="Ventilen Headquarters Event"
+                    class="event-box__image"
+                  />
                   <div class="event-box__details">
                     <p class="event-box__location">
-                      <img src="icons/black_icons/map_black.svg" alt="Location Icon" class="event-box__icon" />
-                      Ventillen Headquarters
+                      <img
+                        src="icons/black_icons/map_black.svg"
+                        alt="Location Icon"
+                        class="event-box__icon"
+                      />
+                      Ventilen Headquarters
                     </p>
                     <p class="event-box__date">
-                      <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
-                      16. Maj 2025
+                      <img
+                        src="icons/black_icons/calendar_black.svg"
+                        alt="Calendar Icon"
+                        class="event-box__icon"
+                      />
+                      16 May 2025
                     </p>
-                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <p class="event-box__description">
+                      This is a brief description of the event.
+                    </p>
                     <div class="event-box__buttons">
-                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
-                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
+                      <button class="event-box__button event-box__button--participate">
+                        Join Now
+                      </button>
+                      <button class="event-box__button event-box__button--read-more">
+                        Read More
+                      </button>
                     </div>
                   </div>
                 </div>
-
                 <!-- Event Box 2 -->
                 <div class="event-box">
-                  <img src="images/coding_pirates.png" alt="Event Image" class="event-box__image" />
+                  <img
+                    src="images/coding_pirates.png"
+                    alt="Coding Pirates Event"
+                    class="event-box__image"
+                  />
                   <div class="event-box__details">
                     <p class="event-box__location">
-                      <img src="icons/black_icons/map_black.svg" alt="Location Icon" class="event-box__icon" />
+                      <img
+                        src="icons/black_icons/map_black.svg"
+                        alt="Location Icon"
+                        class="event-box__icon"
+                      />
                       Coding Pirates
                     </p>
                     <p class="event-box__date">
-                      <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
-                      4. September 2025
+                      <img
+                        src="icons/black_icons/calendar_black.svg"
+                        alt="Calendar Icon"
+                        class="event-box__icon"
+                      />
+                      4 September 2025
                     </p>
-                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <p class="event-box__description">
+                      This is a brief description of the event.
+                    </p>
                     <div class="event-box__buttons">
-                      <button class="event-box__button event-box__button--participate">Deltag nu</button>
-                      <button class="event-box__button event-box__button--read-more">Læs mere</button>
+                      <button class="event-box__button event-box__button--participate">
+                        Join Now
+                      </button>
+                      <button class="event-box__button event-box__button--read-more">
+                        Read More
+                      </button>
                     </div>
                   </div>
                 </div>
-
                 <!-- Event Box 3 -->
                 <div class="event-box">
-                  <img src="images/rode_kors.png" alt="Event Image" class="event-box__image" />
+                  <img
+                    src="images/rode_kors.png"
+                    alt="Røde Kors Odense Event"
+                    class="event-box__image"
+                  />
                   <div class="event-box__details">
                     <p class="event-box__location">
-                      <img src="icons/black_icons/map_black.svg" alt="Location Icon" class="event-box__icon" />
+                      <img
+                        src="icons/black_icons/map_black.svg"
+                        alt="Location Icon"
+                        class="event-box__icon"
+                      />
                       Røde Kors Odense
                     </p>
                     <p class="event-box__date">
-                      <img src="icons/black_icons/calendar_black.svg" alt="Date Icon" class="event-box__icon" />
+                      <img
+                        src="icons/black_icons/calendar_black.svg"
+                        alt="Calendar Icon"
+                        class="event-box__icon"
+                      />
                       10 April 2025
                     </p>
-                    <p class="event-box__description">Dette er en kort beskrivelse af eventet.</p>
+                    <p class="event-box__description">
+                      This is a brief description of the event.
+                    </p>
                     <div class="event-box__buttons">
+                      <button class="event-box__button event-box__button--participate">
+                        Join Now
+                      </button>
+                      <button class="event-box__button event-box__button--read-more">
+                        Read More
+                      </button>
                       <button class="event-box__button">Deltag nu</button>
                       <button class="event-box__button">Læs mere</button>
                     </div>
                   </div>
                 </div>
               </div>
-              <button class="event-carousel__prev">‹</button>
-              <button class="event-carousel__next">›</button>
+              <button class="event-carousel__prev" aria-label="Previous Events">
+                ‹
+              </button>
+              <button class="event-carousel__next" aria-label="Next Events">
+                ›
+              </button>
             </div>
-          </div>
-        </div>
-        <div class="main-content__column" data-tab-content="calendar" style="display: none;">
-          <h2>Kalender</h2>
-          <p>Velkommen til din kalender!</p>
-        </div>
-        <div class="main-content__column main-content__friends" data-tab-content="friends" style="display: none" >
-          <h3 class="main-content__title">Venner</h3>
-          <p class="main-content__placeholder">Se hvad dine venner laver her...</p>
-        </div>
-        <div class="main-content__column main-content__organisations" data-tab-content="organisations" style="display: none" >
-          <h3 class="main-content__title">Mine Organisationer</h3>
-          <p class="main-content__placeholder">
-            Se alle dine organisationer her...
-          </p>
-        </div>
+          </section>
+        </article>
+        <article class="main-content__column" data-tab-content="calendar" style="display: none;">
+          <h2>Calendar</h2>
+          <p>Welcome to your calendar!</p>
+        </article>
+        <article class="main-content__column" data-tab-content="friends" style="display: none;">
+          <h3 class="main-content__title">Friends</h3>
+          <p class="main-content__placeholder">See what your friends are up to...</p>
+        </article>
+        <article class="main-content__column" data-tab-content="organisations" style="display: none;">
+          <h3 class="main-content__title">My Organisations</h3>
+          <p class="main-content__placeholder">View all your organisations here...</p>
+        </article>
       </div>
-    </section>
+    </div>
 
-    <!--Scroll up btn-->
-    <button onclick="topFunction()" class="scrollUpBtn" title="Go to top">
-      <img src="icons/black_icons/up_arrow_black.svg" alt="small_up_arrow" />
+    <button onclick="topFunction()" class="scrollUpBtn" aria-label="Scroll to top">
+      <img
+        src="icons/black_icons/up_arrow_black.svg"
+        alt="Up Arrow Icon"
+      />
     </button>
 
-    <script src="script.js"></script>
-
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="footer__content">
         <p class="footer__text">© 2023 Gen-Fri. All rights reserved.</p>
         <div class="footer__socials">
-          <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/facebook_black.svg" alt="Facebook" class="footer__icon-img" />
+          <a href="#" class="footer__social-icon" aria-label="Facebook">
+            <img
+              src="icons/black_icons/facebook_black.svg"
+              alt="Facebook Icon"
+              class="footer__icon-img"
+            />
           </a>
-          <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/linkedin_black.svg" alt="LinkedIn" />
+          <a href="#" class="footer__social-icon" aria-label="LinkedIn">
+            <img
+              src="icons/black_icons/linkedin_black.svg"
+              alt="LinkedIn Icon"
+            />
           </a>
-          <a href="#" class="footer__social-icon">
-            <img src="icons/black_icons/instagram_black.svg" alt="Instagram" class="footer__icon-img" />
+          <a href="#" class="footer__social-icon" aria-label="Instagram">
+            <img
+              src="icons/black_icons/instagram_black.svg"
+              alt="Instagram Icon"
+              class="footer__icon-img"
+            />
           </a>
         </div>
       </div>
-      <div class="footer__links">
+      <nav class="footer__links" aria-label="Footer Navigation">
         <a href="#" class="footer__link">Privacy Policy</a>
         <a href="#" class="footer__link">Terms of Service</a>
         <a href="#" class="footer__link">Contact Us</a>
         <a href="#" class="footer__link">Help</a>
         <a href="#" class="footer__link">Feedback</a>
-      </div>
+      </nav>
       <div class="footer__theme-toggle">
-        <button id="footer-theme-toggle" class="footer__theme-btn">
-          <img src="icons/black_icons/dark-mode-alt.svg" alt="Toggle theme" />
+        <button id="footer-theme-toggle" class="footer__theme-btn" aria-label="Toggle Theme">
+          <img
+            src="icons/black_icons/dark-mode-alt.svg"
+            alt="Toggle Theme Icon"
+          />
         </button>
       </div>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
