@@ -285,8 +285,8 @@ button {
 /* --- TABS CONTAINER UPDATE (position relative) --- */
 .main-content__tabs {
   display: flex;
-  justify-content: space-around;
-  position: relative; /* Needed for the tab indicator */
+  justify-content: center;
+  position: relative; /*Needed for the tab indicator*/
   width: 100%;
   padding: 0.5rem 0;
   margin-bottom: 1rem;
@@ -294,7 +294,6 @@ button {
   top: 0;
   z-index: 10;
   overflow-x: auto; /* Allows horizontal scroll on small screens */
-  scrollbar-width: none; /* Firefox: hide scrollbar */
 }
 .main-content__tabs::-webkit-scrollbar {
   display: none; /* Chrome/Safari: hide scrollbar */
@@ -694,34 +693,4 @@ button {
   display: flex;
   gap: 0.5rem; /* Add spacing between buttons */
   justify-content: center;
-}
-
-/* Participate Button */
-.event-box__button--participate {
-  background-color: var(--secondaryorange);
-  color: var(--primarywhite);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.event-box__button--participate:hover {
-  background-color: var(--primaryblack);
-}
-
-/* Read More Button */
-.event-box__button--read-more {
-  background-color: #353535; /* Dark gray color */
-  color: var(--primarywhite); /* White text */
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.event-box__button--read-more:hover {
-  background-color: var(--primaryblack); /* Slightly darker on hover */
 }
