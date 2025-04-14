@@ -13,7 +13,7 @@
   --color-black: #000000;  /* Black */
   --color-light-gray: #F5F5F5; /* Light Gray */
 
-  --font-body: Arial, sans-serif;
+  --font-body: "Montserrat", sans-serif;
 }
 
 /* 3. BASE STYLES */
@@ -32,6 +32,13 @@ a {
 a:hover,
 a:focus {
   text-decoration: underline;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5rem 0;
+  font-family: var(--font-body);
+  font-style: bold;
 }
 
 /* Visually hidden class for screen readers */
@@ -65,7 +72,7 @@ a:focus {
 .header {
   background-color: var(--color-white);
   color: var(--color-white);
-  position: relative;
+  position: sticky;
 }
 
 .brand_logo {
@@ -81,7 +88,8 @@ a:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 1.5rem 1.0rem;
+  
 }
 
 .burger-menu {
@@ -125,14 +133,29 @@ a:focus {
 
 .btn-notifications {
   cursor: pointer;
-  height: 25px;
-  width: 25px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--color-white);
+  border: none;
+  outline: none;
 }
 
   .btn-messages {
   cursor: pointer;
-  height: 25px;
-  width: 25px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--color-white);
+  border: none;
+  outline: none;
+} 
+
+.profil-settings {
+  cursor: pointer;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: var(--color-white);
+  border: none;
+  outline: none;
 } 
 
 /* Search Bar (hidden on mobile) */
@@ -153,6 +176,7 @@ a:focus {
 .nav-right {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .nav-btn {
@@ -172,16 +196,32 @@ a:focus {
 .mobile-nav {
   background-color: var(--color-white);
   padding: 1rem;
+  /* Hide nav by default; presumably toggled with JS */
   display: none;
 }
+
 .mobile-nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
 .mobile-nav li {
   margin: 0.5rem 0;
 }
+
 .mobile-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; 
   color: var(--color-dark);
+  text-decoration: none; 
+}
+
+/* Icon sizing */
+.mobile-nav a img {
+  width: 1.25rem; 
+  height: auto;
 }
 
 /* Reveal the mobile nav when .nav-open is applied to .header */
@@ -196,15 +236,17 @@ main {
 
 /* Hero section */
 .hero {
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-dark);
   padding: 2rem;
   text-align: center;
   margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 /* Optional hero image styling */
 .hero-image {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   display: block;
   margin: 0 auto 1rem;
@@ -254,6 +296,13 @@ article {
   font-size: 1rem;
   display: none; /* hidden by default */
 }
+
+/* Ensure the icon fits nicely in the circular button */
+.scroll-to-top img {
+  width: 1rem; /* Adjust size as needed */
+  height: auto;
+}
+
 .scroll-to-top:hover,
 .scroll-to-top:focus {
   background-color: var(--color-dark);
@@ -263,10 +312,9 @@ article {
 .profile-card {
   width: 100%;
   background-color: var(--color-white);
-  border: 2px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 1rem;
-  font-family: sans-serif;
+  font-family: var(--font-body);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
@@ -321,17 +369,16 @@ article {
 
 /* Placeholder icon styling */
 .stat-icon {
-  width: 50px;
-  height: 50px;
+  width: 1rem;
+  height: 1rem;
   margin-right: 0.5rem;
   object-fit: contain;
 }
 
 .messages-board {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 1rem;
-  font-family: Arial, sans-serif;
   background-color: var(--color-white);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -356,7 +403,10 @@ article {
 .new-chat-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  align-self: center;
   border: none;
+  background-color: var(--color-white);
   border-radius: 10px;
   padding: 0.5rem 0.5rem;
   font-size: 0.95rem;
@@ -368,127 +418,105 @@ article {
 }
 
 .new-chat-icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 6px;
+  width: 1rem;
+  height: 1rem;
   object-fit: contain;
 }
 
-/* Individual message container */
 .message {
-  display: flex;
-  align-items: flex-start;
-  background-color: #fff;
-  border: 1px solid #eee;
-  border-radius: 6px;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr; /* Left column auto-size, right column flexible */
+  align-items: center;
+  gap: 1rem;                /* Spacing between avatar and body */
+  padding: 1rem;           /* Optional padding */
+  margin-bottom: 1rem;     /* Spacing between multiple messages */
+  border: 1px solid #ccc;  /* Optional border */
+  border-radius: 0.5rem;   /* Optional rounded corners */
+  background-color: var(--color-light-gray)
 }
 
-/* Avatar area for profile picture and online status */
+/* Avatar area */
 .message-avatar {
-  position: relative;
-  margin-right: 1rem;
+  position: relative; /* For the status dot to be positioned inside */
+  display: flex;      /* Keep the image and status in the same container */
+  align-items: center;
 }
 
+/* User profile picture */
 .message-pic {
-  width: 50px;
+  width: 50px;        /* Adjust size as needed */
   height: 50px;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
+  object-fit: cover;  /* Maintains aspect ratio */
+  border-radius: 50%; /* Round avatar if desired */
 }
-/* Online/Offline status indicator */
+
+/* Online/offline status dot */
 .online-status {
   position: absolute;
-  width: 14px;
-  height: 14px;
-  border: 2px solid #fff;
-  border-radius: 50%;
   bottom: 0;
   right: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: green; /* .offline can override this with red, etc. */
+  border: 2px solid #fff;  /* White border for contrast */
+}
+.online-status.offline {
+  background-color: red;
 }
 
-/* Example of color coding for online vs. offline */
-.online {
-  background-color: #28a745; /* Green */
-}
-
-.offline {
-  background-color: #dc3545; /* Red */
-}
-
-/* Message text area */
+/* Message body (middle + right):
+   - 2 columns: text content is 1fr, button area is auto
+*/
 .message-body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;  /* Align text to the left */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center; /* Vertically center text and actions */
+  gap: 1rem;
 }
 
-
-.message-author {
-  margin: 0;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #353535;
-}
-
+/* Author and text sit in the first (1fr) column */
+.message-author,
 .message-text {
-  margin: 0.25rem 0 0;
-  font-size: 0.95rem;
-  color: #555;
+  margin: 0;               /* Remove default paragraph margins */
+  text-align: center;      /* Center text horizontally */
 }
 
-/* Actions area (e.g., "Message Back") */
+/* "Actions" (Reply button) in the second (auto) column */
 .message-actions {
-  margin-top: 0.5rem;
-  align-self: center;       /* Center the button under the text on small screens */
+  display: flex;
+  justify-content: flex-end; /* Button aligns to the right edge */
 }
+
+/************************************************************/
+/*  BUTTON STYLES                                           */
+/************************************************************/
 
 .reply-button {
   display: inline-flex;
   align-items: center;
-  background-color: #D16708;
+  gap: 0.5rem;            /* Space between icon and text */
+  padding: 0.5rem 0.5rem;
   border: none;
-  border-radius: 4px;
-  color: #fff;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.9rem;
+  border-radius: 5px;
   cursor: pointer;
+  background-color: var(--color-white);
+  font: var(--font-body);
 }
 
-.reply-button:hover {
-  background-color: #353535;
-}
-
+/* Reply Icon (optional sizing) */
 .reply-icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 6px;
-  object-fit: contain;
+  width: 1rem;  /* Adjust as needed */
+  height: auto;
 }
 
-/* 'See All Messages' button at bottom */
-.see-all-messages {
-  text-align: center;
-  margin-top: 1rem;
+/* Hover/focus states for better UX */
+.reply-button:hover,
+.reply-button:focus {
+  background-color: var(--color-accent)
+  color: var(--color-white);
 }
 
-.see-all-button {
-  display: inline-flex;
-  align-items: center;
-  background-color: #D16708;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  padding: 0.6rem 1rem;
-  font-size: 0.95rem;
-  cursor: pointer;
-}
-
-.see-all-button:hover {
-  background-color: #353535;
-}
 
 .view-all-icon {
   width: 16px;
@@ -498,9 +526,13 @@ article {
 }
 
 .mine-organasitioner {
+  background-color: var(--color-white);
   padding: 1rem;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 1rem;border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Section heading */
@@ -525,7 +557,7 @@ article {
 
 /* Placeholder images/icons */
 .article-image {
-  max-width: 100%;
+  width: 4rem;
   height: auto;
   display: block;
   margin-bottom: 0.5rem;

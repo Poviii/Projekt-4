@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gen-Fri My Page</title>
   <link rel="stylesheet" href="css/stylesheet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- HEADER -->
   <header class="header">
     <nav class="nav">
@@ -20,9 +22,9 @@
         <img src="icons/black_icons/burgermenu_black.svg" alt="Menu Icon" />
       </button>
 
-      <!-- Brand / Logo Placeholder -->
+      <!-- Brand / Logo  -->
       <div class="brand">
-        <img src="images/logo_sort-ubaggrund.svg" alt="Logo uden baggrund" class="brand_logo" /> 
+        <img src="logos/logo_sort-ubaggrund.svg" alt="Logo uden baggrund" class="brand_logo" /> 
       </div>
 
       <!-- Search Bar (visible on desktop) -->
@@ -39,13 +41,16 @@
 
       <!-- Nav Right Section -->
       <div class="nav-right">
-        <!-- Replace button icons/images with your own -->
         <button class="btn-notifications" aria-label="Notifications">
           <img src="icons/black_icons/notification_black.svg" alt="Notifications Icon" />
         </button>
 
         <button class="btn-messages" aria-label="Messages">
           <img src="icons/black_icons/message_black.svg" alt="Messages Icon" />
+        </button>
+
+        <button class="profil-settings" aria-label="Profil settings">
+          <img src="icons/black_icons/settings_black.svg" alt="Profil settings" />
         </button>
       </div>
     </nav>
@@ -54,9 +59,9 @@
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
       <ul>
         <li><a href="#"><img src="icons/black_icons/homepage_black.svg">Homepage</a></li>
-        <li><a href="#">My Page</a></li>
-        <li><a href="#">Leaderboard</a></li>
-        <li><a href="#">Beskeder</a></li>
+        <li><a href="#"><img src="icons/black_icons/mypage_black.svg">MyPage</a></li>
+        <li><a href="#"><img src="icons/black_icons/leaderboard_black.svg">Leaderboard</a></li>
+        <li><a href="#"><img src="icons/black_icons/message_black.svg">Beskeder</a></li>
       </ul>
     </div>
   </header>
@@ -64,9 +69,9 @@
   <!-- MAIN CONTENT -->
   <main id="main-content">
     <section class="hero">
-      <img src="images/ventilen_logo_large.png" alt="Landing page image" class="hero-image" />
+      <img src="logos/logo orange m sort.svg" alt="Landing page image" class="hero-image" />
       <h1>Velkommen til Gen-Fri</h1>
-      <p>Bliv frivillig allerede i dag!</p>
+      <p>Frivillighed med hjerte og handling!</p>
     </section>
 
     <section class="content-grid">
@@ -80,19 +85,15 @@
           </div>
         </div>
         <div class="profile-stats">
-          <!-- Single badge placeholder for "Level" -->
           <span class="stat">
             <img src="badges/silver_badge.png" alt="Level Badge" class="stat-icon">
             Level: <strong>5</strong>
           </span>
-      
-          <!-- Multiple badges placeholder for "Badges" -->
           <span class="stat">
             <img src="badges/champion_badge.png" alt="Badges Icon" class="stat-icon">
             Badges: <strong>3</strong>
           </span>
       
-          <!-- Generic icon placeholder for "Points" -->
           <span class="stat">
             <img src="icons/black_icons/points_black.svg" alt="Points Icon" class="stat-icon">
             Points: <strong>1200</strong>
@@ -110,9 +111,9 @@
         <!-- Single Message -->
         <div class="message">
           <div class="message-avatar">
-            <!-- Placeholder for profile picture -->
+
             <img src="images/martin.png" alt="Profile Picture" class="message-pic">
-            <!-- Online status placeholder -->
+
             <span class="online-status online" title="User is online"></span>
           </div>
           <div class="message-body">
@@ -145,26 +146,17 @@
             </div>
           </div>
         </div>
-      
-        <!-- 'See All Messages' button -->
-        <div class="see-all-messages">
-          <button class="see-all-button">
-            <img src="icons/black_icons/message_black.svg" alt="View All Icon" class="view-all-icon">
-            Alle beskeder
-          </button>
-        </div>
       </article>
 
       <section class="mine-organasitioner" aria-labelledby="mineOrganasitionerHeading">
         <!-- The heading for the entire section -->
-        <h2 id="mineOrganasitionerHeading">Mine Organasitioner</h2>
+        <h2 id="mineOrganasitionerHeading">Mine Organisationer</h2>
       
         <div class="organasitioner-grid">
-          <!-- Article One -->
           <article>
-            <!-- Placeholder image -->
+
             <img src="images/amnesty_logo.png" alt="Article One Image" class="article-image" />
-            <!-- Placeholder icon -->
+
             <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
             <h3>Amnesty</h3>
             <p>
@@ -174,9 +166,7 @@
       
           <!-- Article Two -->
           <article>
-            <!-- Placeholder image -->
             <img src="images/rode_kors_logo.png" alt="Article Two Image" class="article-image" />
-            <!-- Placeholder icon -->
             <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
             <h3>Røde Kors</h3>
             <p>
@@ -186,9 +176,7 @@
       
           <!-- Article Three -->
           <article>
-            <!-- Placeholder image -->
             <img src="images/coding_pirates.png" alt="Article Three Image" class="article-image" />
-            <!-- Placeholder icon -->
             <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
             <h3>Coding Pirates</h3>
             <p>
@@ -208,7 +196,11 @@
 
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" aria-label="Scroll to Top">
-    &uarr;
+    <img
+      src="icons/black_icons/up_arrow_black.svg"
+      alt=""
+      aria-hidden="true"
+    />
   </button>
 
   <!-- JavaScript -->
