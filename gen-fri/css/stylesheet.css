@@ -168,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 .search-bar input {
   width: 100%;
   padding: 0.4rem;
-  border: 1px solid var(--color-accent);
+  border: 1px solid var(--color-dark);
   border-radius: 4px;
 }
 
@@ -252,6 +252,86 @@ main {
   margin: 0 auto 1rem;
 }
 
+/* Friends Tab Section */
+.friends-tab {
+  background-color: var(--color-white);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+}
+
+.friends-heading {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Friends list container */
+.friends-list {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  background-color: none;
+  border: none;
+  
+}
+
+/* Friend item */
+.friend {
+  position: relative;
+  width: 4rem;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Profile image */
+.friend-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--color-light);
+}
+
+/* Online/offline status indicator */
+.status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+}
+
+.online {
+  background-color: #4caf50;
+}
+
+.offline {
+  background-color: #ccc;
+}
+
+/* Add Friend Button */
+.add-friend button {
+  border: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-friend button:hover
+{opacity: 0.8;}
+
 /* Content grid */
 .content-grid {
   display: flex;
@@ -262,9 +342,8 @@ main {
 /* Article styling */
 article {
   background-color: var(--color-white);
-  border: 1px solid var(--color-dark);
   padding: 1rem;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 /* Optional article image styling */
 .article-image {
@@ -278,9 +357,65 @@ article {
 .footer {
   background-color: var(--color-dark);
   color: var(--color-white);
-  text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.footer-links a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-primary); /* Use your main accent color */
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-socials img {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-socials a:hover img {
+  opacity: 0.6;
+}
+
+/* Responsive layout for wider screens */
+@media (min-width: 600px) {
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 
 /* 7. SCROLL TO TOP BUTTON */
 .scroll-to-top {
@@ -317,6 +452,7 @@ article {
   font-family: var(--font-body);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  margin-top: 1rem;
 }
 
 .profile-header {
@@ -326,9 +462,9 @@ article {
 }
 
 .profile-pic {
-  width: 80px;
-  height: 80px;
-  border-radius: 15%;
+  width: 6rem;
+  height: auto;
+  border-radius: 10px;
   margin-right: 1rem;
   object-fit: cover;
 }
@@ -510,7 +646,7 @@ article {
   height: auto;
 }
 
-/* Hover/focus states for better UX */
+
 .reply-button:hover,
 .reply-button:focus {
   background-color: var(--color-accent)
@@ -530,7 +666,7 @@ article {
   padding: 1rem;
   max-width: 100%;
   margin: 0 auto;
-  padding: 1rem;border-radius: 10px;
+  border-radius: 10px;
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -545,14 +681,43 @@ article {
 .organasitioner-grid {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr; /* 1 column by default */
+  grid-template-columns: 1fr;
 }
 
-/* Each article: you can adjust padding, borders, etc. as needed */
+/* Each article */
 .organasitioner-grid article {
-  background-color: #fff; /* Change this if you have a different background */
+  background-color: var(--color-white);
   padding: 1rem;
   border-radius: 0.5rem;
+  position: relative; /* Needed for absolute positioning of buttons */
+  border: 1px solid #ccc;
+}
+
+/* Top-right stacked buttons */
+.top-buttons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.top-buttons button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.top-buttons img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.top-buttons button:hover img {
+  opacity: 0.7;
 }
 
 /* Placeholder images/icons */
@@ -562,17 +727,82 @@ article {
   display: block;
   margin-bottom: 0.5rem;
 }
+
 .article-icon {
-  width: 25px; /* Adjust size as needed */
+  width: 25px;
   height: 25px;
   margin-right: 0.5rem;
   object-fit: contain;
 }
 
-/* Hide the icon's alt text from assistive technologies if purely decorative */
 .article-icon[aria-hidden="true"] {
   /* No additional styles needed unless desired */
 }
+
+
+/* Tags (hashtags) */
+.update-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.tag {
+  background-color: var(--color-light-gray);
+  color: var(--color-dark);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+/* Like/Comment buttons */
+.update-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-dark);
+  transition: color 0.2s ease;
+}
+
+.action-btn img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.action-btn:hover {
+  color: var(--color-accent);
+}
+
+.like-btn:hover img,
+.comment-btn:hover img {
+  filter: brightness(0) saturate(100%) sepia(1) hue-rotate(10deg) saturate(5) brightness(1.1);
+}
+
+/* Like Button Active State */
+.like-btn.liked {
+  color: var(--color-accent);
+}
+
+.like-btn.liked .heart-icon {
+  filter: brightness(0) saturate(100%) sepia(1) hue-rotate(-10deg) saturate(5) brightness(1.1);
+}
+
+
+
 
 /* Larger screens: switch to a 3-column layout (adjust as needed) */
 @media screen and (min-width: 768px) {

@@ -34,3 +34,43 @@ window.addEventListener('scroll', () => {
 scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+
+
+  const updatesFeed = document.getElementById('updatesFeed');
+
+  function loadMoreUpdates() {
+    const card = document.createElement('article');
+    card.className = 'update-card friend-post';
+    card.innerHTML = `
+      <div class="update-header">
+        <img src="images/friend2.jpg" alt="Nye ven" class="update-avatar" />
+        <div>
+          <h3>Jakob Hansen</h3>
+          <time>${new Date().toLocaleTimeString()}</time>
+        </div>
+      </div>
+      <p class="update-text">Glæder mig til workshop med Coding Pirates i morgen!</p>
+    `;
+    updatesFeed.appendChild(card);
+  }
+
+  updatesFeed.addEventListener('scroll', () => {
+    if (updatesFeed.scrollTop + updatesFeed.clientHeight >= updatesFeed.scrollHeight - 50) {
+      loadMoreUpdates();
+    }
+  });
+
+  document.querySelectorAll('.like-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const isLiked = button.classList.toggle('liked');
+      button.dataset.liked = isLiked;
+
+      const label = button.querySelector('.like-label');
+      label.textContent = isLiked ? 'Synes ikke alligevel' : 'Synes godt om';
+
+      // Optional: handle count
+      // You can store/update a like count span here if you add it
+    });
+  });
+

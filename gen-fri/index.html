@@ -74,6 +74,38 @@
       <p>Frivillighed med hjerte og handling!</p>
     </section>
 
+    <section class="friends-tab" aria-labelledby="friendsHeading">
+      <h2 id="friendsHeading" class="friends-heading">Venner</h2>
+    
+      <ul class="friends-list">
+        <!-- Friend 1 -->
+        <li class="friend">
+          <img src="images/johan.png" alt="Anna" class="friend-avatar" />
+          <span class="status online" title="Online"></span>
+        </li>
+    
+        <!-- Friend 2 -->
+        <li class="friend">
+          <img src="images/lukas.png" alt="Jakob" class="friend-avatar" />
+          <span class="status offline" title="Offline"></span>
+        </li>
+    
+        <!-- Friend 3 -->
+        <li class="friend">
+          <img src="images/mala.png" alt="Mia" class="friend-avatar" />
+          <span class="status online" title="Online"></span>
+        </li>
+    
+        <!-- Add Friend -->
+        <li class="friend add-friend" title="Tilføj ven">
+          <button>
+            <img src="icons/black_icons/add_black.svg" alt="Tilføj ven" />
+          </button>
+        </li>
+      </ul>
+    </section>
+    
+
     <section class="content-grid">
       <div class="profile-card">
         <div class="profile-header">
@@ -149,15 +181,20 @@
       </article>
 
       <section class="mine-organasitioner" aria-labelledby="mineOrganasitionerHeading">
-        <!-- The heading for the entire section -->
         <h2 id="mineOrganasitionerHeading">Mine Organisationer</h2>
       
         <div class="organasitioner-grid">
+          <!-- Article One -->
           <article>
-
-            <img src="images/amnesty_logo.png" alt="Article One Image" class="article-image" />
-
-            <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
+            <div class="top-buttons">
+              <button class="notif-btn" aria-label="Notifikationer">
+                <img src="icons/orange_icons/notification_orange.svg" alt="Notifications Icon" />
+              </button>
+              <button class="message-btn" aria-label="Beskeder">
+                <img src="icons/orange_icons/message_orange.svg" alt="Message Icon" />
+              </button>
+            </div>
+            <img src="images/amnesty_logo.png" alt="Amnesty logo" class="article-image" />
             <h3>Amnesty</h3>
             <p>
               Amnesty International er en global menneskerettighedsorganisation, der kæmper for retfærdighed og lighed.
@@ -166,8 +203,15 @@
       
           <!-- Article Two -->
           <article>
-            <img src="images/rode_kors_logo.png" alt="Article Two Image" class="article-image" />
-            <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
+            <div class="top-buttons">
+              <button class="notif-btn" aria-label="Notifikationer">
+                <img src="icons/orange_icons/notification_orange.svg" alt="Notifications Icon"/>
+              </button>
+              <button class="message-btn" aria-label="Beskeder">
+                <img src="icons/orange_icons/message_orange.svg" alt="Message Icon" />
+              </button>
+            </div>
+            <img src="images/rode_kors_logo.png" alt="Røde Kors logo" class="article-image" />
             <h3>Røde Kors</h3>
             <p>
               Røde Kors er en humanitær organisation, der hjælper mennesker i nød.
@@ -176,8 +220,15 @@
       
           <!-- Article Three -->
           <article>
-            <img src="images/coding_pirates.png" alt="Article Three Image" class="article-image" />
-            <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
+            <div class="top-buttons">
+              <button class="notif-btn" aria-label="Notifikationer">
+                <img src="icons/orange_icons/notification_orange.svg" alt="Notifications Icon" />
+              </button>
+              <button class="message-btn" aria-label="Beskeder">
+                <img src="icons/orange_icons/message_orange.svg" alt="Message Icon" />
+              </button>
+            </div>
+            <img src="images/coding_pirates.png" alt="Coding Pirates logo" class="article-image" />
             <h3>Coding Pirates</h3>
             <p>
               Coding Pirates er en organisation, der underviser børn i programmering og teknologi.
@@ -185,14 +236,129 @@
           </article>
         </div>
       </section>
+
+      <section class="updates-feed" aria-labelledby="updatesFeedHeading">
+        <h2 id="updatesFeedHeading" class="updates-heading">Opdateringer</h2>
+      
+        <div class="updates-feed-container" id="updatesFeed">
+      
+          <!-- Friend Post Example -->
+          <article class="update-card friend-post">
+            <div class="update-header">
+              <img src="images/lucia.png" alt="Anna" class="update-avatar" />
+              <div>
+                <h3>Anna Jensen</h3>
+                <time>for 1 time siden</time>
+              </div>
+            </div>
+            <p class="update-text">Så glad for at have været frivillig hos Coding Pirates i dag 🚀</p>
+            <div class="update-tags">
+              <span class="tag">#frivillig</span>
+              <span class="tag">#codingpirates</span>
+            </div>
+            <div class="update-actions">
+              <button class="action-btn like-btn" data-liked="false" data-count="12">
+                <img src="icons/black_icons/heart.svg" alt="Synes godt om" class="heart-icon" />
+                <span class="like-count">12</span>
+                <span class="burst"></span>
+              </button>
+            
+              <button class="action-btn comment-btn">
+                <img src="icons/black_icons/comment.svg" alt="Kommentér" />
+                Kommentér
+              </button>
+            </div>
+            
+          </article>
+      
+          <!-- News Post Example -->
+          <article class="update-card news-post">
+            <img src="images/rode_kors.png" alt="Breaking news" class="update-image" />
+            <div class="update-content">
+              <h3 class="update-title">FN advarer om klimakrise</h3>
+              <p class="update-text">En ny rapport viser markant stigning i ekstremt vejr. Læs hvad det betyder for os.</p>
+              <div class="update-tags">
+                <span class="tag">#klima</span>
+                <span class="tag">#nyheder</span>
+              </div>
+              <div class="update-actions">
+                <button class="action-btn like-btn" data-liked="false" data-count="12">
+                  <img src="icons/black_icons/heart_black.svg" alt="Synes godt om" class="heart-icon" />
+                  <span class="like-count">12</span>
+                  <span class="burst"></span>
+                </button>
+              
+                <button class="action-btn comment-btn">
+                  <img src="icons/black_icons/comment-black.svg" alt="Kommentér" />
+                  Kommentér
+                </button>
+              </div>
+              
+              <time class="update-time">4 timer siden</time>
+            </div>
+          </article>
+          <article class="update-card news-post">
+            <img src="images/mijan.png" alt="Breaking news" class="update-image" />
+            <div class="update-content">
+              <h3 class="update-title">FN advarer om klimakrise</h3>
+              <p class="update-text">En ny rapport viser markant stigning i ekstremt vejr. Læs hvad det betyder for os.</p>
+              <div class="update-tags">
+                <span class="tag">#klima</span>
+                <span class="tag">#nyheder</span>
+              </div>
+              <div class="update-actions">
+                <button class="action-btn like-btn" data-liked="false" data-count="12">
+                  <img src="icons/black_icons/heart_black.svg" alt="Synes godt om" class="heart-icon" />
+                  <span class="like-count">12</span>
+                  <span class="burst"></span>
+                </button>
+              
+                <button class="action-btn comment-btn">
+                  <img src="icons/black_icons/comment-black.svg" alt="Kommentér" />
+                  Kommentér
+                </button>
+              </div>
+              
+              <time class="update-time">4 timer siden</time>
+            </div>
+          </article>
+      
+        </div>
+      </section>
+      
+      
+      
       
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <p>&copy; 2025 Your Brand. All Rights Reserved.</p>
-  </footer>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <p>&copy; Gen Fri</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Privatlivspolitik</a>
+      <a href="#">Handelsbetingelser</a>
+      <a href="#">Kontakt</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#" aria-label="Facebook">
+        <img src="icons/orange_icons/facebook_orange.svg" alt="Facebook" />
+      </a>
+      <a href="#" aria-label="Twitter">
+        <img src="icons/orange_icons/linkedin_orange.svg" alt="LinkedIn" />
+      </a>
+      <a href="#" aria-label="Instagram">
+        <img src="icons/orange_icons/instagram_orange.svg" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+</footer>
+
 
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" aria-label="Scroll to Top">
