@@ -2,39 +2,217 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Navbar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gen-Fri My Page</title>
   <link rel="stylesheet" href="css/stylesheet.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo"> <img src="images/logo_sort-ubaggrund.svg" alt="Logo uden baggrund"></div>
-    <div class="burger" id="burger">
-      ☰
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav">
+      <!-- Burger Menu Button -->
+      <button 
+        class="burger-menu" 
+        aria-label="Open Menu" 
+        aria-expanded="false"
+      >
+        <img src="icons/black_icons/burgermenu_black.svg" alt="Menu Icon" />
+      </button>
+
+      <!-- Brand / Logo Placeholder -->
+      <div class="brand">
+        <img src="images/logo_sort-ubaggrund.svg" alt="Logo uden baggrund" class="brand_logo" /> 
+      </div>
+
+      <!-- Search Bar (visible on desktop) -->
+      <div class="search-bar">
+        <label for="searchInput" class="visually-hidden">Søg her...</label>
+        <input 
+          type="search" 
+          id="searchInput" 
+          name="search" 
+          placeholder="Search..." 
+          aria-label="Search" 
+        />
+      </div>
+
+      <!-- Nav Right Section -->
+      <div class="nav-right">
+        <!-- Replace button icons/images with your own -->
+        <button class="btn-notifications" aria-label="Notifications">
+          <img src="icons/black_icons/notification_black.svg" alt="Notifications Icon" />
+        </button>
+
+        <button class="btn-messages" aria-label="Messages">
+          <img src="icons/black_icons/message_black.svg" alt="Messages Icon" />
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <ul>
+        <li><a href="#">Homepage</a></li>
+        <li><a href="#">My Page</a></li>
+        <li><a href="#">Leaderboard</a></li>
+        <li><a href="#">Beskeder</a></li>
+      </ul>
     </div>
-    <div class="nav-links" id="nav-links">
-      <a href="#">Homepage</a>
-      <a href="#">Mypage</a>
-      <a href="#">Leaderboard</a>
-      <a href="#">Message</a>
-    </div>
-  </nav>
+  </header>
 
-  <script>
-    const burger = document.getElementById('burger');
-    const navLinks = document.getElementById('nav-links');
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <section class="hero">
+      <img src="images/ventilen_logo_large.png" alt="Landing page image" class="hero-image" />
+      <h1>Velkommen til Gen-Fri</h1>
+      <p>Bliv frivillig allerede i dag!</p>
+    </section>
 
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+    <section class="content-grid">
+      <div class="profile-card">
+        <div class="profile-header">
+          <img src="images/capio.png" alt="Profile Picture" class="profile-pic">
+          <div class="profile-personal-info">
+            <h2 class="profile-name">Casper Hansen</h2>
+            <p class="profile-age">Alder: 27</p>
+            <p class="profile-town">By: Odense</p>
+          </div>
+        </div>
+        <div class="profile-stats">
+          <!-- Single badge placeholder for "Level" -->
+          <span class="stat">
+            <img src="badges/silver_badge.png" alt="Level Badge" class="stat-icon">
+            Level: <strong>5</strong>
+          </span>
+      
+          <!-- Multiple badges placeholder for "Badges" -->
+          <span class="stat">
+            <img src="badges/champion_badge.png" alt="Badges Icon" class="stat-icon">
+            Badges: <strong>3</strong>
+          </span>
+      
+          <!-- Generic icon placeholder for "Points" -->
+          <span class="stat">
+            <img src="icons/black_icons/points_black.svg" alt="Points Icon" class="stat-icon">
+            Points: <strong>1200</strong>
+          </span>
+        </div>
+      </div>
+      <article class="messages-board">
+        <div class="messages-header">
+          <h2>Beskeder</h2>
+          <button class="new-chat-button">
+            <img src="icons/black_icons/message_black.svg" alt="New Chat Icon" class="new-chat-icon">
+          </button>
+        </div>
+      
+        <!-- Single Message -->
+        <div class="message">
+          <div class="message-avatar">
+            <!-- Placeholder for profile picture -->
+            <img src="images/martin.png" alt="Profile Picture" class="message-pic">
+            <!-- Online status placeholder -->
+            <span class="online-status online" title="User is online"></span>
+          </div>
+          <div class="message-body">
+            <p class="message-author">Martin</p>
+            <p class="message-text">Hey! Frisk på lidt frivlligt arbejde?</p>
+            <div class="message-actions">
+              <button class="reply-button">
+                <img src="icons/black_icons/reply_black.svg" alt="Reply Icon" class="reply-icon">
+                Svar
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Another Message -->
+        <div class="message">
+          <div class="message-avatar">
+            <img src="images/mijan.png" alt="Profile Picture" class="message-pic">
+            <!-- Offline status example -->
+            <span class="online-status offline" title="User is offline"></span>
+          </div>
+          <div class="message-body">
+            <p class="message-author">Mijan</p>
+            <p class="message-text">Jeg kan ikke alligevel</p>
+            <div class="message-actions">
+              <button class="reply-button">
+                <img src="icons/black_icons/reply_black.svg" alt="Reply Icon" class="reply-icon">
+                Svar
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- 'See All Messages' button -->
+        <div class="see-all-messages">
+          <button class="see-all-button">
+            <img src="icons/black_icons/message_black.svg" alt="View All Icon" class="view-all-icon">
+            Alle beskeder
+          </button>
+        </div>
+      </article>
 
+      <section class="mine-organasitioner" aria-labelledby="mineOrganasitionerHeading">
+        <!-- The heading for the entire section -->
+        <h2 id="mineOrganasitionerHeading">Mine Organasitioner</h2>
+      
+        <div class="organasitioner-grid">
+          <!-- Article One -->
+          <article>
+            <!-- Placeholder image -->
+            <img src="images/amnesty_logo.png" alt="Article One Image" class="article-image" />
+            <!-- Placeholder icon -->
+            <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
+            <h3>Amnesty</h3>
+            <p>
+              Amnesty International er en global menneskerettighedsorganisation, der kæmper for retfærdighed og lighed.
+            </p>
+          </article>
+      
+          <!-- Article Two -->
+          <article>
+            <!-- Placeholder image -->
+            <img src="images/rode_kors_logo.png" alt="Article Two Image" class="article-image" />
+            <!-- Placeholder icon -->
+            <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
+            <h3>Røde Kors</h3>
+            <p>
+              Røde Kors er en humanitær organisation, der hjælper mennesker i nød.
+            </p>
+          </article>
+      
+          <!-- Article Three -->
+          <article>
+            <!-- Placeholder image -->
+            <img src="images/coding_pirates.png" alt="Article Three Image" class="article-image" />
+            <!-- Placeholder icon -->
+            <img src="icons/black_icons/notification_black.svg" alt="" class="article-icon" aria-hidden="true" />
+            <h3>Coding Pirates</h3>
+            <p>
+              Coding Pirates er en organisation, der underviser børn i programmering og teknologi.
+            </p>
+          </article>
+        </div>
+      </section>
+      
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 Your Brand. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" aria-label="Scroll to Top">
+    &uarr;
+  </button>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
 </body>
+
 </html>

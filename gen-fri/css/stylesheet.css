@@ -1,64 +1,606 @@
+/* 1. RESET or NORMALIZE (optional minimal reset) */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. VARIABLES (for easy color changes) */
+:root {
+  --color-accent: #D16708;  /* Orange */
+  --color-dark: #353535;   /* Dark Gray */
+  --color-white: #FFFFFF;  /* White */
+  --color-black: #000000;  /* Black */
+  --color-light-gray: #F5F5F5; /* Light Gray */
+
+  --font-body: Arial, sans-serif;
+}
+
+/* 3. BASE STYLES */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-light-gray);
+  color: var(--color-dark);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Visually hidden class for screen readers */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; 
+  height: 1px; 
+  padding: 0; 
+  margin: -1px; 
+  overflow: hidden; 
+  clip: rect(0, 0, 0, 0); 
+  border: 0;
+}
+
+/* Skip link styling */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 8px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* 4. HEADER & NAV */
+.header {
+  background-color: var(--color-white);
+  color: var(--color-white);
+  position: relative;
+}
+
+.brand_logo {
+  max-height: 25px;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Navbar (mobile-first) */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.burger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 1.5rem;
+  width: 2rem;
+  padding: 0;
+  margin-right: 1rem;
+}
+
+.burger-menu span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-white);
+  margin-bottom: 4px;
+  border-radius: 2px;
+}
+.burger-menu span:last-child {
+  margin-bottom: 0;
+}
+
+/* Brand Placeholder */
+.brand a {
+  font-weight: bold;
+  color: var(--color-white);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* Optional brand logo styling if used */
+.brand-logo {
+  max-height: 40px;
+  margin-right: 0.5rem;
+}
+
+.btn-notifications {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+}
+
+  .btn-messages {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+} 
+
+/* Search Bar (hidden on mobile) */
+.search-bar {
+  display: none; /* Shown on desktop via media query */
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.4rem;
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+}
+
+/* Nav Right Section */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+}
+.nav-btn:hover,
+.nav-btn:focus {
+  color: var(--color-accent);
+}
+
+/* Mobile Nav (collapsed menu) */
+.mobile-nav {
+  background-color: var(--color-white);
+  padding: 1rem;
+  display: none;
+}
+.mobile-nav ul {
+  list-style: none;
+}
+.mobile-nav li {
+  margin: 0.5rem 0;
+}
+.mobile-nav a {
+  color: var(--color-dark);
+}
+
+/* Reveal the mobile nav when .nav-open is applied to .header */
+.header.nav-open .mobile-nav {
+  display: block;
+}
+
+/* 5. MAIN CONTENT */
+main {
+  padding: 1rem;
+}
+
+/* Hero section */
+.hero {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+/* Optional hero image styling */
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* Content grid */
+.content-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Article styling */
+article {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-dark);
+  padding: 1rem;
+  border-radius: 5px;
+}
+/* Optional article image styling */
+.article-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* 6. FOOTER */
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* 7. SCROLL TO TOP BUTTON */
+.scroll-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--color-accent);
+  border: none;
+  color: var(--color-white);
+  padding: 0.7rem 0.9rem;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: none; /* hidden by default */
+}
+.scroll-to-top:hover,
+.scroll-to-top:focus {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.profile-card {
+  width: 100%;
+  background-color: var(--color-white);
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 15%;
+  margin-right: 1rem;
+  object-fit: cover;
+}
+
+.profile-personal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.profile-age,
+.profile-town {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.stat {
+  background-color: var(--color-white);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Placeholder icon styling */
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5rem;
+  object-fit: contain;
+}
+
+.messages-board {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  background-color: var(--color-white);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: none;
+}
+
+/* Header area: Title + "New Chat" button */
+.messages-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.messages-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--color-dark);
+}
+
+/* "New Chat" button */
+.new-chat-button {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.new-chat-button:hover {
+  background-color: #D16708
+}
+
+.new-chat-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  object-fit: contain;
+}
+
+/* Individual message container */
+.message {
+  display: flex;
+  align-items: flex-start;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Avatar area for profile picture and online status */
+.message-avatar {
+  position: relative;
+  margin-right: 1rem;
+}
+
+.message-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+/* Online/Offline status indicator */
+.online-status {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+}
+
+/* Example of color coding for online vs. offline */
+.online {
+  background-color: #28a745; /* Green */
+}
+
+.offline {
+  background-color: #dc3545; /* Red */
+}
+
+/* Message text area */
+.message-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* Align text to the left */
+}
+
+
+.message-author {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #353535;
+}
+
+.message-text {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Actions area (e.g., "Message Back") */
+.message-actions {
+  margin-top: 0.5rem;
+  align-self: center;       /* Center the button under the text on small screens */
+}
+
+.reply-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #D16708;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.reply-button:hover {
+  background-color: #353535;
+}
+
+.reply-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  object-fit: contain;
+}
+
+/* 'See All Messages' button at bottom */
+.see-all-messages {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.see-all-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #D16708;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.see-all-button:hover {
+  background-color: #353535;
+}
+
+.view-all-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  object-fit: contain;
+}
+
+.mine-organasitioner {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section heading */
+.mine-organasitioner h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid container */
+.organasitioner-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr; /* 1 column by default */
+}
+
+/* Each article: you can adjust padding, borders, etc. as needed */
+.organasitioner-grid article {
+  background-color: #fff; /* Change this if you have a different background */
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Placeholder images/icons */
+.article-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.article-icon {
+  width: 25px; /* Adjust size as needed */
+  height: 25px;
+  margin-right: 0.5rem;
+  object-fit: contain;
+}
+
+/* Hide the icon's alt text from assistive technologies if purely decorative */
+.article-icon[aria-hidden="true"] {
+  /* No additional styles needed unless desired */
+}
+
+/* Larger screens: switch to a 3-column layout (adjust as needed) */
+@media screen and (min-width: 768px) {
+  .organasitioner-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  body {
-    font-family: sans-serif;
+}
+
+/* Further accessibility & responsiveness:
+   - Ensure sufficient color contrast.
+   - Use scalable font sizes (e.g., rem instead of px).
+   - Adjust the layout for narrower devices if needed. */
+
+/* 8. MEDIA QUERIES */
+/* Tablet breakpoint (example: 600px) */
+@media (min-width: 600px) {
+  .content-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
+  .content-grid article {
+    flex: 1 1 calc(50% - 1rem);
+  }
+  .message-body {
+    flex-direction: row;    /* Place text and button side-by-side */
     align-items: center;
-    background: #333;
-    color: white;
-    padding: 1rem;
+    justify-content: space-between; /* Text on the left, button on the right */
   }
-  
-  .logo {
-    width: 10px;
-    height: 10px;
+  .message-actions {
+    margin-top: 0;          
+    align-self: flex-end !important;
   }
-  
-  .burger {
-    font-size: 1.5rem;
-    cursor: pointer;
-    display: block;
+}
+
+/* Desktop breakpoint (example: 900px) */
+@media (min-width: 900px) {
+  .burger-menu {
+    display: none; /* If you prefer a typical horizontal nav on desktop */
   }
-  
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #444;
+
+  .search-bar {
+    display: block; /* Show the search bar on desktop */
   }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    padding: 1rem;
-    border-top: 1px solid #555;
+
+  .nav {
+    justify-content: flex-start;
   }
-  
-  .nav-links.active {
-    display: flex;
+  .brand {
+    margin-right: 2rem;
   }
-  
-  /* Desktop view */
-  @media (min-width: 768px) {
-    .burger {
-      display: none;
-    }
-  
-    .nav-links {
-      display: flex;
-      flex-direction: row;
-      background: none;
-    }
-  
-    .nav-links a {
-      border: none;
-      padding: 0 1rem;
-    }
+  .nav-right {
+    margin-left: auto;
   }
+  .message-body {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .message-actions {
+    margin-top: 0;
+    align-self: flex-end !important;
+  }
+}
