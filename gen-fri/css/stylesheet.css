@@ -25,7 +25,7 @@ body {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-dark);
   text-decoration: none;
 }
 
@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .search-bar input {
-  width: 100%;
+  width: 30%;
   padding: 0.4rem;
   border: 1px solid var(--color-dark);
   border-radius: 4px;
@@ -179,13 +179,11 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.5rem;
 }
 
-.nav-btn {
-  background: none;
-  border: none;
-  color: var(--color-white);
-  cursor: pointer;
-  font-size: 1.1rem;
-  margin-left: 1rem;
+.nav-right button img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  display: block;
 }
 .nav-btn:hover,
 .nav-btn:focus {
@@ -269,15 +267,9 @@ main {
 /* Friends list container */
 .friends-list {
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-wrap: wrap;
-  background-color: none;
-  border: none;
-  
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 1rem; /* Add spacing between friends */
+  justify-content: center; /* Center the friends list */  
 }
 
 /* Friend item */
@@ -286,7 +278,11 @@ main {
   width: 4rem;
   height: auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+flex: 1 1 calc(25% - 1rem); /* Four columns on larger screens */
+  max-width: 100px; /* Limit the size of each friend card */
 }
+
+
 
 /* Profile image */
 .friend-avatar {
@@ -335,9 +331,11 @@ main {
 /* Content grid */
 .content-grid {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: column; /* Stack sections vertically by default */
+  gap: 1rem; /* Add spacing between sections */
 }
+
+
 
 /* Article styling */
 article {
@@ -407,14 +405,6 @@ article {
   opacity: 0.6;
 }
 
-/* Responsive layout for wider screens */
-@media (min-width: 600px) {
-  .footer-container {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
 
 
 /* 7. SCROLL TO TOP BUTTON */
@@ -649,7 +639,7 @@ article {
 
 .reply-button:hover,
 .reply-button:focus {
-  background-color: var(--color-accent)
+  background-color: var(--color-accent);
   color: var(--color-white);
 }
 
@@ -735,10 +725,6 @@ article {
   object-fit: contain;
 }
 
-.article-icon[aria-hidden="true"] {
-  /* No additional styles needed unless desired */
-}
-
 
 /* Tags (hashtags) */
 .update-tags {
@@ -758,11 +744,71 @@ article {
 }
 
 /* Like/Comment buttons */
+.loading-indicator {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin: 1.5rem 0;
+  display: none;
+}
+/* Scrollable feed area */
+.updates-scroll-box {
+  max-height: 500px; /* Adjust height */
+  overflow-y: auto;
+  padding-right: 10px; /* prevent scrollbar from overlapping content */
+  scroll-behavior: smooth;
+  border-radius: 10px;
+  background: var(--color-white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 2px solid var(--color-accent);
+}
+
+/* Optional: Custom scrollbar */
+.updates-scroll-box::-webkit-scrollbar {
+  width: 6px;
+}
+.updates-scroll-box::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+/* Ensure feed items don't stretch too wide */
+.updates-feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+}
+
+.loading-indicator {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin: 1rem 0;
+  display: none;
+}
+.update-image {
+  width: 4rem;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
 .update-actions {
   display: flex;
   gap: 1rem;
   margin-top: 0.75rem;
 }
+
+/* Styling for the divider */
+.divider {
+  border: none; 
+  height: 1px;  
+  background-color: #353535; 
+  margin: 20px 0; 
+  opacity: 0.3; 
+}
+
 
 .action-btn {
   display: inline-flex;
@@ -801,68 +847,478 @@ article {
   filter: brightness(0) saturate(100%) sepia(1) hue-rotate(-10deg) saturate(5) brightness(1.1);
 }
 
+/* Næste Events Section */
+.next-events-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.next-events-section h2 {
+  text-align: left;
+  font-size: 2rem; /* Use rem for scalability */
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Container for Horizontal Scrolling */
+.events-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  gap: 2rem; /* Space between the cards */
+  padding-bottom: 2rem; /* To avoid overlap with the scrollbar */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Event Card Styling */
+.event-card {
+  width: 250px; /* Fixed width for each event card */
+  height: 400px; /* Fixed height to ensure uniform size */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0; /* Prevent shrinking */
+  display: flex;
+  flex-direction: column; /* Arrange elements in a column */
+}
+
+.event-image {
+  width: 100%;
+  height: 12rem; /* Fixed height for the image */
+  object-fit: cover; /* Ensure image covers the space without distortion */
+}
+
+/* Content Section Styling */
+.event-content {
+  padding: 1.5rem;
+  flex-grow: 1; /* Allow the content to grow and fill space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure space is evenly distributed */
+}
+
+/* Title Styling */
+.event-content h3 {
+  font-size: 1.5rem; /* Use rem for better scalability */
+  font-weight: bold;
+  margin: 0; /* Remove any default margin */
+  padding-bottom: 0.5rem; /* Consistent space below title */
+  text-align: center; /* Center the title */
+  line-height: 1.2; /* Ensures the text has proper spacing */
+  height: 2.5rem; /* Set a fixed height for consistent sizing of <h3> */
+  overflow: hidden; /* Ensure long titles don’t push layout */
+  display: flex;
+  justify-content: center; /* Center title vertically */
+  align-items: center; /* Center title vertically */
+}
+
+/* Event Description Styling */
+.event-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allow description to take up available space */
+}
+
+/* Event Details Styling */
+.event-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem; /* Smaller font size for details */
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.event-details img {
+  width: 1rem; /* Use rem for icon size */
+  height: 1rem;
+  margin-right: 0.5rem;
+}
+
+/* Styling for the Deltag Button */
+.participate-btn {
+  background-color: #d16708; /* Set to the requested hex color */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Ensure button stays at the bottom of the card */
+  width: 100%; /* Full width button */
+}
+
+.participate-btn:hover {
+  background-color: #353535; /* Darker shade on hover */
+}
+
+.participate-btn:active {
+  background-color: #2b2b2b; /* Even darker shade on active */
+}
 
 
 
-/* Larger screens: switch to a 3-column layout (adjust as needed) */
-@media screen and (min-width: 768px) {
+
+
+
+/* Calendar Section Styling */
+.calendar-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Styling for Navigation Buttons */
+.calendar-nav {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.calendar-nav img {
+  width: 20px;
+  height: 20px;
+}
+
+#calendar-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Calendar Grid and Day Names Styling */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.day-name {
+  font-weight: bold;
+  color: #333;
+  padding: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Styling for Calendar Days */
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+
+.calendar-day {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background-color: #e0e0e0;
+}
+
+.selected {
+  background-color: #28a745;
+  color: white;
+}
+
+.current-day {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+/* Event Icons in Days */
+.event-icon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+/* Styling for Popup */
+.event-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button.save-event {
+  background-color: #28a745;
+}
+
+button.close-popup {
+  background-color: #dc3545;
+}
+
+
+
+
+
+
+
+/* --- Mobile First Styles (default styles apply below 480px) --- */
+
+/* --- Breakpoint 1: Small devices (min-width: 480px) --- */
+@media (min-width: 480px) {
+  .friend {
+    flex: 1 1 calc(50% - 1rem); /* Two columns on mobile */
+  }
+}
+
+/* --- Breakpoint 2: Medium devices / tablets (min-width: 768px) --- */
+@media (min-width: 768px) {
   .organasitioner-grid {
     grid-template-columns: repeat(3, 1fr);
   }
-}
 
-/* Further accessibility & responsiveness:
-   - Ensure sufficient color contrast.
-   - Use scalable font sizes (e.g., rem instead of px).
-   - Adjust the layout for narrower devices if needed. */
-
-/* 8. MEDIA QUERIES */
-/* Tablet breakpoint (example: 600px) */
-@media (min-width: 600px) {
   .content-grid {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column; /* Changed from row to column */
+    flex-wrap: nowrap; /* Prevent wrapping */
   }
+
+  .content-grid > *,
   .content-grid article {
-    flex: 1 1 calc(50% - 1rem);
+    flex: unset; /* Remove forced sizing */
+    max-width: 100%; /* Full width */
   }
-  .message-body {
-    flex-direction: row;    /* Place text and button side-by-side */
-    align-items: center;
-    justify-content: space-between; /* Text on the left, button on the right */
-  }
-  .message-actions {
-    margin-top: 0;          
-    align-self: flex-end !important;
-  }
-}
-
-/* Desktop breakpoint (example: 900px) */
-@media (min-width: 900px) {
-  .burger-menu {
-    display: none; /* If you prefer a typical horizontal nav on desktop */
+  .profile-card,
+  .friends-tab {
+    max-width: 100%;
   }
 
-  .search-bar {
-    display: block; /* Show the search bar on desktop */
-  }
 
-  .nav {
-    justify-content: flex-start;
-  }
-  .brand {
-    margin-right: 2rem;
-  }
-  .nav-right {
-    margin-left: auto;
-  }
   .message-body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
+
   .message-actions {
     margin-top: 0;
     align-self: flex-end !important;
   }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .friend {
+    flex: 1 1 calc(33.33% - 1rem); /* Three columns on tablets */
+  }
+
+  .next-events-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .events-container {
+    gap: 1rem;
+  }
+
+  .event-card {
+    width: 200px;
+  }
+
+  .event-content {
+    padding: 1rem;
+  }
+
+  .event-description {
+    font-size: 0.9rem;
+  }
+
+  .participate-btn {
+    padding: 0.5rem 1rem;
+  }
 }
+
+/* --- Breakpoint 3: Large devices / desktops (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .burger-menu {
+    display: none;
+  }
+
+  .search-bar {
+    display: block;
+  }
+
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .brand {
+    margin-right: 2rem;
+  }
+
+  .nav-right {
+    margin-left: auto;
+  }
+
+  .message-body {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .message-actions {
+    margin-top: 0;
+    align-self: flex-end !important;
+  }
+
+  .content-grid {
+    flex-direction: column; /* Same as mobile/tablet */
+    gap: 1rem;
+  }
+
+  .profile-card,
+  .friends-tab {
+    flex: unset;
+    max-width: 100%;
+  }
+
+  .next-events-section {
+    padding: 1.5rem;
+  }
+
+  .event-card {
+    width: 100%;
+  }
+  /* Show Sidebar, Hide Mobile Nav */
+  .mobile-nav {
+    display: none !important;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--color-white);
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+  }
+
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--color-dark);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+
+  .sidebar a:hover,
+  .sidebar a:focus {
+    background-color: var(--color-light-gray);
+  }
+
+  .main-with-sidebar {
+    margin-left: 250px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+
+  .profile-card {
+    grid-column: span 4;
+  }
+
+  .friends-tab {
+    grid-column: span 4;
+  }
+
+  .updates-feed-container {
+    grid-column: span 8;
+  }
+
+  .mine-organasitioner {
+    grid-column: span 8;
+  }
+  /* Optional: Style for sidebar nav icons */
+  .sidebar img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  }
+}
+/* Optional wrapper on desktop */
+@media (min-width: 1024px) {
+  main {
+    padding: 0;
+  }
+}
+

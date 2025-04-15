@@ -65,6 +65,8 @@
       </ul>
     </div>
   </header>
+  
+  
 
   <!-- MAIN CONTENT -->
   <main id="main-content">
@@ -238,93 +240,291 @@
       </section>
 
       <section class="updates-feed" aria-labelledby="updatesFeedHeading">
-        <h2 id="updatesFeedHeading" class="updates-heading">Opdateringer</h2>
+        <div class="updates-scroll-box">
+          <div class="updates-feed-container" id="updatesFeed">
+            <h2 id="updatesFeedHeading" class="updates-heading">Opdateringer</h2>
       
-        <div class="updates-feed-container" id="updatesFeed">
-      
-          <!-- Friend Post Example -->
-          <article class="update-card friend-post">
-            <div class="update-header">
-              <img src="images/lucia.png" alt="Anna" class="update-avatar" />
-              <div>
-                <h3>Anna Jensen</h3>
-                <time>for 1 time siden</time>
+            <!-- Post 1: Digital Platform for Volunteering -->
+            <article class="update-card news-post">
+              <img src="logos/Logo sort m orange.svg" class="update-image" alt="Ny digital platform for frivilligt arbejde" />
+              <div class="update-content">
+                <h3 class="update-title">Ny digital platform gør frivilligt arbejde lettere!</h3>
+                <p class="update-text">En ny platform giver et overblik over NGO’er, events og fællesskaber for at hjælpe unge med at finde frivillige muligheder.</p>
+                <div class="update-tags">
+                  <span class="tag">#frivilligtarbejde</span>
+                  <span class="tag">#digitalisering</span>
+                </div>
+                <time class="update-time">2 timer siden</time>
               </div>
-            </div>
-            <p class="update-text">Så glad for at have været frivillig hos Coding Pirates i dag 🚀</p>
-            <div class="update-tags">
-              <span class="tag">#frivillig</span>
-              <span class="tag">#codingpirates</span>
-            </div>
-            <div class="update-actions">
-              <button class="action-btn like-btn" data-liked="false" data-count="12">
-                <img src="icons/black_icons/heart.svg" alt="Synes godt om" class="heart-icon" />
-                <span class="like-count">12</span>
-                <span class="burst"></span>
-              </button>
-            
-              <button class="action-btn comment-btn">
-                <img src="icons/black_icons/comment.svg" alt="Kommentér" />
-                Kommentér
-              </button>
-            </div>
-            
-          </article>
-      
-          <!-- News Post Example -->
-          <article class="update-card news-post">
-            <img src="images/rode_kors.png" alt="Breaking news" class="update-image" />
-            <div class="update-content">
-              <h3 class="update-title">FN advarer om klimakrise</h3>
-              <p class="update-text">En ny rapport viser markant stigning i ekstremt vejr. Læs hvad det betyder for os.</p>
+            </article>
+            <hr class="divider">
+            <!-- Post 2: Personal Experience with Volunteering -->
+            <article class="update-card">
+              <div class="update-header">
+                <img src="images/lucia.png" alt="Marie" class="update-avatar" />
+                <div>
+                  <h3>Marie Andersen</h3>
+                  <time>for 3 timer siden</time>
+                </div>
+              </div>
+              <p class="update-text">“Jeg var nervøs for at starte med frivilligt arbejde, men efter at have fundet en platform med nemme muligheder, var det faktisk ret sjovt og givende!”</p>
               <div class="update-tags">
-                <span class="tag">#klima</span>
-                <span class="tag">#nyheder</span>
+                <span class="tag">#frivilligtarbejde</span>
+                <span class="tag">#personligudvikling</span>
               </div>
-              <div class="update-actions">
-                <button class="action-btn like-btn" data-liked="false" data-count="12">
-                  <img src="icons/black_icons/heart_black.svg" alt="Synes godt om" class="heart-icon" />
-                  <span class="like-count">12</span>
-                  <span class="burst"></span>
-                </button>
-              
-                <button class="action-btn comment-btn">
-                  <img src="icons/black_icons/comment-black.svg" alt="Kommentér" />
-                  Kommentér
-                </button>
+            </article>
+            <hr class="divider">
+            <!-- Post 3: Friend Shared an Article -->
+            <article class="update-card friend-post">
+              <div class="update-header">
+                <img src="images/johan.png" alt="Johan" class="update-avatar" />
+                <div>
+                  <h3>@johan syntes godt om et opslag</h3>
+                  <time>for 5 minutter siden</time>
+                </div>
               </div>
-              
-              <time class="update-time">4 timer siden</time>
-            </div>
-          </article>
-          <article class="update-card news-post">
-            <img src="images/mijan.png" alt="Breaking news" class="update-image" />
-            <div class="update-content">
-              <h3 class="update-title">FN advarer om klimakrise</h3>
-              <p class="update-text">En ny rapport viser markant stigning i ekstremt vejr. Læs hvad det betyder for os.</p>
+              <p class="update-text">"Tjek denne artikel ud! Det er virkelig vigtigt at få flere unge til at tage ansvar for deres lokalsamfund." 🌍</p>
+            </article>
+            <hr class="divider">
+            <!-- Post 4: Personal Post about Skills and CV Building -->
+            <article class="update-card">
+              <div class="update-header">
+                <img src="images/lukas.png" alt="Frederik" class="update-avatar" />
+                <div>
+                  <h3>Frederik Sørensen</h3>
+                  <time>for 1 time siden</time>
+                </div>
+              </div>
+              <p class="update-text">“Har lige opdateret mit CV med de færdigheder, jeg har opnået gennem frivilligt arbejde. Fantastisk at kunne vise, hvad man har lært!”</p>
               <div class="update-tags">
-                <span class="tag">#klima</span>
-                <span class="tag">#nyheder</span>
+                <span class="tag">#CV</span>
+                <span class="tag">#frivilligtarbejde</span>
               </div>
-              <div class="update-actions">
-                <button class="action-btn like-btn" data-liked="false" data-count="12">
-                  <img src="icons/black_icons/heart_black.svg" alt="Synes godt om" class="heart-icon" />
-                  <span class="like-count">12</span>
-                  <span class="burst"></span>
-                </button>
-              
-                <button class="action-btn comment-btn">
-                  <img src="icons/black_icons/comment-black.svg" alt="Kommentér" />
-                  Kommentér
-                </button>
+            </article>
+            <hr class="divider">
+            <!-- Post 5: News Post about Youth Motivation for Volunteering -->
+            <article class="update-card news-post">
+              <img src="images/ventilen_logo.png" class="update-image" alt="Unge og frivilligt arbejde" />
+              <div class="update-content">
+                <h3 class="update-title">Unge vil gerne hjælpe – men barrierer stopper dem</h3>
+                <p class="update-text">Mange unge har lyst til at hjælpe, men barrierer som manglende tid og energi gør det svært at komme i gang.</p>
+                <div class="update-tags">
+                  <span class="tag">#ungdom</span>
+                  <span class="tag">#frivilligtarbejde</span>
+                </div>
+                <time class="update-time">for 30 minutter siden</time>
               </div>
-              
-              <time class="update-time">4 timer siden</time>
-            </div>
-          </article>
+            </article>
+            <hr class="divider">
+            <!-- Post 6: Friend Shared an Event -->
+            <article class="update-card friend-post">
+              <div class="update-header">
+                <img src="images/lucia.png" alt="Anna" class="update-avatar" />
+                <div>
+                  <h3>@anna syntes godt om et opslag</h3>
+                  <time>for 20 minutter siden</time>
+                </div>
+              </div>
+              <p class="update-text">"Der er et fedt event for frivillige i denne weekend – det er en god chance for at møde nye mennesker og lære noget!"</p>
+            </article>
+            <hr class="divider">
+            <!-- Post 7: News Post about Volunteer Badges -->
+            <article class="update-card news-post">
+              <img src="badges/champion_badge.png" class="update-image" alt="Frivillige badges og kvalifikationer" />
+              <div class="update-content">
+                <h3 class="update-title">Badges og kvalifikationer for frivillige giver værdi!</h3>
+                <p class="update-text">Frivillige kan nu optjene badges og delbare kvalifikationer, der gør deres indsats mere konkret og værdifuld for fremtidige jobmuligheder.</p>
+                <div class="update-tags">
+                  <span class="tag">#frivilligtarbejde</span>
+                  <span class="tag">#kompetencer</span>
+                </div>
+                <time class="update-time">for 1 time siden</time>
+              </div>
+            </article>
+            <hr class="divider">
+            <!-- Post 8: Personal Post about Networking -->
+            <article class="update-card">
+              <div class="update-header">
+                <img src="images/lucia.png" alt="Sara" class="update-avatar" />
+                <div>
+                  <h3>Sara Madsen</h3>
+                  <time>for 2 timer siden</time>
+                </div>
+              </div>
+              <p class="update-text">“Mødte nogle super spændende mennesker gennem mit frivillige arbejde i går. Det føles godt at bidrage og netværke samtidig!”</p>
+              <div class="update-tags">
+                <span class="tag">#netværk</span>
+                <span class="tag">#frivilligtarbejde</span>
+              </div>
+            </article>
+
       
+          </div>
         </div>
       </section>
+
+      <section class="next-events-section">
+        <h2>Næste events</h2>
+      
+        <div class="events-container">
+          <!-- Event 1 -->
+          <div class="event-card">
+            <img src="images/event1.jpg" alt="Miljørensning" class="event-image" />
+            <div class="event-content">
+              <h3>Frivillig Miljørensning</h3>
+              <p class="event-description">Ryd op i lokalområdet og vær med til at skabe en renere fremtid.</p>
+              <div class="event-details">
+                <span class="event-date"><img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" /> 05/04/2025</span>
+                <span class="event-location"><img src="icons/black_icons/map_black.svg" alt="Location Icon" /> Sønderborg</span>
+              </div>
+              <button class="participate-btn">Deltag</button>
+            </div>
+          </div>
+      
+          <!-- Event 2 -->
+          <div class="event-card">
+            <img src="images/event2.jpg" alt="Padelturnering" class="event-image" />
+            <div class="event-content">
+              <h3>Padelturnering for Unge</h3>
+              <p class="event-description">Tilmeld dig og vær med til at spille padel i en sjov og afslappet atmosfære.</p>
+              <div class="event-details">
+                <span class="event-date"><img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" /> 20/04/2025</span>
+                <span class="event-location"><img src="icons/black_icons/map_black.svg" alt="Location Icon" /> Odense</span>
+              </div>
+              <button class="participate-btn">Deltag</button>
+            </div>
+          </div>
+      
+          <!-- Event 3 -->
+          <div class="event-card">
+            <img src="images/event3.jpg" alt="Hackathon" class="event-image" />
+            <div class="event-content">
+              <h3>Hackathon for Sociale Initiativer</h3>
+              <p class="event-description">Udvikl innovative løsninger, der kan gøre en forskel i samfundet.</p>
+              <div class="event-details">
+                <span class="event-date"><img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" /> 25/04/2025</span>
+                <span class="event-location"><img src="icons/black_icons/map_black.svg" alt="Location Icon" /> København</span>
+              </div>
+              <button class="participate-btn">Deltag</button>
+            </div>
+          </div>
+      
+          <!-- Event 4 -->
+          <div class="event-card">
+            <img src="images/event4.jpg" alt="Workshop om Frivilligt Arbejde" class="event-image" />
+            <div class="event-content">
+              <h3>Workshop om Frivilligt Arbejde</h3>
+              <p class="event-description">Lær hvordan du kan bruge frivilligt arbejde til at styrke dit CV.</p>
+              <div class="event-details">
+                <span class="event-date"><img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" /> 02/05/2025</span>
+                <span class="event-location"><img src="icons/black_icons/map_black.svg" alt="Location Icon" /> Online</span>
+              </div>
+              <button class="participate-btn">Deltag</button>
+            </div>
+          </div>
+      
+          <!-- Event 5 -->
+          <div class="event-card">
+            <img src="images/event5.jpg" alt="Fællesspisning" class="event-image" />
+            <div class="event-content">
+              <h3>Fællesspisning for Unge</h3>
+              <p class="event-description">Kom og mød nye mennesker over en fælles middag.</p>
+              <div class="event-details">
+                <span class="event-date"><img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" /> 10/05/2025</span>
+                <span class="event-location"><img src="icons/black_icons/map_black.svg" alt="Location Icon" /> København</span>
+              </div>
+              <button class="participate-btn">Deltag</button>
+            </div>
+          </div>
+      
+          <!-- Event 6 -->
+          <div class="event-card">
+            <img src="images/event6.jpg" alt="Debat om Unge i Samfundet" class="event-image" />
+            <div class="event-content">
+              <h3>Online Debat om Unge i Samfundet</h3>
+              <p class="event-description">Diskuter unges rolle i samfundet med eksperter og medborgere.</p>
+              <div class="event-details">
+                <span class="event-date"><img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" /> 15/05/2025</span>
+                <span class="event-location"><img src="icons/black_icons/map_black.svg" alt="Location Icon" /> Online</span>
+              </div>
+              <button class="participate-btn">Deltag</button>
+            </div>
+          </div>
+      
+          <!-- Event 7 -->
+          <div class="event-card">
+            <img src="images/event7.jpg" alt="Udendørs Yoga for Mental Sundhed" class="event-image" />
+            <div class="event-content">
+              <h3>Udendørs Yoga for Mental Sundhed</h3>
+              <p class="event-description">Oplev fordelene ved yoga for mental sundhed i naturen.</p>
+              <div class="event-details">
+                <span class="event-date"><img src="icons/black_icons/calendar_black.svg" alt="Calendar Icon" /> 20/05/2025</span>
+                <span class="event-location"><img src="icons/black_icons/map_black.svg" alt="Location Icon" /> Aarhus</span>
+              </div>
+              <button class="participate-btn">Deltag</button>
+            </div>
+          </div>
+      
+          <!-- More event cards as needed... -->
+        </div>
+      </section>
+      
+      
+      
+      
+      <section class="calendar-section">
+        <div class="calendar-header">
+          <!-- Previous Year Button with Icon -->
+          <button class="calendar-nav prev-year" onclick="changeYear(-1)">
+            <img src="icons/orange_icons/left_arrow_orange.svg" alt="Previous Year" class="nav-icon" />
+          </button>
+      
+          <!-- Previous Month Button with Icon -->
+          <button class="calendar-nav prev-month" onclick="changeMonth(-1)">
+            <img src="icons/black_icons/left_arrow_black.svg" alt="Previous Month" class="nav-icon" />
+          </button>
+      
+          <h2 id="calendar-title">April 2025</h2>
+      
+          <!-- Next Month Button with Icon -->
+          <button class="calendar-nav next-month" onclick="changeMonth(1)">
+            <img src="icons/black_icons/right_arrow_black.svg" alt="Next Month" class="nav-icon" />
+          </button>
+      
+          <!-- Next Year Button with Icon -->
+          <button class="calendar-nav next-year" onclick="changeYear(1)">
+            <img src="icons/orange_icons/right_arrow_orange.svg" alt="Next Year" class="nav-icon" />
+          </button>
+        </div>
+      
+        <div class="calendar-grid">
+          <!-- Calendar Day Names -->
+          <div class="day-name">Man</div>
+          <div class="day-name">Tir</div>
+          <div class="day-name">Ons</div>
+          <div class="day-name">Tor</div>
+          <div class="day-name">Fre</div>
+          <div class="day-name">Lør</div>
+          <div class="day-name">Søn</div>
+        </div>
+      
+        <div class="calendar-days">
+          <!-- Calendar Days will be populated dynamically -->
+        </div>
+      
+        <div id="event-popup" class="event-popup">
+          <div class="popup-content">
+            <h3>Event for <span id="event-date"></span></h3>
+            <textarea id="event-details" placeholder="Tilføj en beskrivelse..."></textarea>
+            <button class="save-event" onclick="saveEvent()">Gem</button>
+            <button class="close-popup" onclick="closePopup()">Luk</button>
+          </div>
+        </div>
+      </section>
+      
+      
+      
+      
       
       
       
