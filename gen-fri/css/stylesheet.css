@@ -1143,8 +1143,7 @@ button.close-popup {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #333;
-  color: white;
+  background: var(--color-accent);
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -1153,6 +1152,7 @@ button.close-popup {
   cursor: pointer;
   z-index: 2;
 }
+
 .nav-button.left {
   left: 0px;
 }
