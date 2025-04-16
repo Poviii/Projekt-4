@@ -5,35 +5,35 @@ const carouselEvents = [
       location: "Odense",
       date: "26. maj",
       org: "Ventilen",
-      logo: "img/ventilen-logo.webp"
+      logo: "images/ventilen-logo.webp"
     },
     {
       title: "Landsindsamling",
       location: "Odense",
       date: "5. juni",
       org: "Røde Kors",
-      logo: "img/roede-kors-logo.webp"
+      logo: "images/roede-kors-logo.webp"
     },
     {
       title: "Regions møde",
       location: "Odense",
       date: "13. juni",
       org: "Coding Pirates",
-      logo: "img/coding-pirate-logo.webp"
+      logo: "images/coding-pirate-logo.webp"
     },
     {
       title: "Fællesspisning",
       location: "Odense",
       date: "20. juni",
       org: "Ventilen",
-      logo: "img/ventilen-logo.webp"
+      logo: "images/ventilen-logo.webp"
     },
     {
       title: "Ferielejre møde",
       location: "Odense",
       date: "28. juni",
       org: "Rød kors",
-      logo: "img/roede-kors-logo.webp"
+      logo: "images/roede-kors-logo.webp"
     }
   ];
   
