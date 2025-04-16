@@ -90,6 +90,26 @@ h6 {
   font-size: clamp(0.875rem, 3vw, 1.25rem);
 }
 
+button {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px); /* Lifts the button slightly upward */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+}
+
+button:active {
+  transform: translateY(0); /* Returns to original position on click */
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow when pressed */
+}
+
 /* Visually hidden class for screen readers */
 .visually-hidden {
   position: absolute !important;
@@ -957,15 +977,7 @@ textarea {
   border-radius: 5px;
 }
 
-button {
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
+
 
 button.save-event {
   background-color: #28a745;
@@ -1044,12 +1056,6 @@ button.close-popup {
   font-weight: bold;
 }
 
-/* Note: For filtering to work, each leaderboard-item should include a data-category attribute */
-
-
-
-
-/* --- Mobile First Styles (default styles apply below 480px) --- */
 
 /* --- Breakpoint 1: Small devices (min-width: 480px) --- */
 @media (min-width: 480px) {
