@@ -1,5 +1,5 @@
 // 📌 Et array med objekter - hvert objekt er et event med info
-const events = [
+const carouselEvents = [
     {
       title: "KOMsammen - Filmaften",
       location: "Odense",
@@ -52,11 +52,11 @@ const events = [
     return 3;
   }
   
-  // 📌 Funktion der looper gennem events-array og genererer kort i DOM'en
+  // 📌 Funktion der looper gennem carouselEvents-array og genererer kort i DOM'en
   function renderCards() {
     carousel.innerHTML = ""; // ryd tidligere indhold
   
-    events.forEach((event) => {
+    carouselEvents.forEach((event) => {
       // For hvert event opretter vi et DOM-element (et kort)
       const card = document.createElement("div");
       card.className = "event-card";
@@ -90,7 +90,7 @@ const events = [
   
   // 📌 Funktion: Går én slide frem hvis det er muligt (if-statement)
   function nextSlide() {
-    if (currentIndex + visibleCards < events.length) {
+    if (currentIndex + visibleCards < carouselEvents.length) {
       currentIndex++;
       updateCarousel(); // opdater visningen
     }
@@ -117,7 +117,7 @@ const events = [
   // 📌 Funktion: Genererer dots til navigation (DOM + loop)
   function renderDots() {
     dotsContainer.innerHTML = "";
-    const totalDots = Math.ceil(events.length - visibleCards + 1);
+    const totalDots = Math.ceil(carouselEvents.length - visibleCards + 1);
   
     for (let i = 0; i < totalDots; i++) {
       const dot = document.createElement("span");
@@ -144,8 +144,8 @@ const events = [
       visibleCards = newVisible;
   
       // Hvis currentIndex er ude af synk, juster det
-      if (currentIndex > events.length - visibleCards) {
-        currentIndex = Math.max(0, events.length - visibleCards);
+      if (currentIndex > carouselEvents.length - visibleCards) {
+        currentIndex = Math.max(0, carouselEvents.length - visibleCards);
       }
   
       renderCards(); // Genopbyg carousel
