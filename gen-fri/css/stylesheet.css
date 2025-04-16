@@ -900,7 +900,7 @@ article {
 /* Styling for the Deltag Button */
 .participate-btn {
   background-color: #d16708; /* Set to the requested hex color */
-  color: #fff;
+  color: var(--color-white);
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
@@ -909,6 +909,8 @@ article {
   transition: background-color 0.3s ease;
   margin-top: auto; /* Ensure button stays at the bottom of the card */
   width: 100%; /* Full width button */
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+
 }
 
 .participate-btn:hover {
