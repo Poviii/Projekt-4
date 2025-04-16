@@ -35,10 +35,59 @@ a:focus {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0.5rem 0;
+h1 {
   font-family: var(--font-body);
-  font-style: bold;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 1rem 0;
+  /* Scales from 2rem on small screens to 3.5rem on large screens */
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+/* h2 */
+h2 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 1rem 0;
+  /* Scales from 1.75rem on small screens to 3rem on large screens */
+  font-size: clamp(1.75rem, 5vw, 3rem);
+}
+
+/* h3 */
+h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 1rem 0;
+  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+}
+
+/* h4 */
+h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 1rem 0;
+  font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+/* h5 */
+h5 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 1rem 0;
+  font-size: clamp(1rem, 3.5vw, 1.5rem);
+}
+
+/* h6 */
+h6 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  line-height: 1.6;
+  margin: 1rem 0;
+  font-size: clamp(0.875rem, 3vw, 1.25rem);
 }
 
 /* Visually hidden class for screen readers */
@@ -138,16 +187,20 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-white);
   border: none;
   outline: none;
+  padding: 0; /* Override global padding */
+  margin-top: 0; /* Adjust if needed */
 }
 
   .btn-messages {
-  cursor: pointer;
-  height: 1.5rem;
-  width: 1.5rem;
-  background-color: var(--color-white);
-  border: none;
-  outline: none;
-} 
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--color-white);
+    border: none;
+    outline: none;
+    padding: 0; /* Override global padding */
+    margin-top: 0; /* Adjust if needed */
+  }
 
 .profil-settings {
   cursor: pointer;
@@ -156,7 +209,9 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--color-white);
   border: none;
   outline: none;
-} 
+  padding: 0; /* Override global padding */
+  margin-top: 0; /* Adjust if needed */
+}
 
 /* Search Bar (hidden on mobile) */
 .search-bar {
@@ -180,8 +235,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-right button img {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   object-fit: contain;
   display: block;
 }
@@ -259,10 +314,6 @@ main {
   max-width: 100%;
 }
 
-.friends-heading {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-}
 
 /* Friends list container */
 .friends-list {
@@ -270,6 +321,7 @@ main {
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
   gap: 1rem; /* Add spacing between friends */
   justify-content: center; /* Center the friends list */  
+  list-style: none;
 }
 
 /* Friend item */
@@ -305,20 +357,19 @@ flex: 1 1 calc(25% - 1rem); /* Four columns on larger screens */
 }
 
 .online {
-  background-color: #4caf50;
+  background-color: green;
 }
 
 .offline {
-  background-color: #ccc;
+  background-color: red;
 }
 
 /* Add Friend Button */
 .add-friend button {
   border: none;
   background: none;
-  width: 100%;
-  height: 100%;
-  padding: 0.5rem;
+  width: 3rem;
+  height: 3rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -502,28 +553,15 @@ article {
 }
 
 .messages-board {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 1rem;
   background-color: var(--color-white);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   border: none;
+  padding-left: 1rem;
 }
 
-/* Header area: Title + "New Chat" button */
-.messages-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-}
 
-.messages-header h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  color: var(--color-dark);
-}
+
 
 /* "New Chat" button */
 .new-chat-button {
@@ -544,128 +582,72 @@ article {
 }
 
 .new-chat-icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   object-fit: contain;
 }
 
+/* Restyled Message Section using modern flexbox layout */
 .message {
-  display: grid;
-  grid-template-columns: auto 1fr; /* Left column auto-size, right column flexible */
-  align-items: center;
-  gap: 1rem;                /* Spacing between avatar and body */
-  padding: 1rem;           /* Optional padding */
-  margin-bottom: 1rem;     /* Spacing between multiple messages */
-  border: 1px solid #ccc;  /* Optional border */
-  border-radius: 0.5rem;   /* Optional rounded corners */
-  background-color: var(--color-light-gray)
-}
-
-/* Avatar area */
-.message-avatar {
-  position: relative; /* For the status dot to be positioned inside */
-  display: flex;      /* Keep the image and status in the same container */
-  align-items: center;
-}
-
-/* User profile picture */
-.message-pic {
-  width: 50px;        /* Adjust size as needed */
-  height: 50px;
-  object-fit: cover;  /* Maintains aspect ratio */
-  border-radius: 50%; /* Round avatar if desired */
-}
-
-/* Online/offline status dot */
-.online-status {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: green; /* .offline can override this with red, etc. */
-  border: 2px solid #fff;  /* White border for contrast */
-}
-.online-status.offline {
-  background-color: red;
-}
-
-/* Message body (middle + right):
-   - 2 columns: text content is 1fr, button area is auto
-*/
-.message-body {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center; /* Vertically center text and actions */
-  gap: 1rem;
-}
-
-/* Author and text sit in the first (1fr) column */
-.message-author,
-.message-text {
-  margin: 0;               /* Remove default paragraph margins */
-  text-align: center;      /* Center text horizontally */
-}
-
-/* "Actions" (Reply button) in the second (auto) column */
-.message-actions {
   display: flex;
-  justify-content: flex-end; /* Button aligns to the right edge */
+  align-items: center; /* Vertically center items in a row */
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background-color: var(--color-light-gray);
 }
 
-/************************************************************/
-/*  BUTTON STYLES                                           */
-/************************************************************/
-
-.reply-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;            /* Space between icon and text */
-  padding: 0.5rem 0.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: var(--color-white);
-  font: var(--font-body);
+/* Avatar container */
+.message-avatar {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
 }
 
-/* Reply Icon (optional sizing) */
-.reply-icon {
-  width: 1rem;  /* Adjust as needed */
-  height: auto;
+/* Profile picture inside the avatar */
+.message-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-
-.reply-button:hover,
-.reply-button:focus {
-  background-color: var(--color-accent);
-  color: var(--color-white);
+/* Message content (text and metadata) */
+.message-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
+/* Message author (name) styling */
+.message-author {
+  font-weight: bold;
+  margin: 0;
+}
 
-.view-all-icon {
-  width: 16px;
-  height: 16px;
-  margin-right: 6px;
-  object-fit: contain;
+/* Message text styling */
+.message-text {
+  margin: 0;
+}
+
+/* Actions container, e.g., Reply button, aligned to the right */
+.message-actions {
+  margin-left: auto; /* Push the button to the far right */
+  align-self: center; /* Align the button vertically to the center */
 }
 
 .mine-organasitioner {
   background-color: var(--color-white);
-  padding: 1rem;
-  max-width: 100%;
-  margin: 0 auto;
+  padding-left: 1rem;
   border-radius: 10px;
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Section heading */
-.mine-organasitioner h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
 
 /* Grid container */
 .organasitioner-grid {
@@ -680,7 +662,6 @@ article {
   padding: 1rem;
   border-radius: 0.5rem;
   position: relative; /* Needed for absolute positioning of buttons */
-  border: 1px solid #ccc;
 }
 
 /* Top-right stacked buttons */
@@ -775,9 +756,10 @@ article {
 /* Ensure feed items don't stretch too wide */
 .updates-feed-container {
   display: flex;
+  background-color: var(--color-white);
   flex-direction: column;
   gap: 1.25rem;
-  padding: 1rem;
+  padding-left: 1rem;
 }
 
 .loading-indicator {
@@ -849,21 +831,29 @@ article {
 
 /* Næste Events Section */
 .next-events-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #fff;
-  border-radius: 1rem;
+  background-color: var(--color-white);
+  padding-left: 1rem;
+  margin: 0;  /* Reset margin */
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.next-events-section h2 {
-  text-align: left;
-  font-size: 2rem; /* Use rem for scalability */
-  font-weight: bold;
-  margin-bottom: 2rem;
+.next-events-section .event-image {
+  width: 100%; /* Ensure the image spans the full width of the card */
+  height: 100px; /* Fixed height for consistency */
+  object-fit: cover; /* Maintain aspect ratio without distortion */
+  margin-bottom: 0; /* Remove any extra space below the image */
 }
+.next-events-section .event-content h3 {
+  margin-top: 0.5rem;      /* Remove top margin to align right under the image */
+  margin-bottom: 0.5rem; /* Set a consistent spacing between h3 and the next element */
+}
+
+.next-events-section .event-content .event-description {
+  margin-top: 1rem;
+  margin-bottom: 1rem;  
+}
+
 
 /* Container for Horizontal Scrolling */
 .events-container {
@@ -880,6 +870,7 @@ article {
   width: 250px; /* Fixed width for each event card */
   height: 400px; /* Fixed height to ensure uniform size */
   background-color: #f9f9f9;
+  padding: 1rem;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -888,43 +879,8 @@ article {
   flex-direction: column; /* Arrange elements in a column */
 }
 
-.event-image {
-  width: 100%;
-  height: 12rem; /* Fixed height for the image */
-  object-fit: cover; /* Ensure image covers the space without distortion */
-}
 
-/* Content Section Styling */
-.event-content {
-  padding: 1.5rem;
-  flex-grow: 1; /* Allow the content to grow and fill space */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Ensure space is evenly distributed */
-}
 
-/* Title Styling */
-.event-content h3 {
-  font-size: 1.5rem; /* Use rem for better scalability */
-  font-weight: bold;
-  margin: 0; /* Remove any default margin */
-  padding-bottom: 0.5rem; /* Consistent space below title */
-  text-align: center; /* Center the title */
-  line-height: 1.2; /* Ensures the text has proper spacing */
-  height: 2.5rem; /* Set a fixed height for consistent sizing of <h3> */
-  overflow: hidden; /* Ensure long titles don’t push layout */
-  display: flex;
-  justify-content: center; /* Center title vertically */
-  align-items: center; /* Center title vertically */
-}
-
-/* Event Description Styling */
-.event-description {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-  flex-grow: 1; /* Allow description to take up available space */
-}
 
 /* Event Details Styling */
 .event-details {
@@ -970,11 +926,8 @@ article {
 
 /* Calendar Section Styling */
 .calendar-section {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
+  background-color: var(--color-white);
+  padding-left: 1rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1099,8 +1052,8 @@ textarea {
 }
 
 button {
-  background-color: #007bff;
-  color: #fff;
+  background-color: var(--color-accent);
+  color: var(--color-white);
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -1117,7 +1070,75 @@ button.close-popup {
 }
 
 
+/* Leaderboard Section Styling */
+.leaderboard {
+  background-color: var(--color-white);
+  padding-left: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+
+.leaderboard-filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.leaderboard-filters .filter-btn {
+  background-color: var(--color-light-gray);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.leaderboard-filters .filter-btn.active {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+.leaderboard-item .rank {
+  font-weight: bold;
+  width: 2rem;
+  text-align: center;
+}
+
+.leaderboard-item .user-avatar img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.leaderboard-item .user-name {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.leaderboard-item .user-points {
+  font-weight: bold;
+}
+
+/* Note: For filtering to work, each leaderboard-item should include a data-category attribute */
 
 
 
@@ -1174,9 +1195,6 @@ button.close-popup {
     flex: 1 1 calc(33.33% - 1rem); /* Three columns on tablets */
   }
 
-  .next-events-section h2 {
-    font-size: 1.75rem;
-  }
 
   .events-container {
     gap: 1rem;

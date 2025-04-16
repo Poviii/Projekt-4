@@ -260,3 +260,36 @@ function saveEvent() {
 
 // Initial render
 renderCalendar();
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const filterButtons = document.querySelectorAll(".leaderboard-filters .filter-btn");
+  const leaderboardItems = document.querySelectorAll(".leaderboard-list .leaderboard-item");
+
+  filterButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      // Remove active class from all filter buttons
+      filterButtons.forEach(btn => btn.classList.remove("active"));
+      // Add active class to the clicked button
+      button.classList.add("active");
+
+      const filterValue = button.getAttribute("data-filter");
+
+      leaderboardItems.forEach(item => {
+        // If the selected filter is 'all', display every item
+        if (filterValue === "all") {
+          item.style.display = "";
+        } else {
+          // Otherwise, only display items matching the filter
+          // Ensure each item has a corresponding data-category attribute in your HTML
+          if (item.getAttribute("data-category") === filterValue) {
+            item.style.display = "";
+          } else {
+            item.style.display = "none";
+          }
+        }
+      });
+    });
+  });
+});
