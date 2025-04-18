@@ -317,6 +317,16 @@ main {
   padding: 1rem;
 }
 
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* one column on small screens */
+  gap: 1rem;
+}
+
+.section-wrapper {
+  padding: clamp(1rem, 2vw, 2rem);
+}
+
 /* Hero section */
 .hero {
   background-color: var(--color-white);
@@ -412,12 +422,7 @@ flex: 1 1 calc(25% - 1rem); /* Four columns on larger screens */
 .add-friend button:hover
 {opacity: 0.8;}
 
-/* Content grid */
-.content-grid {
-  display: flex;
-  flex-direction: column; /* Stack sections vertically by default */
-  gap: 1rem; /* Add spacing between sections */
-}
+
 
 
 
@@ -1265,16 +1270,7 @@ button.close-popup {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .content-grid {
-    flex-direction: column; /* Changed from row to column */
-    flex-wrap: nowrap; /* Prevent wrapping */
-  }
-
-  .content-grid > *,
-  .content-grid article {
-    flex: unset; /* Remove forced sizing */
-    max-width: 100%; /* Full width */
-  }
+  
   .profile-card,
   .friends-tab {
     max-width: 100%;
@@ -1330,6 +1326,10 @@ button.close-popup {
     display: none;
   }
 
+  .main-grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
   .search-bar {
     display: block;
   }
@@ -1357,10 +1357,7 @@ button.close-popup {
     align-self: flex-end !important;
   }
 
-  .content-grid {
-    flex-direction: column; /* Same as mobile/tablet */
-    gap: 1rem;
-  }
+  .hero { grid-column: 1 / -1; }
 
   .profile-card,
   .friends-tab {
@@ -1418,21 +1415,23 @@ button.close-popup {
     gap: 2rem;
   }
 
-  .profile-card {
-    grid-column: span 4;
-  }
-
-  .friends-tab {
-    grid-column: span 4;
-  }
+  .profile-card     { grid-column: span 3; }
+  .friends-tab      { grid-column: span 3; }
 
   .updates-feed-container {
     grid-column: span 8;
   }
 
-  .mine-organasitioner {
-    grid-column: span 8;
-  }
+  .mine-organasitioner { grid-column: span 6; }
+
+  .updates-feed,
+  .messages-board   { grid-column: span 6; }
+
+  .carousel-card,
+  .calendar-section,
+  .leaderboard      { grid-column: 1 / -1; }
+
+
   /* Optional: Style for sidebar nav icons */
   .sidebar img {
   width: 1.25rem;
