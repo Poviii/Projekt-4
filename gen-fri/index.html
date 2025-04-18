@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gen-Fri My Page</title>
   <link rel="stylesheet" href="css/stylesheet.css" />
+  <link rel="stylesheet" href="css/globals.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -76,6 +77,8 @@
       <p>Frivillighed med hjerte og handling!</p>
     </section>
 
+    <!-- MINE VENNER -->
+
     <section class="friends-tab" aria-labelledby="friendsHeading">
       <h2 id="friendsHeading" class="friends-heading">Venner</h2>
     
@@ -107,8 +110,9 @@
       </ul>
     </section>
 
-    <section>
-    <div class="profile-card">
+
+    <!-- PROFIL -->
+    <section class="profile-card">
         <div class="profile-header">
           <img src="images/capio.png" alt="Profile Picture" class="profile-pic">
           <div class="profile-personal-info">
@@ -132,71 +136,18 @@
             Points: <strong>1200</strong>
           </span>
         </div>
-      </div>
       </section>
 
-    <section class="messages-board">
-      <div class="messages-header">
-        
-        <h2>Beskeder</h2>
-      </div>
-      <div>
-        <button class="new-chat-button">
-          <img src="icons/black_icons/reply_black.svg" alt="New Chat Icon" class="new-chat-icon">
-        </button>
-      </div>
-      
-    
-      <!-- Single Message -->
-      <div class="message">
-        <div class="message-avatar">
 
-          <img src="images/martin.png" alt="Profile Picture" class="message-pic">
-
-          <span class="online-status online" title="User is online"></span>
-        </div>
-        <div class="message-body">
-          <p class="message-author">Martin</p>
-          <p class="message-text">Hey! Frisk på lidt frivlligt arbejde?</p>
-          <div class="message-actions">
-            <button class="reply-button">
-              <img src="icons/white_icons/message_white.svg" alt="Reply Icon" class="reply-icon">
-              Svar
-            </button>
-          </div>
-        </div>
-      </div>
-    
-      <!-- Another Message -->
-      <div class="message">
-        <div class="message-avatar">
-          <img src="images/mijan.png" alt="Profile Picture" class="message-pic">
-          <!-- Offline status example -->
-          <span class="online-status offline" title="User is offline"></span>
-        </div>
-        <div class="message-body">
-          <p class="message-author">Mijan</p>
-          <p class="message-text">Jeg kan ikke alligevel</p>
-          <div class="message-actions">
-            <button class="reply-button">
-              <img src="icons/white_icons/message_white.svg" alt="Reply Icon" class="reply-icon">
-              Svar
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-
-    
-      
-      <article class="messages-board">
+      <!-- BESKEDER -->
+      <section class="messages-board">
         <div class="messages-header">
           <h2>Beskeder</h2>
           <button class="new-chat-button">
-            <img src="icons/black_icons/reply_black.svg" alt="New Chat Icon" class="new-chat-icon">
+            <img src="icons/orange_icons/reply_orange.svg" alt="New Chat Icon" class="new-chat-icon">
           </button>
         </div>
+        
       
         <!-- Single Message -->
         <div class="message">
@@ -209,34 +160,36 @@
           <div class="message-body">
             <p class="message-author">Martin</p>
             <p class="message-text">Hey! Frisk på lidt frivlligt arbejde?</p>
+          </div>
             <div class="message-actions">
               <button class="reply-button">
                 <img src="icons/white_icons/message_white.svg" alt="Reply Icon" class="reply-icon">
-                Svar
               </button>
             </div>
-          </div>
         </div>
       
         <!-- Another Message -->
         <div class="message">
           <div class="message-avatar">
+
             <img src="images/mijan.png" alt="Profile Picture" class="message-pic">
-            <!-- Offline status example -->
-            <span class="online-status offline" title="User is offline"></span>
+
+            <span class="online-status online" title="User is online"></span>
           </div>
           <div class="message-body">
             <p class="message-author">Mijan</p>
-            <p class="message-text">Jeg kan ikke alligevel</p>
+            <p class="message-text">Jeg kan ikke hjælpe alligevel</p>
+          </div>
             <div class="message-actions">
               <button class="reply-button">
                 <img src="icons/white_icons/message_white.svg" alt="Reply Icon" class="reply-icon">
-                Svar
               </button>
             </div>
-          </div>
         </div>
-      </article>
+      </section>
+    
+
+      <!-- MINE ORGANISATIONER -->
 
       <section class="mine-organasitioner" aria-labelledby="mineOrganasitionerHeading">
         <h2 id="mineOrganasitionerHeading">Mine Organisationer</h2>
@@ -294,6 +247,8 @@
           </article>
         </div>
       </section>
+
+      <!-- OPDATERINGER -->
 
       <section class="updates-feed" aria-labelledby="updatesFeedHeading">
         <div class="updates-scroll-box">
@@ -419,6 +374,7 @@
         </div>
       </section> 
 
+      <!-- Carousel Section -->
       </section>
       <!-- Thea -->
       <section class="carousel-card">
@@ -440,7 +396,7 @@
       </section>
       <!--thea slut-->  
       
-      
+      <!-- KALENDER -->
       
       <section class="calendar-section">
         <div class="calendar-header">
@@ -455,7 +411,7 @@
             <img src="icons/black_icons/left_arrow_black.svg" alt="Previous Month" class="nav-icon" />
           </button>
       
-          <h2 id="calendar-title">April 2025</h2>
+          <h5 id="calendar-title">April 2025</h5>
       
           <!-- Next Month Button with Icon -->
           <button class="calendar-nav next-month" onclick="changeMonth(1)">
@@ -493,7 +449,7 @@
         </div>
       </section>
       
-        <!-- Leaderboard Section -->
+        <!-- LEADERBOARD -->
       <section class="leaderboard" aria-labelledby="leaderboardHeading">
         <h2 id="leaderboardHeading">Leaderboard</h2>
         <div class="leaderboard-filters">
