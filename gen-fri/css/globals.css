@@ -19,6 +19,7 @@
     --radius: 0.625rem;       /* 10 px rounded -> ≈ 0.625rem             */
     --card-min: 16rem;        /* ≈ 256 px  : smallest card on phones     */
     --card-max: 20rem;        /* ≈ 320 px  : biggest card on desktops    */
+    --header-h: 64px;         /* 1 point of control */
   }
 
 
@@ -29,7 +30,9 @@ body {
     background-color: var(--color-light-gray);
     color: var(--color-dark);
     line-height: 1.5;
+    padding-top: var(--header-h)
   }
+
   
   a {
     color: var(--color-dark);
@@ -57,7 +60,7 @@ body {
     font-weight: 700;
     line-height: 1.3;
     /* Scales from 1.75rem on small screens to 3rem on large screens */
-    font-size: clamp(1.75rem, 5vw, 3rem);
+    font-size: clamp(1.75rem, 5vw, 2rem);
   }
   
   /* h3 */
@@ -66,7 +69,7 @@ body {
     font-weight: 600;
     line-height: 1.4;
     margin: 1rem 0;
-    font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+    font-size: clamp(1.5rem, 4.5vw, 1.7rem);
   }
   
   /* h4 */
@@ -116,19 +119,6 @@ body {
   button:active {
     transform: translateY(0);  
   }
-
-  .action-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.3rem 0.5rem;
-    font-size: 0.85rem;
-    color: var(--color-dark);
-    transition: color 0.2s ease;
-  }
   
   .action-btn img {
     width: 16px;
@@ -140,18 +130,6 @@ body {
     color: var(--color-accent);
   }
   
-  .like-btn:hover img,
-  .comment-btn:hover img {
-    filter: brightness(0) saturate(100%) sepia(1) hue-rotate(10deg) saturate(5) brightness(1.1);
-  }
-  
-  .like-btn.liked {
-    color: var(--color-accent);
-  }
-  
-  .like-btn.liked .heart-icon {
-    filter: brightness(0) saturate(100%) sepia(1) hue-rotate(-10deg) saturate(5) brightness(1.1);
-  }
 
   /* Like/Comment buttons */
 .loading-indicator {
@@ -189,26 +167,6 @@ body {
     color: var(--color-white);
   }
 
-
-    /* 5. BILLEDER */
-  .img {
-    background-color: none;
-  }
-
-
-
-  /* Visually hidden class for screen readers */
-.visually-hidden {
-    position: absolute !important;
-    width: 1px; 
-    height: 1px; 
-    padding: 0; 
-    margin: -1px; 
-    overflow: hidden; 
-    clip: rect(0, 0, 0, 0); 
-    border: 0;
-  }
-  
   /* Skip link styling */
   .skip-link {
     position: absolute;

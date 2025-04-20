@@ -4,15 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gen-Fri My Page</title>
-  <link rel="stylesheet" href="css/globals.css">
-  <link rel="stylesheet" href="css/stylesheet.css" />
+  <link rel="stylesheet" href="../css/globals.css" />
+  <link rel="stylesheet" href="../css/stylesheet.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
-  <!-- site‑header.html -->
 <header class="site-header">
 
   <div class="header-inner">
@@ -26,30 +25,30 @@
 
     <!-- ② brand / home link -->
     <a href="/" class="brand" aria-label="Gen‑Fri">
-      <img src="logos/logo_sort-ubaggrund.svg" alt="" loading="lazy" height="28">
+      <img src="../logos/logo_sort-ubaggrund.svg" alt="Brand logo" loading="lazy" height="28">
     </a>
 
     <!-- ③ full menu (one single list for every breakpoint) -->
     <nav class="primary-nav" aria-label="Main">
       <ul id="primary-menu" class="nav-list">
-        <a href="../gen-fri/html/homepage.html">
-          <img src="icons/black_icons/homepage_black.svg" alt="Homepage">
+        <a href="../html/homepage.html">
+          <img src="../icons/black_icons/homepage_black.svg" alt="Homepage">
            <span class="label">Homepage</span>
         </a>
-        <a href="#">
-          <img src="icons/black_icons/mypage_black.svg" alt="My Page">
+        <a href="../index.html">
+          <img src="../icons/black_icons/mypage_black.svg" alt="My Page">
            <span class="label">My Page</span>
         </a>
-        <a href="../gen-fri/html/leaderboard.html">
-          <img src="icons/black_icons/leaderboard_black.svg" alt="Leaderboard">
+        <a href="#">
+          <img src="../icons/black_icons/leaderboard_black.svg" alt="Leaderboard">
            <span class="label">Leaderboard</span>
         </a>
         <a href="#">
-          <img src="icons/black_icons/message_black.svg" alt="Beskeder">
+          <img src="../icons/black_icons/message_black.svg" alt="Beskeder">
            <span class="label">Beskeder</span>
         </a>
         <a href="#">
-          <img src="icons/black_icons/settings_black.svg" alt="Indstillinger">
+          <img src="../icons/black_icons/settings_black.svg" alt="Indstillinger">
            <span class="label">Indstillinger</span>
         </a>
       </ul>
@@ -67,184 +66,9 @@
 
   <!-- MAIN CONTENT -->
   <main id="main-content" class="main-grid">
-    <section class="hero">
-      <img src="logos/logo orange m sort.svg" alt="Landing page image" class="hero-image" />
-      <h1>Velkommen til Gen-Fri</h1>
-      <p>Frivillighed med hjerte og handling!</p>
-    </section>
-
-    <!-- MINE VENNER -->
-
-    <section class="friends-tab" aria-labelledby="friendsHeading">
-      <h2 id="friendsHeading" class="friends-heading">Venner</h2>
-    
-      <ul class="friends-list">
-        <!-- Friend 1 -->
-        <li class="friend">
-          <img src="images/johan.png" alt="Anna" class="friend-avatar" />
-          <span class="status online" title="Online"></span>
-        </li>
-    
-        <!-- Friend 2 -->
-        <li class="friend">
-          <img src="images/lukas.png" alt="Jakob" class="friend-avatar" />
-          <span class="status offline" title="Offline"></span>
-        </li>
-    
-        <!-- Friend 3 -->
-        <li class="friend">
-          <img src="images/mala.png" alt="Mia" class="friend-avatar" />
-          <span class="status online" title="Online"></span>
-        </li>
-    
-        <!-- Add Friend -->
-        <li class="friend add-friend" title="Tilføj ven">
-          <button>
-            <img src="icons/black_icons/add_black.svg" alt="Tilføj ven" />
-          </button>
-        </li>
-      </ul>
-    </section>
-
-
-    <!-- PROFIL -->
-    <section class="profile-card">
-      <h2 class="profile-heading">Min Profil</h2>
-        <div class="profile-header">
-          <img src="images/capio.png" alt="Profile Picture" class="profile-pic">
-          <div class="profile-personal-info">
-            <h3 class="profile-name">Casper Hansen</h3>
-            <p class="profile-age">Alder: 27</p>
-            <p class="profile-town">By: Odense</p>
-          </div>
-        </div>
-        <div class="profile-stats">
-          <span class="stat">
-            <img src="badges/silver_badge.png" alt="Level Badge" class="stat-icon">
-            Level: <strong>5</strong>
-          </span>
-          <span class="stat">
-            <img src="badges/champion_badge.png" alt="Badges Icon" class="stat-icon">
-            Badges: <strong>3</strong>
-          </span>
-      
-          <span class="stat">
-            <img src="icons/black_icons/points_black.svg" alt="Points Icon" class="stat-icon">
-            Points: <strong>1200</strong>
-          </span>
-        </div>
-      </section>
-
-
-      <!-- BESKEDER -->
-      <section class="messages-board">
-        <div class="messages-header">
-          <h2>Beskeder</h2>
-          <button class="new-chat-button">
-            <img src="icons/orange_icons/reply_orange.svg" alt="New Chat Icon" class="new-chat-icon">
-          </button>
-        </div>
-        
-      
-        <!-- Single Message -->
-        <div class="message">
-          <div class="message-avatar">
-
-            <img src="images/martin.png" alt="Profile Picture" class="message-pic">
-
-            <span class="online-status online" title="User is online"></span>
-          </div>
-          <div class="message-body">
-            <p class="message-author">Martin</p>
-            <p class="message-text">Hey! Frisk på lidt frivlligt arbejde?</p>
-          </div>
-            <div class="message-actions">
-              <button class="reply-button">
-                <img src="icons/white_icons/message_white.svg" alt="Reply Icon" class="reply-icon">
-              </button>
-            </div>
-        </div>
-      
-        <!-- Another Message -->
-        <div class="message">
-          <div class="message-avatar">
-
-            <img src="images/mijan.png" alt="Profile Picture" class="message-pic">
-
-            <span class="online-status online" title="User is online"></span>
-          </div>
-          <div class="message-body">
-            <p class="message-author">Mijan</p>
-            <p class="message-text">Jeg kan ikke hjælpe alligevel</p>
-          </div>
-            <div class="message-actions">
-              <button class="reply-button">
-                <img src="icons/white_icons/message_white.svg" alt="Reply Icon" class="reply-icon">
-              </button>
-            </div>
-        </div>
-      </section>
     
 
-      <!-- MINE ORGANISATIONER -->
-
-      <section class="mine-organasitioner" aria-labelledby="mineOrganasitionerHeading">
-        <h2 id="mineOrganasitionerHeading">Mine Organisationer</h2>
-      
-        <div class="organasitioner-grid">
-          <!-- Article One -->
-          <article>
-            <div class="top-buttons">
-              <button class="icon-btn notif-btn" aria-label="Notifikationer">
-                <img src="icons/orange_icons/notification_orange.svg" alt="Notifications Icon" />
-              </button>
-              <button class="icon-btn message-btn" aria-label="Beskeder">
-                <img src="icons/orange_icons/message_orange.svg" alt="Message Icon" />
-              </button>
-            </div>
-            <img src="images/amnesty_logo.png" alt="Amnesty logo" class="article-image" />
-            <h3>Amnesty</h3>
-            <p>
-              Amnesty International er en global menneskerettighedsorganisation, der kæmper for retfærdighed og lighed.
-            </p>
-          </article>
-          <hr class="divider">
-          <!-- Article Two -->
-          <article>
-            <div class="top-buttons">
-              <button class="icon-btn notif-btn" aria-label="Notifikationer">
-                <img src="icons/orange_icons/notification_orange.svg" alt="Notifications Icon"/>
-              </button>
-              <button class="icon-btn message-btn" aria-label="Beskeder">
-                <img src="icons/orange_icons/message_orange.svg" alt="Message Icon" />
-              </button>
-            </div>
-            <img src="images/rode_kors_logo.png" alt="Røde Kors logo" class="article-image" />
-            <h3>Røde Kors</h3>
-            <p>
-              Røde Kors er en humanitær organisation, der hjælper mennesker i nød.
-            </p>
-          </article>
-          <hr class="divider">
-          <!-- Article Three -->
-          <article>
-            <div class="top-buttons">
-              <button class="icon-btn notif-btn" aria-label="Notifikationer">
-                <img src="icons/orange_icons/notification_orange.svg" alt="Notifications Icon" />
-              </button>
-              <button class="icon-btn message-btn" aria-label="Beskeder">
-                <img src="icons/orange_icons/message_orange.svg" alt="Message Icon" />
-              </button>
-            </div>
-            <img src="images/coding_pirates.png" alt="Coding Pirates logo" class="article-image" />
-            <h3>Coding Pirates</h3>
-            <p>
-              Coding Pirates er en organisation, der underviser børn i programmering og teknologi.
-            </p>
-          </article>
-        </div>
-      </section>
-
+    
       <!-- OPDATERINGER -->
 
       <section class="updates-feed" aria-labelledby="updatesFeedHeading">

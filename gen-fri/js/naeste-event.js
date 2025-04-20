@@ -66,7 +66,7 @@ const carouselEvents = [
         <img src="${event.logo}" alt="logo">
         <h3>${event.title}</h3>
         <div class="event-info">
-          <p>📍 ${event.location}</p>
+          <p>  ${event.location}</p>
           <p>📅 ${event.date}</p>
         </div>
         <div class="button-group">

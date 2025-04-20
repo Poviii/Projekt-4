@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gen-Fri My Page</title>
+  <link rel="stylesheet" href="../css/globals.css" />
+  <link rel="stylesheet" href="../css/stylesheet.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+<header class="site-header">
+
+  <div class="header-inner">
+    <!-- ① burger / drawer toggle -->
+    <button class="nav-toggle"
+            aria-label="Toggle navigation"
+            aria-controls="primary-menu"
+            aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <!-- ② brand / home link -->
+    <a href="/" class="brand" aria-label="Gen‑Fri">
+      <img src="../logos/logo_sort-ubaggrund.svg" alt="Brand logo" loading="lazy" height="28">
+    </a>
+
+    <!-- ③ full menu (one single list for every breakpoint) -->
+    <nav class="primary-nav" aria-label="Main">
+      <ul id="primary-menu" class="nav-list">
+        <a href="../html/homepage.html">
+          <img src="../icons/black_icons/homepage_black.svg" alt="Homepage">
+           <span class="label">Homepage</span>
+        </a>
+        <a href="../index.html">
+          <img src="../icons/black_icons/mypage_black.svg" alt="My Page">
+           <span class="label">My Page</span>
+        </a>
+        <a href="../html/leaderboard.html">
+          <img src="../icons/black_icons/leaderboard_black.svg" alt="Leaderboard">
+           <span class="label">Leaderboard</span>
+        </a>
+        <a href="#">
+          <img src="../icons/black_icons/message_black.svg" alt="Beskeder">
+           <span class="label">Beskeder</span>
+        </a>
+        <a href="#">
+          <img src="../icons/black_icons/settings_black.svg" alt="Indstillinger">
+           <span class="label">Indstillinger</span>
+        </a>
+      </ul>
+    </nav>
+
+    <!-- ⑤ search (desktop‑only) -->
+    <form class="search" role="search">
+      <label for="searchInput" class="sr-only"><img class="search_black" src="../gen-fri/icons/black_icons/search_black.svg" alt="search icon"></label>
+      <input id="searchInput" name="s" type="search" placeholder="Søg...">
+    </form>
+  </div>
+</header>
+  
+  
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="main-grid">
+      
+        <!-- LEADERBOARD -->
+      <section class="leaderboard" aria-labelledby="leaderboardHeading">
+        <h2 id="leaderboardHeading">Leaderboard</h2>
+        <div class="leaderboard-filters">
+          <button class="filter-btn active" data-filter="all">Alle</button>
+          <button class="filter-btn" data-filter="friends">Venner</button>
+          <button class="filter-btn" data-filter="region">Region</button>
+        </div>
+        <ul class="leaderboard-list">
+          <li class="leaderboard-item" data-category="friends">
+            <span class="rank">1</span>
+            <span class="user-avatar"><img src="images/johan.png" alt="User Avatar"></span>
+            <span class="user-name">Alice</span>
+            <span class="user-points">1200 Point</span>
+          </li>
+          <li class="leaderboard-item" data-category="region">
+            <span class="rank">2</span>
+            <span class="user-avatar"><img src="images/lukas.png" alt="User Avatar"></span>
+            <span class="user-name">Bob</span>
+            <span class="user-points">1100 Point</span>
+          </li>
+          <li class="leaderboard-item" data-category="friends">
+            <span class="rank">3</span>
+            <span class="user-avatar"><img src="images/capio.png" alt="User Avatar"></span>
+            <span class="user-name">Charlie</span>
+            <span class="user-points">1050 Point</span>
+          </li>
+          <li class="leaderboard-item" data-category="friends">
+            <span class="rank">3</span>
+            <span class="user-avatar"><img src="images/martin.png" alt="User Avatar"></span>
+            <span class="user-name">Charlie</span>
+            <span class="user-points">900 Point</span>
+          </li>
+          <li class="leaderboard-item" data-category="region">
+            <span class="rank">2</span>
+            <span class="user-avatar"><img src="images/lukas.png" alt="User Avatar"></span>
+            <span class="user-name">Kevin</span>
+            <span class="user-points">670 Point</span>
+          </li>
+        </ul>
+      </section>
+      
+      
+      
+      
+      
+      
+    
+  </main>
+
+  <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <p>&copy; Gen Fri</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#">Privatlivspolitik</a>
+      <a href="#">Handelsbetingelser</a>
+      <a href="#">Kontakt</a>
+    </div>
+
+    <div class="footer-socials">
+      <a href="#" aria-label="Facebook">
+        <img src="icons/orange_icons/facebook_orange.svg" alt="Facebook" />
+      </a>
+      <a href="#" aria-label="Twitter">
+        <img src="icons/orange_icons/linkedin_orange.svg" alt="LinkedIn" />
+      </a>
+      <a href="#" aria-label="Instagram">
+        <img src="icons/orange_icons/instagram_orange.svg" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" aria-label="Scroll to Top">
+    <img
+      src="icons/black_icons/up_arrow_black.svg"
+      alt=""
+      aria-hidden="true"
+    />
+  </button>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+  <script src="js/naeste-event.js"></script>
+</body>
+
+</html>

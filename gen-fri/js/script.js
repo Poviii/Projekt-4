@@ -4,22 +4,17 @@ const header = document.querySelector('.header');
 const mobileNav = document.getElementById('mobileNav');
 const scrollTopBtn = document.querySelector('.scroll-to-top');
 
-// 1. Toggle Mobile Nav via Burger Menu
-if (burgerMenu) {
-  burgerMenu.addEventListener('click', () => {
-    const isExpanded = burgerMenu.getAttribute('aria-expanded') === 'true' || false;
-    burgerMenu.setAttribute('aria-expanded', !isExpanded);
-    
-    // Toggle .nav-open on header
-    header.classList.toggle('nav-open');
+// header.js
+const toggle   = document.querySelector('.nav-toggle');
+const menu     = document.getElementById('primary-menu');
+const html     = document.documentElement;
 
-    // Toggle aria-hidden on the mobile nav
-    if (mobileNav) {
-      const navHidden = mobileNav.getAttribute('aria-hidden') === 'true' || false;
-      mobileNav.setAttribute('aria-hidden', !navHidden);
-    }
-  });
-}
+toggle?.addEventListener('click', () => {
+  const open = toggle.getAttribute('aria-expanded') === 'true';
+  toggle.setAttribute('aria-expanded', String(!open));
+  menu.classList.toggle('is-open');
+  html.classList.toggle('no-scroll', !open);   // locks body scroll when drawer open
+});
 
 // 2. Show/Hide Scroll to Top Button
 window.addEventListener('scroll', () => {
