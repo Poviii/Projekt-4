@@ -620,6 +620,7 @@ h3 {
 /*Thea */
 .carousel-card {
   max-width: 100%;
+  margin: 40px 50px;
   padding: 1rem;
   background-color: var(--color-white);
   border-radius: 10px;
@@ -643,6 +644,7 @@ h3 {
   display: flex;
   gap: 20px;
   transition: transform 0.4s ease-in-out;
+
 }
 
 .event-card {
@@ -701,15 +703,22 @@ h3 {
   cursor: pointer;
   z-index: 2;
 }
+.nav-button.left {
+  left: 0px;
+}
+.nav-button.right {
+  right: 0px;
+}
 
 .nav-button.left img {
   display: flex;
   width: 24px;
   height: 24px;
   object-fit: contain;
-  margin: 0;
+  margin: -10px;
   justify-content: center;
   align-items: center;
+
 }
 
 .nav-button.right img {
@@ -717,9 +726,9 @@ h3 {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  margin: 0;
+  margin: -10px;
   justify-content: center;
-  align-items: center;
+  align-items: end;
 }
 
 .event-card button {
@@ -731,6 +740,7 @@ h3 {
   cursor: pointer;
   font-size: 13px;
   transition: background 0.2s ease;
+  
 }
 .event-card button:hover {
   background: var(--color-accent);
