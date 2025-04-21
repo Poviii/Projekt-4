@@ -538,7 +538,6 @@ h3 {
   gap: .5rem;
   pointer-events: none;         /* ← stops the div catching clicks   */
 }
-.top-buttons > *{ pointer-events: auto; }  /* …but the buttons remain clickable */
 
 /* Placeholder images/icons */
 .article-image {
@@ -573,14 +572,6 @@ h3 {
   margin-top: 1rem;
 }
 
-/* Optional: Custom scrollbar */
-.updates-scroll-box::-webkit-scrollbar {
-  width: 6px;
-}
-.updates-scroll-box::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 10px;
-}
 
 .updates-feed {
   background-color: var(--color-white);
@@ -1070,7 +1061,6 @@ button.close-popup {
   /* hide word labels beside icons */
   .nav-list .label{
     position: absolute;
-    clip: rect(0 0 0 0);
     clip-path: inset(50%);
     width: 1px; height: 1px;
     overflow: hidden;

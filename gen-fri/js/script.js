@@ -56,19 +56,6 @@ scrollTopBtn.addEventListener('click', () => {
     }
   });
 
-  document.querySelectorAll('.like-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const isLiked = button.classList.toggle('liked');
-      button.dataset.liked = isLiked;
-
-      const label = button.querySelector('.like-label');
-      label.textContent = isLiked ? 'Synes ikke alligevel' : 'Synes godt om';
-
-      // Optional: handle count
-      // You can store/update a like count span here if you add it
-    });
-  });
-
 
   const scrollBox = document.querySelector('.updates-scroll-box');
   const feedContainer = document.getElementById('updatesFeed');
