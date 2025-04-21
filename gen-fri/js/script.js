@@ -133,7 +133,7 @@ scrollTopBtn.addEventListener('click', () => {
     }
   });
 
-  // Initial load
+  // KALENDER
   document.addEventListener('DOMContentLoaded', loadPosts);
 
 

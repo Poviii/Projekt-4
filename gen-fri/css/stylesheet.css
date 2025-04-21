@@ -1,5 +1,13 @@
 
+/* orange ikon */
+.nav-list a[aria-current="page"] img{
+  content: attr(data-orange);   /* udrulles herunder */
+}
 
+/* orange tekst */
+.nav-list a[aria-current="page"] .label{
+  color: var(--color-accent);
+}
 
 
 
@@ -77,6 +85,7 @@
   align-items: center;
   gap: .75rem;
   font-weight: 600;
+  font-size: 0.9rem;
 }
 
 .search img {
@@ -186,59 +195,7 @@ article {
 }
 
 
-/* 6. FOOTER */
-.footer {
-  background-color: var(--color-dark);
-  color: var(--color-white);
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
 
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-brand {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.footer-links {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: nowrap;
-}
-
-.footer-links a {
-  color: var(--color-white);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: var(--color-primary); /* Use your main accent color */
-}
-
-.footer-socials {
-  display: flex;
-  gap: 1rem;
-}
-
-.footer-socials img {
-  width: 24px;
-  height: 24px;
-  transition: opacity 0.3s ease;
-}
-
-.footer-socials a:hover img {
-  opacity: 0.6;
-}
 
 
 
@@ -473,9 +430,8 @@ h3 {
 
 .more-arrow {
   text-align: center;
-  margin: 15px;
-  font-size: 24px;
-  color: #E3751D;
+  font-size: 50px;
+  color: var(--color-accent);
   cursor: pointer;
 }
 
@@ -511,24 +467,6 @@ h3 {
   padding: 1rem;
   border-radius: 0.5rem;
   position: relative; /* Needed for absolute positioning of buttons */
-}
-
-/* Top-right stacked buttons */
-.top-buttons{
-  position: absolute;
-  inset-block-start: .75rem;    /* = top */
-  inset-inline-end:  .75rem;    /* = right (auto‑flips in RTL) */
-  display: grid;                /* grid is tidier than flex for a column */
-  gap: .5rem;
-  pointer-events: none;         /* ← stops the div catching clicks   */
-}
-
-/* Placeholder images/icons */
-.article-image {
-  width: 4rem;
-  height: auto;
-  display: block;
-  margin-bottom: 0.5rem;
 }
 
 
@@ -964,7 +902,59 @@ button.close-popup {
   font-weight: bold;
 }
 
+/* 6. FOOTER */
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+.footer-links a {
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-primary); /* Use your main accent color */
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-socials img {
+  width: 24px;
+  height: 24px;
+  transition: opacity 0.3s ease;
+}
+
+.footer-socials a:hover img {
+  opacity: 0.6;
+}
 
 /* --- Breakpoint 1: Small devices (min-width: 480px) --- */
 @media (min-width: 480px) {
@@ -1030,13 +1020,12 @@ button.close-popup {
     height: auto;
   }
 
-  /* hide word labels beside icons */
   .nav-list .label{
-    position: absolute;
-    clip-path: inset(50%);
-    width: 1px; height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
+    position: static;          /* tilbage i normal flow   */
+    clip-path: none;
+    width: auto; height: auto; /* normal størrelse        */
+    overflow: visible;
+    white-space: normal;
   }
 
   /* search bar is visible on desktop */

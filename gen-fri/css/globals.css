@@ -148,20 +148,6 @@ body {
     color: var(--color-white);
   }
 
-  /* Skip link styling */
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background-color: var(--color-accent);
-    color: var(--color-white);
-    padding: 8px;
-    z-index: 1000;
-    text-decoration: none;
-  }
-  .skip-link:focus {
-    top: 0;
-  }
 
   /* Online/offline status indicator */
 .status {
