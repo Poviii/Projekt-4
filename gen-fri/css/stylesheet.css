@@ -85,11 +85,6 @@
   object-fit: contain;
 }
 
-/* ─────────  utility cluster  ───────── */
-.utility{
-  display: flex;
-  gap: .75rem;
-}
 .utility button{
   background: none;
   border: 0;
@@ -184,23 +179,12 @@ flex: 1 1 calc(25% - 1rem); /* Four columns on larger screens */
 .add-friend button:hover
 {opacity: 0.8;}
 
-
-
-
-
-/* Article styling */
 article {
   background-color: var(--color-white);
   padding: 1rem;
   border-radius: 10px;
 }
-/* Optional article image styling */
-.article-image {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 1rem;
-}
+
 
 /* 6. FOOTER */
 .footer {
@@ -589,13 +573,6 @@ h3 {
   padding-left: 1rem;
 }
 
-.loading-indicator {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #888;
-  margin: 1rem 0;
-  display: none;
-}
 .update-image {
   width: 4rem;
   height: auto;
@@ -1033,11 +1010,6 @@ button.close-popup {
 
   .event-card {
     width: 200px;
-  }
-
-
-  .participate-btn {
-    padding: 0.5rem 1rem;
   }
 }
 

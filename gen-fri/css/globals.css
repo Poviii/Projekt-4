@@ -120,26 +120,6 @@ body {
   button:active {
     transform: translateY(0);  
   }
-  
-  .action-btn img {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-  }
-  
-  .action-btn:hover {
-    color: var(--color-accent);
-  }
-  
-
-  /* Like/Comment buttons */
-.loading-indicator {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #888;
-    margin: 1.5rem 0;
-    display: none;
-  }
 
   /* 7. SCROLL TO TOP BUTTON */
 .scroll-to-top {
@@ -156,9 +136,9 @@ body {
     display: none; /* hidden by default */
   }
   
-  /* Ensure the icon fits nicely in the circular button */
+  
   .scroll-to-top img {
-    width: 1rem; /* Adjust size as needed */
+    width: 1rem; 
     height: auto;
   }
   
@@ -203,7 +183,7 @@ body {
   }
 
 
-  /* Styling for the divider */
+  /* Styling divider */
 .divider {
     border: none; 
     height: 1px;  
@@ -220,7 +200,7 @@ main {
   
   .main-grid {
     display: grid;
-    grid-template-columns: 1fr;   /* one column on small screens */
+    grid-template-columns: 1fr;   /* one column small screens */
     gap: 1rem;
   }
 

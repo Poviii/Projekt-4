@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gen-Fri My Page</title>
-  <link rel="stylesheet" href="../css/globals.css" />
-  <link rel="stylesheet" href="../css/stylesheet.css" />
+  <base href="/gen-fri/">
+
+  <link rel="stylesheet" href="css/globals.css">
+  <link rel="stylesheet" href="css/stylesheet.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
+  <!-- site‑header.html -->
 <header class="site-header">
 
   <div class="header-inner">
@@ -24,40 +27,50 @@
     </button>
 
     <!-- ② brand / home link -->
-    <a href="/" class="brand" aria-label="Gen‑Fri">
-      <img src="../logos/logo_sort-ubaggrund.svg" alt="Brand logo" loading="lazy" height="28">
+    <a href="/gen-fri/index.html" class="brand" aria-label="Gen‑Fri">
+      <img src="logos/logo_sort-ubaggrund.svg" alt="Brand logo" height="28">
     </a>
 
     <!-- ③ full menu (one single list for every breakpoint) -->
     <nav class="primary-nav" aria-label="Main">
       <ul id="primary-menu" class="nav-list">
-        <a href="../html/homepage.html">
-          <img src="../icons/black_icons/homepage_black.svg" alt="Homepage">
-           <span class="label">Homepage</span>
-        </a>
-        <a href="../index.html">
-          <img src="../icons/black_icons/mypage_black.svg" alt="My Page">
-           <span class="label">My Page</span>
-        </a>
-        <a href="../html/leaderboard.html">
-          <img src="../icons/black_icons/leaderboard_black.svg" alt="Leaderboard">
-           <span class="label">Leaderboard</span>
-        </a>
-        <a href="#">
-          <img src="../icons/black_icons/message_black.svg" alt="Beskeder">
-           <span class="label">Beskeder</span>
-        </a>
-        <a href="#">
-          <img src="../icons/black_icons/settings_black.svg" alt="Indstillinger">
-           <span class="label">Indstillinger</span>
-        </a>
+        <li>
+          <a href="/gen-fri/html/homepage.html">
+            <img src="icons/black_icons/homepage_black.svg" alt="Homepage">
+            <span class="label">Homepage</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="icons/black_icons/mypage_black.svg" alt="My Page">
+            <span class="label">My Page</span>
+          </a>
+        </li>
+        <li>
+          <a href="/gen-fri/html/leaderboard.html">
+            <img src="icons/black_icons/leaderboard_black.svg" alt="Leaderboard">
+            <span class="label">Leaderboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="icons/black_icons/message_black.svg" alt="Beskeder">
+            <span class="label">Beskeder</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="icons/black_icons/settings_black.svg" alt="Indstillinger">
+            <span class="label">Indstillinger</span>
+          </a>
+        </li>
       </ul>
     </nav>
 
     <!-- ⑤ search (desktop‑only) -->
     <form class="search" role="search">
-      <label for="searchInput" class="sr-only"><img class="search_black" src="../gen-fri/icons/black_icons/search_black.svg" alt="search icon"></label>
-      <input id="searchInput" name="s" type="search" placeholder="Søg...">
+      <label for="searchInput" class="sr-only"><img class="search_black" src="icons/black_icons/search_black.svg" alt="search icon"></label>
+      <input id="searchInput" name="s" type="search" placeholder="Søg…">
     </form>
   </div>
 </header>
@@ -67,47 +80,47 @@
   <!-- MAIN CONTENT -->
   <main id="main-content" class="main-grid">
       
-        <!-- LEADERBOARD -->
-      <section class="leaderboard" aria-labelledby="leaderboardHeading">
-        <h2 id="leaderboardHeading">Leaderboard</h2>
-        <div class="leaderboard-filters">
-          <button class="filter-btn active" data-filter="all">Alle</button>
-          <button class="filter-btn" data-filter="friends">Venner</button>
-          <button class="filter-btn" data-filter="region">Region</button>
-        </div>
-        <ul class="leaderboard-list">
-          <li class="leaderboard-item" data-category="friends">
-            <span class="rank">1</span>
-            <span class="user-avatar"><img src="images/johan.png" alt="User Avatar"></span>
-            <span class="user-name">Alice</span>
-            <span class="user-points">1200 Point</span>
-          </li>
-          <li class="leaderboard-item" data-category="region">
-            <span class="rank">2</span>
-            <span class="user-avatar"><img src="images/lukas.png" alt="User Avatar"></span>
-            <span class="user-name">Bob</span>
-            <span class="user-points">1100 Point</span>
-          </li>
-          <li class="leaderboard-item" data-category="friends">
-            <span class="rank">3</span>
-            <span class="user-avatar"><img src="images/capio.png" alt="User Avatar"></span>
-            <span class="user-name">Charlie</span>
-            <span class="user-points">1050 Point</span>
-          </li>
-          <li class="leaderboard-item" data-category="friends">
-            <span class="rank">3</span>
-            <span class="user-avatar"><img src="images/martin.png" alt="User Avatar"></span>
-            <span class="user-name">Charlie</span>
-            <span class="user-points">900 Point</span>
-          </li>
-          <li class="leaderboard-item" data-category="region">
-            <span class="rank">2</span>
-            <span class="user-avatar"><img src="images/lukas.png" alt="User Avatar"></span>
-            <span class="user-name">Kevin</span>
-            <span class="user-points">670 Point</span>
-          </li>
-        </ul>
-      </section>
+    <!-- LEADERBOARD -->
+    <section class="leaderboard" aria-labelledby="leaderboardHeading">
+      <h2 id="leaderboardHeading">Leaderboard</h2>
+      <div class="leaderboard-filters">
+        <button class="filter-btn active" data-filter="all">Alle</button>
+        <button class="filter-btn" data-filter="friends">Venner</button>
+        <button class="filter-btn" data-filter="region">Region</button>
+      </div>
+      <ul class="leaderboard-list">
+        <li class="leaderboard-item" data-category="friends">
+          <span class="rank">1</span>
+          <span class="user-avatar"><img src="../gen-fri/images/johan.webp" alt="User Avatar"></span>
+          <span class="user-name">Johan</span>
+          <span class="user-points">1200 Point</span>
+        </li>
+        <li class="leaderboard-item" data-category="region">
+          <span class="rank">2</span>
+          <span class="user-avatar"><img src="../gen-fri/images/lukas.webp" alt="User Avatar"></span>
+          <span class="user-name">Lukas</span>
+          <span class="user-points">1100 Point</span>
+        </li>
+        <li class="leaderboard-item" data-category="friends">
+          <span class="rank">3</span>
+          <span class="user-avatar"><img src="../gen-fri/images/anna.webp" alt="User Avatar"></span>
+          <span class="user-name">Anna</span>
+          <span class="user-points">1050 Point</span>
+        </li>
+        <li class="leaderboard-item" data-category="friends">
+          <span class="rank">3</span>
+          <span class="user-avatar"><img src="../gen-fri/images/lucia.webp" alt="User Avatar"></span>
+          <span class="user-name">Lucia</span>
+          <span class="user-points">900 Point</span>
+        </li>
+        <li class="leaderboard-item" data-category="region">
+          <span class="rank">2</span>
+          <span class="user-avatar"><img src="../gen-fri/images/pernille.webp" alt="User Avatar"></span>
+          <span class="user-name">Pernille</span>
+          <span class="user-points">670 Point</span>
+        </li>
+      </ul>
+    </section>
       
       
       
@@ -155,10 +168,11 @@
   </button>
 
   <!-- JavaScript -->
-  <script src="../gen-fri/js/script.js"></script>
-  <script src="../gen-fri/js/naeste-event.js"></script>
-  <script src="../gen-fri/js/eventpopup.js"></script>
-  <script src="../gen-fri/js/organisations.js"></script>
+  <!-- JavaScript (loades efter DOM) -->
+  <script defer src="/gen-fri/js/script.js"></script>
+  <script defer src="/gen-fri/js/naeste-event.js"></script>
+  <script defer src="/gen-fri/js/eventpopup.js"></script>
+  <script defer src="/gen-fri/js/organisations.js"></script>
 </body>
 
 </html>

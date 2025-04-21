@@ -1,10 +1,7 @@
-// DOM Elements
-const burgerMenu = document.querySelector('.burger-menu');
-const header = document.querySelector('.header');
-const mobileNav = document.getElementById('mobileNav');
-const scrollTopBtn = document.querySelector('.scroll-to-top');
 
-// header.js
+
+
+// header - Casper
 const toggle   = document.querySelector('.nav-toggle');
 const menu     = document.getElementById('primary-menu');
 const html     = document.documentElement;
@@ -13,24 +10,31 @@ toggle?.addEventListener('click', () => {
   const open = toggle.getAttribute('aria-expanded') === 'true';
   toggle.setAttribute('aria-expanded', String(!open));
   menu.classList.toggle('is-open');
-  html.classList.toggle('no-scroll', !open);   // locks body scroll when drawer open
+  html.classList.toggle('no-scroll', !open);   
 });
 
-// 2. Show/Hide Scroll to Top Button
+// 2. Show/Hide Scroll to Top Button - Martin
+
+const scrollTopBtn = document.querySelector('.scroll-to-top');
+let mybutton = document.getElementById('.scroll-to-top');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
+  if (window.scrollY > 20) {
     scrollTopBtn.style.display = 'block';
   } else {
     scrollTopBtn.style.display = 'none';
   }
 });
 
-// 3. Scroll to Top Smoothly
 scrollTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 
+
+
+
+
+// Updates Feed
 
   const updatesFeed = document.getElementById('updatesFeed');
 
