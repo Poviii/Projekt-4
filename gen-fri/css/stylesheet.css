@@ -16,7 +16,7 @@
   max-width: 1200px;
   margin: 0 auto;
   height: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,14 +79,10 @@
   font-weight: 600;
 }
 
-.search_black {
+.search img {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  margin: 0;
-  justify-content: center;
-  align-items: center;
-  background: var(--color-white);
 }
 
 /* ─────────  utility cluster  ───────── */
@@ -455,6 +451,60 @@ article {
   color: var(--color-white);
 }
 
+/* LUKAS Style */
+.slide__organisations {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+.tilmelding__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-light-gray);
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.tilmelding__button .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tilmelding__button img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+
+
+.more-arrow {
+  text-align: center;
+  margin: 15px;
+  font-size: 24px;
+  color: #E3751D;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.more-arrow.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+
 .mine-organasitioner {
   background-color: var(--color-white);
   padding: 1rem;
@@ -488,7 +538,7 @@ article {
   gap: .5rem;
   pointer-events: none;         /* ← stops the div catching clicks   */
 }
-.top-buttons > *{ pointer-events:auto; }  /* …but the buttons remain clickable */
+.top-buttons > *{ pointer-events: auto; }  /* …but the buttons remain clickable */
 
 /* Placeholder images/icons */
 .article-image {
@@ -559,7 +609,12 @@ article {
   width: 4rem;
   height: auto;
   border-radius: 10px;
-  margin-bottom: 1rem;
+}
+
+.update-avatar {
+  width: 4rem;
+  height: auto;
+  border-radius: 10px;
 }
 
 /*Thea */
@@ -997,7 +1052,7 @@ button.close-popup {
     position: static;
     flex-direction: row;
     transform: none;
-    gap: 1.25rem;
+    gap: 3rem;
     padding: 0;
     height: auto;
   }
