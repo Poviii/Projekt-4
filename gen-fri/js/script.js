@@ -6,12 +6,47 @@ const toggle   = document.querySelector('.nav-toggle');
 const menu     = document.getElementById('primary-menu');
 const html     = document.documentElement;
 
-toggle?.addEventListener('click', () => {
-  const open = toggle.getAttribute('aria-expanded') === 'true';
-  toggle.setAttribute('aria-expanded', String(!open));
-  menu.classList.toggle('is-open');
-  html.classList.toggle('no-scroll', !open);   
-});
+// Funktion der toggler menuen
+function toggleMenu() {
+  const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+  // If-else 
+  if (isOpen) {
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('is-open');
+    html.classList.remove('no-scroll');
+  } else {
+    toggle.setAttribute('aria-expanded', 'true');
+    menu.classList.add('is-open');
+    html.classList.add('no-scroll');
+  }
+
+  
+  logMenuState(isOpen);
+}
+
+// Eventlistener (Event)
+toggle?.addEventListener('click', toggleMenu);
+
+// Array + loop + funktion
+const logMessages = [
+  'Menu er lukket.',
+  'Menu er åben.',
+  'Brugeren toggler menuen.',
+];
+
+function logMenuState(isOpen) {
+  // Loop igennem arrayet
+  logMessages.forEach((msg, index) => {
+    if (index === 2) {
+      console.log(msg); // log altid sidste besked
+    } else if (index === 1 && !isOpen) {
+      console.log(msg); // hvis menu åbnes
+    } else if (index === 0 && isOpen) {
+      console.log(msg); // hvis menu lukkes
+    }
+  });
+}
 
 // 2. Show/Hide Scroll to Top Button - Martin
 
