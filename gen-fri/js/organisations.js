@@ -13,8 +13,8 @@ for (var i = 0; i < likeKnapper.length; i++) {
     // Event
     knap.addEventListener("click", function() {
         // If-else
-        if (this.src.includes("/icons/orange_icons/heart_filled.svg")) {
-            this.src = "/icons/orange_icons/heart_filled.svg";
+        if (this.src.includes("/gen-fri/icons/black_icons/heart_black.svg")) {
+            this.src = "/gen-fri/icons/orange_icons/heart_orange.svg";
             alert("Du har tilføjet en organisation!");
         } else {
             this.src = "/icons/black_icons/heart_black.svg";
