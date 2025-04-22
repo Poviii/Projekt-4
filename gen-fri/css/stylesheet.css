@@ -1087,3 +1087,82 @@ button.close-popup {
   .leaderboard      { grid-column: 1 / -1; }
 
 }
+
+#learnMoreBtn {
+  background-color: #D9762A;
+  text-align: center;
+  width: fit-content;
+  padding: 1vw 2vw;
+  margin: 14px 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+#learnMoreBtn:hover {
+  background-color: var(--color-accent);
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  background: var(--color-white);
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 20px;
+  z-index: 10000;
+  text-align: justify;
+  
+}
+
+#popup ul {
+  list-style-type: none;
+  margin: 10px 30%;
+}
+
+#closePopup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#eventTitle {
+  font-size: 1rem;
+}
+
+#eventDescription, #eventDetails {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+#popupSignupBtn {
+  width: 100%;
+  text-align: center;
+  background-color: #D9762A;
+  color: var(--color-white);
+  transition: background-color 0.3s, border 0.3s;
+}
+
+#popupSignupBtn:hover {
+  border: none;
+  background-color: var(--color-accent);
+}
+
+@media screen and (max-width: 700px) {
+  #popup {
+    width: 60%;
+    transform: translateX(-50%);
+  }
+
+  #eventDescription {
+    text-align: left;
+  }
+}
