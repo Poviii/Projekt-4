@@ -1,4 +1,4 @@
-// 📌 Et array med objekter - hvert objekt er et event med info
+// array med objekter
 const carouselEvents = [
     {
       title: "KOMsammen - Filmaften",
@@ -37,31 +37,30 @@ const carouselEvents = [
     }
   ];
   
-  // 📌 Variabler (pensum) til at holde styr på hvilket slide vi er på
+  //  Variabler 
   let currentIndex = 0;
-  let visibleCards = getVisibleCards(); // responsiv funktion
+  let visibleCards = getVisibleCards(); 
   
-  // 📌 DOM-manipulation: Vi henter HTML-elementer via klasser
+  //  DOM-manipulation
   const carousel = document.querySelector(".carousel-container");
   const dotsContainer = document.querySelector(".dots");
   
-  // 📌 Funktion med if-else (pensum): Afgør hvor mange kort der vises afhængig af skærmstørrelse
+  //  Funktion med if-else 
   function getVisibleCards() {
     if (window.innerWidth < 600) return 1;
     if (window.innerWidth < 900) return 2;
     return 3;
   }
   
-  // 📌 Funktion der looper gennem carouselEvents-array og genererer kort i DOM'en
   function renderCards() {
-    carousel.innerHTML = ""; // ryd tidligere indhold
+    carousel.innerHTML = ""; 
   
     carouselEvents.forEach((event) => {
-      // For hvert event opretter vi et DOM-element (et kort)
+      
       const card = document.createElement("div");
       card.className = "event-card";
   
-      // 🧠 DOM-manipulation og objekter: Vi bruger properties fra event-objektet
+     
       card.innerHTML = `
         <img src="${event.logo}" alt="logo">
         <h3>${event.title}</h3>
@@ -75,28 +74,27 @@ const carouselEvents = [
         </div>
       `;
   
-      // 📌 Tilføjer kortet til DOM'en
       carousel.appendChild(card);
     });
   
-    updateCarousel(); // sørger for korrekt placering
-    renderDots();     // opdaterer dots
+    updateCarousel(); 
+    renderDots();    
   }
   
-  // 📌 Funktion til at vise info-popup (DOM + alert)
+
   function alertInfo(title, org) {
     alert(`Event: ${title}\nArrangør: ${org}`);
   }
   
-  // 📌 Funktion: Går én slide frem hvis det er muligt (if-statement)
+  
   function nextSlide() {
     if (currentIndex + visibleCards < carouselEvents.length) {
       currentIndex++;
-      updateCarousel(); // opdater visningen
+      updateCarousel(); 
     }
   }
   
-  // 📌 Funktion: Går én slide tilbage hvis muligt
+  
   function prevSlide() {
     if (currentIndex > 0) {
       currentIndex--;
@@ -104,17 +102,17 @@ const carouselEvents = [
     }
   }
   
-  // 📌 Funktion: Opdaterer hvor langt vi skal "translate" kortene (DOM + operatorer)
+  
   function updateCarousel() {
     const cardWidth = carousel.querySelector(".event-card")?.offsetWidth || 280;
-    const gap = 20; // mellemrum mellem kort
-    const offset = currentIndex * (cardWidth + gap); // Operatorer: gang og plus
+    const gap = 20; 
+    const offset = currentIndex * (cardWidth + gap); 
     carousel.style.transform = `translateX(-${offset}px)`;
   
-    updateDots(); // opdater hvilken dot der er aktiv
+    updateDots(); 
   }
   
-  // 📌 Funktion: Genererer dots til navigation (DOM + loop)
+  
   function renderDots() {
     dotsContainer.innerHTML = "";
     const totalDots = Math.ceil(carouselEvents.length - visibleCards + 1);
@@ -127,7 +125,7 @@ const carouselEvents = [
     }
   }
   
-  // 📌 Funktion: Opdaterer dot-markering (DOM + loop + if)
+  //  Opdaterer dot-markering  + loop + if
   function updateDots() {
     const allDots = document.querySelectorAll(".dot");
   
@@ -136,25 +134,25 @@ const carouselEvents = [
     });
   }
   
-  // 📌 Event listener (DOM): Når vinduet ændres, genberegnes layout
+  
   window.addEventListener("resize", () => {
     const newVisible = getVisibleCards();
   
     if (newVisible !== visibleCards) {
       visibleCards = newVisible;
   
-      // Hvis currentIndex er ude af synk, juster det
+      
       if (currentIndex > carouselEvents.length - visibleCards) {
         currentIndex = Math.max(0, carouselEvents.length - visibleCards);
       }
   
-      renderCards(); // Genopbyg carousel
+      renderCards(); 
     }
   });
   
-  // 📌 Event listeners til navigation med pile
+
   document.querySelector(".nav-button.left").addEventListener("click", prevSlide);
   document.querySelector(".nav-button.right").addEventListener("click", nextSlide);
   
-  // 📌 Starter hele carousel når siden loader
+
   renderCards();

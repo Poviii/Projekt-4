@@ -523,10 +523,10 @@ h3 {
   border-radius: 10px;
 }
 
-/*Thea */
+/* thea*/
 .carousel-card {
   max-width: 100%;
-  margin: 40px 50px;
+  margin: 40px 0;
   padding: 1rem;
   background-color: var(--color-white);
   border-radius: 10px;
