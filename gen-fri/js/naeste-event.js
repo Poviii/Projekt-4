@@ -68,13 +68,13 @@ const carouselEvents = [
           <p>  ${event.location}</p>
           <p>📅 ${event.date}</p>
         </div>
-        <button id="learnMoreBtn">Learn more</button>
+        <button id="learnMoreBtn">Læs mere</button>
           <div id="popup">
               <span id="closePopup">&times;</span>
               <h2 id="eventTitle"></h2>
               <p id="eventDescription"></p>
               <ul id="eventDetails"></ul>
-              <button href="#" id="popupSignupBtn">Sign up</button>
+              <button href="#" id="popupSignupBtn">Tilmeld dig</button>
           </div>
       `;
   
