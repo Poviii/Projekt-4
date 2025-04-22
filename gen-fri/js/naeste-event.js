@@ -68,10 +68,14 @@ const carouselEvents = [
           <p>  ${event.location}</p>
           <p>📅 ${event.date}</p>
         </div>
-        <div class="button-group">
-          <button onclick="alertInfo('${event.title}', '${event.org}')">Info</button>
-          <button>Deltag</button>
-        </div>
+        <button id="learnMoreBtn">Learn more</button>
+          <div id="popup">
+              <span id="closePopup">&times;</span>
+              <h2 id="eventTitle"></h2>
+              <p id="eventDescription"></p>
+              <ul id="eventDetails"></ul>
+              <button href="#" id="popupSignupBtn">Sign up</button>
+          </div>
       `;
   
       carousel.appendChild(card);
