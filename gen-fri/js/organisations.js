@@ -13,11 +13,11 @@ for (var i = 0; i < likeKnapper.length; i++) {
     // Event
     knap.addEventListener("click", function() {
         // If-else
-        if (this.src.includes("/gen-fri/icons/orange_icons/heart_orange.svg")) {
-            this.src = "/gen-fri/icons/orange_icons/heart_orange.svg";
+        if (this.src.includes("/icons/orange_icons/heart_filled.svg")) {
+            this.src = "/icons/orange_icons/heart_filled.svg";
             alert("Du har tilføjet en organisation!");
         } else {
-            this.src = "/gen-fri/icons/black_icons/heart_black.svg";
+            this.src = "/icons/black_icons/heart_black.svg";
             alert("Du har fjernet din tilmelding.");
         }
     });
