@@ -10,7 +10,7 @@ const html     = document.documentElement;
 function toggleMenu() {
   const isOpen = toggle.getAttribute('aria-expanded') === 'true';
 
-  // If-else demonstreret tydeligt
+  // If-else 
   if (isOpen) {
     toggle.setAttribute('aria-expanded', 'false');
     menu.classList.remove('is-open');
@@ -21,7 +21,7 @@ function toggleMenu() {
     html.classList.add('no-scroll');
   }
 
-  // Kald ekstra funktion der kører et loop
+  
   logMenuState(isOpen);
 }
 
