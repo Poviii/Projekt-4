@@ -14,109 +14,109 @@
 <body>
   <!-- HEADER -->
   <!-- site‑header.html -->
-<header class="site-header">
+  <header class="site-header">
 
-  <div class="header-inner">
-    <!-- ① burger / drawer toggle -->
-    <button class="nav-toggle"
-            aria-label="Toggle navigation"
-            aria-controls="primary-menu"
-            aria-expanded="false">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
-
-    <!-- ② brand / home link -->
-    <a href="index.html" class="brand" aria-label="Gen‑Fri">
-      <img src="logos/logo_sort-ubaggrund.svg" alt="Brand logo" height="28">
-    </a>
-
-    <!-- ③ full menu (one single list for every breakpoint) -->
-    <nav class="primary-nav" aria-label="Main">
-      <ul id="primary-menu" class="nav-list">
-        <li>
-          <a href="html/homepage.html">
-            <img src="icons/black_icons/homepage_black.svg" alt="Homepage">
-            <span class="label">Homepage</span>
-          </a>
-        </li>
-        <li>
-          <a href="index.html" aria-current="page">
-            <img src="icons/orange_icons/mypage_orange.svg" alt="My Page">
-            <span class="label">My Page</span>
-          </a>
-        </li>
-        <li>
-          <a href="html/leaderboard.html">
-            <img src="icons/black_icons/leaderboard_black.svg" alt="Leaderboard">
-            <span class="label">Leaderboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="icons/black_icons/message_black.svg" alt="Beskeder">
-            <span class="label">Beskeder</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="icons/black_icons/settings_black.svg" alt="Indstillinger">
-            <span class="label">Indstillinger</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- ⑤ search (desktop‑only) -->
-    <form class="search" role="search">
-      <label for="searchInput" class="sr-only"><img class="search_black" src="icons/black_icons/search_black.svg" alt="search icon"></label>
-      <input id="searchInput" name="s" type="search" placeholder="Søg…">
-    </form>
-  </div>
-</header>
+    <div class="header-inner">
+      <!-- ① burger / drawer toggle -->
+      <button class="nav-toggle"
+              aria-label="Toggle navigation"
+              aria-controls="primary-menu"
+              aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
   
+      <!-- ② brand / home link -->
+      <a href="index.html" class="brand" aria-label="Gen‑Fri">
+        <img src="/logos/logo_sort-ubaggrund.svg" alt="Brand logo" height="28">
+      </a>
   
-
-  <!-- LEADERBOARD -->
-  <section class="leaderboard" aria-labelledby="leaderboardHeading">
-    <h2 id="leaderboardHeading">Leaderboard</h2>
-    <div class="leaderboard-filters">
-      <button class="filter-btn active" data-filter="all">Alle</button>
-      <button class="filter-btn" data-filter="friends">Venner</button>
-      <button class="filter-btn" data-filter="region">Region</button>
+      <!-- ③ full menu (one single list for every breakpoint) -->
+      <nav class="primary-nav" aria-label="Main">
+        <ul id="primary-menu" class="nav-list">
+          <li>
+            <a href="/html/homepage.html">
+              <img src="/icons/black_icons/homepage_black.svg" alt="Homepage">
+              <span class="label">Homepage</span>
+            </a>
+          </li>
+          <li>
+            <a href="/index.html">
+              <img src="/icons/black_icons/mypage_black.svg" alt="My Page">
+              <span class="label">My Page</span>
+            </a>
+          </li>
+          <li>
+            <a href="/html/leaderboard.html" aria-current="page">
+              <img src="/icons/orange_icons/leaderboard_orange.svg" alt="Leaderboard">
+              <span class="label">Leaderboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="/icons/black_icons/message_black.svg" alt="Beskeder">
+              <span class="label">Beskeder</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="/icons/black_icons/settings_black.svg" alt="Indstillinger">
+              <span class="label">Indstillinger</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+  
+      <!-- ⑤ search (desktop‑only) -->
+      <form class="search" role="search">
+        <label for="searchInput" class="sr-only"><img class="search_black" src="/icons/black_icons/search_black.svg" alt="search icon"></label>
+        <input id="searchInput" name="s" type="search" placeholder="Søg…">
+      </form>
     </div>
-    <ul class="leaderboard-list">
-      <li class="leaderboard-item" data-category="friends">
-        <span class="rank">1</span>
-        <span class="user-avatar"><img src="images/johan.webp" alt="User Avatar"></span>
-        <span class="user-name">Johan</span>
-        <span class="user-points">1200 Point</span>
-      </li>
-      <li class="leaderboard-item" data-category="region">
-        <span class="rank">2</span>
-        <span class="user-avatar"><img src="images/lukas.webp" alt="User Avatar"></span>
-        <span class="user-name">Lukas</span>
-        <span class="user-points">1100 Point</span>
-      </li>
-      <li class="leaderboard-item" data-category="friends">
-        <span class="rank">3</span>
-        <span class="user-avatar"><img src="images/anna.webp" alt="User Avatar"></span>
-        <span class="user-name">Anna</span>
-        <span class="user-points">1050 Point</span>
-      </li>
-      <li class="leaderboard-item" data-category="friends">
-        <span class="rank">3</span>
-        <span class="user-avatar"><img src="images/lucia.webp" alt="User Avatar"></span>
-        <span class="user-name">Lucia</span>
-        <span class="user-points">900 Point</span>
-      </li>
-      <li class="leaderboard-item" data-category="region">
-        <span class="rank">2</span>
-        <span class="user-avatar"><img src="images/pernille.webp" alt="User Avatar"></span>
-        <span class="user-name">Pernille</span>
-        <span class="user-points">670 Point</span>
-      </li>
-    </ul>
-  </section>
+  </header>
+  
+  
+
+        <!-- LEADERBOARD -->
+        <section class="leaderboard" aria-labelledby="leaderboardHeading">
+          <h2 id="leaderboardHeading">Leaderboard</h2>
+          <div class="leaderboard-filters">
+            <button class="filter-btn active" data-filter="all">Alle</button>
+            <button class="filter-btn" data-filter="friends">Venner</button>
+            <button class="filter-btn" data-filter="region">Region</button>
+          </div>
+          <ul class="leaderboard-list">
+            <li class="leaderboard-item" data-category="friends">
+              <span class="rank">1</span>
+              <span class="user-avatar"><img src="/images/johan.webp" alt="User Avatar"></span>
+              <span class="user-name">Johan</span>
+              <span class="user-points">1200 Point</span>
+            </li>
+            <li class="leaderboard-item" data-category="region">
+              <span class="rank">2</span>
+              <span class="user-avatar"><img src="/images/lukas.webp" alt="User Avatar"></span>
+              <span class="user-name">Lukas</span>
+              <span class="user-points">1100 Point</span>
+            </li>
+            <li class="leaderboard-item" data-category="friends">
+              <span class="rank">3</span>
+              <span class="user-avatar"><img src="/images/anna.webp" alt="User Avatar"></span>
+              <span class="user-name">Anna</span>
+              <span class="user-points">1050 Point</span>
+            </li>
+            <li class="leaderboard-item" data-category="friends">
+              <span class="rank">3</span>
+              <span class="user-avatar"><img src="/images/lucia.webp" alt="User Avatar"></span>
+              <span class="user-name">Lucia</span>
+              <span class="user-points">900 Point</span>
+            </li>
+            <li class="leaderboard-item" data-category="region">
+              <span class="rank">2</span>
+              <span class="user-avatar"><img src="/images/pernille.webp" alt="User Avatar"></span>
+              <span class="user-name">Pernille</span>
+              <span class="user-points">670 Point</span>
+            </li>
+          </ul>
+        </section>
       
       
       
@@ -124,7 +124,7 @@
       
       
     
-  </main>
+
 
   <!-- FOOTER -->
 <footer class="footer">

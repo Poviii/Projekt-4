@@ -1060,6 +1060,9 @@ button.close-popup {
     width: 100%;
   }
   
+  .brand {
+    display: none;
+  }
 
   .profile-card     { grid-column: span 3; }
   .friends-tab      { grid-column: span 3; }
