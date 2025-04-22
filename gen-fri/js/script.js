@@ -237,7 +237,7 @@ function renderCalendar() {
     const formattedDate = `${month + 1}/${day}/${year}`;
     if (events[formattedDate]) {
       const iconPlaceholder = document.createElement('img');
-      iconPlaceholder.src = '/icons/black_icons/add_black.svg'; // Replace with your actual icon path
+      iconPlaceholder.src = 'icons/black_icons/add_black.svg'; // Replace with your actual icon path
       iconPlaceholder.alt = 'Event Icon';
       iconPlaceholder.classList.add('event-icon');
       dayDiv.appendChild(iconPlaceholder);
